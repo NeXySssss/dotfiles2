@@ -112,6 +112,28 @@ local function buffers_count()
 	return #buffers
 end
 
+local function lsp_diagnostics()
+	local d = lsp_status.diagnostics()
+	return ' ' .. d.errors .. '  ' .. d.warnings .. '  ' .. d.info;
+end
+
+local function lsp_messages()
+	local m = lsp_status.messages()
+	local str = ''
+	for _, v in ipairs(m) do
+		if v.name then str = '[' .. v.name .. '] ' end
+		if v.title then str = str .. v.title end
+		if v.percentage then
+			str = str .. ' (' .. v.percentage .. '%): '
+		else
+			str = str .. ': '
+		end
+		if v.message then str = str .. v.message end
+		str = str .. ' '
+	end
+	return str
+end
+
 -- Left side
 gls.left[1] = {
 	ViMode = {
@@ -158,46 +180,37 @@ gls.left[3] = {
 		provider = get_current_file_name,
 		condition = buffer_not_empty,
 		highlight = {colors.fg, colors.section_bg},
+		separator = ' ',
+		separator_highlight = {colors.section_bg, colors.bg}
 	}
 }
 gls.left[4] = {
 	LspDiagnostics = {
 		provider = lsp_diagnostics,
 		highlight = {colors.fg, colors.bg},
-		separator = '',
+		separator = ' ',
 		separator_highlight = {colors.section_bg, colors.bg}
 	}
 }
 gls.left[5] = {
-	LspDiagnostics = {
-		provider = lsp_message,
-		highlight = {colors.red1, colors.bg},
-	}
-}
-gls.left[6] = {
 	WhiteSpace = {
 		provider = trailing_whitespace,
 		condition = buffer_not_empty,
 		highlight = {colors.fg, colors.bg}
 	}
 }
-gls.left[7] = {
+gls.left[6] = {
 	TabIndent = {
 		provider = tab_indent,
 		condition = buffer_not_empty,
 		highlight = {colors.fg, colors.bg},
-		--[[ separator = '',
-		separator_highlight = {colors.section_bg, colors.bg} ]]
+		separator = ' ',
+		separator_highlight = {colors.section_bg, colors.bg}
 	}
 }
-
-local function lsp_diagnostics()
-	return '';
-end
-
-local function lsp_message()
-	return '';
-end
+gls.left[7] = {
+	LspMessage = {provider = lsp_messages, highlight = {colors.red1, colors.bg}}
+}
 
 -- Right side
 gls.right[1] = {

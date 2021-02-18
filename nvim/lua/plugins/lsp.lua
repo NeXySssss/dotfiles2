@@ -58,9 +58,12 @@ local on_attach = function(client, bufnr)
 	lsp_status.on_attach(client)
 end
 
+exec [[autocmd InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *.rs :lua require'lsp_extensions'.inlay_hints{ prefix = ' » ', highlight = "NonText", enabled = {"ChainingHint", "TypeHint", "ParameterHint"} }]]
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities = vim.tbl_extend('keep', capabilities or {}, lsp_status.capabilities)
+capabilities = vim.tbl_extend('keep', capabilities or {},
+                              lsp_status.capabilities)
 
 nvim_lsp.sumneko_lua.setup {
 	cmd = {"lua-language-server"},
