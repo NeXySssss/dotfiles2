@@ -28,6 +28,8 @@ paq'monaqa/dial.nvim'
 paq'jbyuki/instant.nvim'
 paq'b3nj5m1n/kommentary'
 paq'glepnir/galaxyline.nvim'
+paq'mfussenegger/nvim-dap'
+paq'theHamsta/nvim-dap-virtual-text'
 
 --[[
      Plugin configs
@@ -45,3 +47,4 @@ require'plugins/dial'
 require'plugins/autopairs'
 require'plugins/galaxyline'
 require'plugins/neogit'
+require'plugins/dap'

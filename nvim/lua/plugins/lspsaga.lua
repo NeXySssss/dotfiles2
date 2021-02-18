@@ -1,30 +1,28 @@
 require'lspsaga'.init_lsp_saga()
+local opts = {noremap = true, silent = true}
 
-exec[[
-" lsp provider to find the cursor word definition and reference
-nnoremap <silent> gh :Lspsaga lsp_finder<CR>
-" code action
-nnoremap <silent><leader>ca :Lspsaga code_action<CR>
-vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
-" show hover doc
-nnoremap <silent>K :Lspsaga hover_doc<CR>
-" scroll down hover doc or scroll in definition preview
-nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
-" scroll up hover doc
-nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
-" show signature help
-nnoremap <silent> gs :Lspsaga signature_help<CR>
-" rename
-nnoremap <silent>gr :Lspsaga rename<CR>
-" close rename win use <C-c> in insert mode or `q` in noremal mode or `:q`
-" preview definition
-nnoremap <silent> gd :Lspsaga preview_definition<CR>
-" show diagnostics
-nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
-" jump diagnostic
-nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
-nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
-" float terminal also you can pass the cli command in open_float_terminal function
-nnoremap <silent> <A-d> :Lspsaga open_floaterm<CR>
-tnoremap <silent> <A-d> <C-\><C-n>:Lspsaga close_floaterm<CR>
-]]
+-- lsp provider to find the cursor word definition and reference
+map("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
+-- code action
+map("n", "<leader>a", "<cmd>Lspsaga code_action<CR>", opts)
+map("v", "<leader>a", "<cmd><C-U>Lspsaga range_code_action<CR>", opts)
+-- hover doc
+map("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+map("n", "<C-f>",
+    "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", opts)
+map("n", "<C-b>",
+    "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", opts)
+-- show signature help
+map("n", "gs", "<cmd>Lspsaga signature_help<CR>", opts)
+-- rename
+map("n", "gr", "<cmd>Lspsaga rename<CR>", opts)
+-- preview definition
+map("n", "gd", "<cmd>Lspsaga preview_definition<CR>", opts)
+-- show line diagnostics
+map("n", "<leader>d", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
+-- jump diagnostics
+map("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+map("n", "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+-- float terminal
+map("n", "<A-d>", "<cmd>Lspsaga open_floaterm<CR>", opts)
+map("t", "<A-d>", "<C-\\><C-n><cmd>Lspsaga close_floaterm<CR>", opts)

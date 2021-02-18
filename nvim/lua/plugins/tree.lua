@@ -1,1 +1,2 @@
-map('n', '<leader>tr', '<Cmd>NvimTreeToggle<CR>', { noremap=true, silent=true })
+map('n', '<leader>tr', '<Cmd>NvimTreeToggle<CR>',
+    {noremap = true, silent = true})

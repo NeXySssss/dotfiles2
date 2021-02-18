@@ -1,26 +1,26 @@
--- TODO: Replace lspsaga exec keybinds with lua alternatives, add nvim-dap or vimspector
-
-
+-- TODO: add nvim-dap or vimspector
 -- Utils
 map = vim.api.nvim_set_keymap
 exec = function(text) vim.api.nvim_exec(text, false) end
-t = function(str) return vim.api.nvim_replace_termcodes(str, true, true, true) end
+t =
+				function(str)
+					return vim.api.nvim_replace_termcodes(str, true, true, true)
+				end
 
 -- TODO: Remove when https://github.com/neovim/neovim/pull/13479 lands
 local opts_info = vim.api.nvim_get_all_options_info()
 local opt = setmetatable({}, {
-  __index = vim.o,
-  __newindex = function(_, key, value)
-    vim.o[key] = value
-    local scope = opts_info[key].scope
-    if scope == "win" then
-      vim.wo[key] = value
-    elseif scope == "buf" then
-      vim.bo[key] = value
-    end
-  end,
+	__index = vim.o,
+	__newindex = function(_, key, value)
+		vim.o[key] = value
+		local scope = opts_info[key].scope
+		if scope == "win" then
+			vim.wo[key] = value
+		elseif scope == "buf" then
+			vim.bo[key] = value
+		end
+	end
 })
-
 
 -- Options
 opt.mouse = "a"
@@ -42,9 +42,7 @@ opt.splitbelow = true
 opt.splitright = true
 opt.foldlevelstart = 9999
 
-if vim.fn.has("termguicolors") == 1 then
-	opt.termguicolors  = true
-end
+if vim.fn.has("termguicolors") == 1 then opt.termguicolors = true end
 vim.api.nvim_exec("colorscheme nvcode", false)
 
 vim.g.mapleader = ";"
@@ -62,8 +60,10 @@ map('', '<A-Right>', '<cmd>wincmd l<CR>', {noremap = true, silent = true})
 -- Splits
 map('', '<leader>h', ':split<Space>', {noremap = true, silent = true})
 map('', '<leader>v', ':vsplit<Space>', {noremap = true, silent = true})
-map('', '<leader>th', '<cmd>split term://$SHELL<CR>', {noremap = true, silent = true})
-map('', '<leader>tv', '<cmd>vsplit term://$SHELL<CR>', {noremap = true, silent = true})
+map('', '<leader>th', '<cmd>split term://$SHELL<CR>',
+    {noremap = true, silent = true})
+map('', '<leader>tv', '<cmd>vsplit term://$SHELL<CR>',
+    {noremap = true, silent = true})
 
 -- Tabs
 map('', '<A-Tab>', '<cmd>tabnext<CR>', {noremap = true, silent = true})
