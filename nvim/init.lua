@@ -1,4 +1,10 @@
-local map = vim.api.nvim_set_keymap
+-- Utils
+map = vim.api.nvim_set_keymap
+exec = function(text) vim.api.nvim_exec(text, false) end
+
+t = function(str)
+	return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
 
 -- TODO: Remove when https://github.com/neovim/neovim/pull/13479 lands
 local opts_info = vim.api.nvim_get_all_options_info()
@@ -15,6 +21,8 @@ local opt = setmetatable({}, {
   end,
 })
 
+
+-- Options
 opt.mouse = "a"
 opt.completeopt = "menu,menuone,noselect"
 opt.clipboard = "unnamedplus"
@@ -39,12 +47,6 @@ end
 vim.api.nvim_exec("colorscheme nvcode", false)
 
 vim.g.mapleader = ";"
-
-map('i', '<C-Space>', 'compe#complete()', {noremap = true, silent = true, expr = true})
-map('i', '<CR>', 'compe#confirm(\'<CR>\')', {noremap = true, silent = true, expr = true})
-map('i', '<C-e>', 'compe#close(\'<C-e>\')', {noremap = true, silent = true, expr = true})
-map('i', '<C-f>', 'compe#scroll({ \'delta\': +4 })', {noremap = true, silent = true, expr = true})
-map('i', '<C-d>', 'compe#scroll({ \'delta\': -4 })', {noremap = true, silent = true, expr = true})
 
 map('', '<A-h>', '<cmd>wincmd h<CR>', {noremap = true, silent = true})
 map('', '<A-Left>', '<cmd>wincmd h<CR>', {noremap = true, silent = true})

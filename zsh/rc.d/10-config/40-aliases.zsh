@@ -1,6 +1,6 @@
 # vim: foldmethod=marker
 
-# Pacman{{{
+# Pacman {{{
 alias pacman="sudo pacman --color auto"
 alias pcsyu="sudo pacman -Syu"
 alias pcs="sudo pacman -S"
@@ -10,7 +10,7 @@ alias yay="paru"
 alias p="paru"
 # }}}
 
-# Replace programs with alternatives{{{
+# Replace programs with alternatives {{{
 alias a="exa -a"
 alias l="exa -l"
 alias la="exa -la"
@@ -22,14 +22,14 @@ alias vim="nvim"
 alias vi="nvim"
 # }}}
 
-# Add default options{{{
+# Add default options {{{
 alias mkdir="mkdir -pv"
 alias kkfetch="neofetch --ascii $ZDOTDIR/33kk.ascii"
 alias ckkfetch="clear && neofetch --ascii $ZDOTDIR/33kk.ascii"
 alias ping="ping -c 5"
 # }}}
 
-# Shorten long commands{{{
+# Shorten long commands {{{
 alias t="touch"
 alias h="history"
 alias j="jobs -l"
@@ -48,7 +48,7 @@ ytp() { vlc `youtube-dl -g $@` }
 jc() { cat $@ | jq | bat --file-name $@ }
 # }}}
 
-# Clear command history{{{
+# Clear command history {{{
 alias clh="function erase_history { local HISTSIZE=0; } && erase_history && rm $HISTFILE"
 alias clhe="rm $HISTFILE && exit"
 

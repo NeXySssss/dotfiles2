@@ -1,6 +1,6 @@
 require'lspsaga'.init_lsp_saga()
 
-vim.api.nvim_exec([[
+exec[[
 " lsp provider to find the cursor word definition and reference
 nnoremap <silent> gh :Lspsaga lsp_finder<CR>
 " code action
@@ -27,4 +27,4 @@ nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
 " float terminal also you can pass the cli command in open_float_terminal function
 nnoremap <silent> <A-d> :Lspsaga open_floaterm<CR>
 tnoremap <silent> <A-d> <C-\><C-n>:Lspsaga close_floaterm<CR>
-]], false)
+]]

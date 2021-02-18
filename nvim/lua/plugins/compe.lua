@@ -26,9 +26,6 @@ require'compe'.setup {
 	};
 }
 
-local t = function(str)
-	return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
 
 local check_back_space = function()
 	local col = vim.fn.col('.') - 1
@@ -63,7 +60,13 @@ _G.s_tab_complete = function()
 	end
 end
 
-vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true, silent = true})
-vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true, silent = true})
-vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true, silent = true})
-vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true, silent = true})
+map("i", "<Tab>", "v:lua.tab_complete()", {expr = true, silent = true})
+map("s", "<Tab>", "v:lua.tab_complete()", {expr = true, silent = true})
+map("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true, silent = true})
+map("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true, silent = true})
+
+map('i', '<C-Space>', 'compe#complete()', {noremap = true, silent = true, expr = true})
+map('i', '<CR>', 'compe#confirm(\'<CR>\')', {noremap = true, silent = true, expr = true})
+map('i', '<C-e>', 'compe#close(\'<C-e>\')', {noremap = true, silent = true, expr = true})
+map('i', '<C-f>', 'compe#scroll({ \'delta\': +4 })', {noremap = true, silent = true, expr = true})
+map('i', '<C-d>', 'compe#scroll({ \'delta\': -4 })', {noremap = true, silent = true, expr = true})

@@ -1,2 +1,1 @@
-local opts = { noremap=true, silent=true }
-vim.api.nvim_set_keymap('n', '<leader>tr', '<Cmd>NvimTreeToggle<CR>', opts)
+map('n', '<leader>tr', '<Cmd>NvimTreeToggle<CR>', { noremap=true, silent=true })
