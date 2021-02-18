@@ -102,7 +102,7 @@ ctrl + alt + f
 	~/.config/bspwm/scripts/run browser
 
 Print
-	~/.config/bspwm/scripts/run screeot-area
+	~/.config/bspwm/scripts/run screenshot-area
 
 super + l
 	~/.config/bspwm/scripts/run lock
