@@ -114,7 +114,7 @@ end
 
 local function lsp_diagnostics()
 	local d = lsp_status.diagnostics()
-	return ' ' .. d.errors .. '  ' .. d.warnings .. '  ' .. d.info;
+	return '  ' .. d.errors .. '  ' .. d.warnings .. '  ' .. d.info;
 end
 
 local function lsp_messages()
@@ -180,7 +180,7 @@ gls.left[3] = {
 		provider = get_current_file_name,
 		condition = buffer_not_empty,
 		highlight = {colors.fg, colors.section_bg},
-		separator = ' ',
+		separator = '',
 		separator_highlight = {colors.section_bg, colors.bg}
 	}
 }

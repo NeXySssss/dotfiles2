@@ -42,6 +42,7 @@ paq 'jbyuki/instant.nvim'
 paq 'b3nj5m1n/kommentary'
 paq 'glepnir/galaxyline.nvim'
 paq 'mfussenegger/nvim-dap'
+paq 'puremourning/vimspector'
 paq 'theHamsta/nvim-dap-virtual-text'
 paq 'mhinz/vim-startify'
 
@@ -63,6 +64,7 @@ else
 	require 'plugins/autopairs'
 	require 'plugins/galaxyline'
 	require 'plugins/neogit'
-	require 'plugins/dap'
+	-- require 'plugins/dap'
+	require 'plugins/vimspector'
 end
 

@@ -1,6 +1,8 @@
-local dap = require('dap')
+local dap = require'dap'
 local opts = {noremap = true, silent = true}
 vim.g.dap_virtual_text = true
+
+-- require'dap.ext.vscode'.load_launchjs()
 
 dap.adapters.node2 = {
 	type = 'executable',
@@ -10,6 +12,7 @@ dap.adapters.node2 = {
 						'/Documents/cloned/vscode-node-debug2/out/src/nodeDebug.js'
 	}
 }
+
 dap.configurations.javascript = {
 	{
 		type = 'node2',
@@ -21,6 +24,42 @@ dap.configurations.javascript = {
 		console = 'integratedTerminal'
 	}
 }
+
+dap.adapters.netcoredbg = {
+	type = 'executable',
+	command = '/home/marko/Downloads/netcoredbg/netcoredbg',
+	args = {'--interpreter=vscode --attach ${processId}'},
+	options = {cwd = "/home/marko/Downloads/netcoredbg"}
+}
+--
+--[[ dap.adapters.netcoredbg = {
+	type = 'server',
+	port = 4711
+} ]]
+
+dap.configurations.cs = {
+	{
+		type = 'netcoredbg',
+		request = 'launch',
+		name = 'Netcoredbg',
+		program = '${workspaceFolder}/bin/Debug/netcoreapp3.1/Uniview.Server',
+		cwd = '${workspaceFolder}'
+	}
+}
+--[[ dap.adapters.cs = {
+	type = 'server',
+	port = 61564
+} ]]
+--[[ dap.configurations.cs = {
+	{
+		type = "netcoredbg",
+		request = "launch",
+		program = "dotnet",
+		args = {"run"},
+		-- stopAtEntry = true,
+		cwd = "${workspaceFolder}"
+	}
+} ]]
 
 map('n', '<F5>', '<cmd>lua require\'dap\'.continue()<CR>', opts)
 map('n', '<F10>', '<cmd>lua require\'dap\'.step_over()<CR>', opts)
