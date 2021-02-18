@@ -1,5 +1,13 @@
 -- TODO: add nvim-dap or vimspector
 -- Utils
+system_name = ""
+if vim.fn.has("mac") == 1 then
+  system_name = "macOS"
+elseif vim.fn.has("unix") == 1 then
+  system_name = "Linux"
+elseif vim.fn.has('win32') == 1 then
+  system_name = "Windows"
+end
 map = vim.api.nvim_set_keymap
 exec = function(text) vim.api.nvim_exec(text, false) end
 t =
@@ -43,7 +51,6 @@ opt.splitright = true
 opt.foldlevelstart = 9999
 
 if vim.fn.has("termguicolors") == 1 then opt.termguicolors = true end
-vim.api.nvim_exec("colorscheme nvcode", false)
 
 vim.g.mapleader = ";"
 

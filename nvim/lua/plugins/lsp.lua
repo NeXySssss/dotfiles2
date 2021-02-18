@@ -1,4 +1,14 @@
 local nvim_lsp = require('lspconfig')
+local lsp_status = require('lsp-status')
+-- completion_customize_lsp_label as used in completion-nvim
+-- Optional: customize the kind labels used in identifying the current function.
+-- g:completion_customize_lsp_label is a dict mapping from LSP symbol kind 
+-- to the string you want to display as a label
+-- lsp_status.config { kind_labels = vim.g.completion_customize_lsp_label }
+
+-- Register the progress handler
+lsp_status.register_progress()
+
 local on_attach = function(client, bufnr)
 	local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 	local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -44,10 +54,13 @@ local on_attach = function(client, bufnr)
 		augroup END
 		]]
 	end
+
+	lsp_status.on_attach(client)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities = vim.tbl_extend('keep', capabilities or {}, lsp_status.capabilities)
 
 nvim_lsp.sumneko_lua.setup {
 	cmd = {"lua-language-server"},
@@ -92,7 +105,7 @@ nvim_lsp.tsserver.setup {
 
 nvim_lsp.html.setup {capabilities = capabilities, on_attach = on_attach}
 
-nvim_lsp.cssls.setup {on_attach = on_attach}
+nvim_lsp.cssls.setup {capabilities = capabilities, on_attach = on_attach}
 
 nvim_lsp.jsonls.setup {
 	commands = {
@@ -100,6 +113,7 @@ nvim_lsp.jsonls.setup {
 			function() vim.lsp.buf.range_formatting({}, {0, 0}, {vim.fn.line("$"), 0}) end
 		}
 	},
+	capabilities = capabilities,
 	on_attach = on_attach
 }
 
@@ -168,6 +182,7 @@ nvim_lsp.efm.setup {
 	root_dir = nvim_lsp.util.root_pattern {
 		".git", "package.json", "tsconfig.json", "jsconfig.json", "/"
 	},
+	capabilities = capabilities,
 	on_attach = on_attach
 }
 

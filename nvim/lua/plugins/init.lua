@@ -1,13 +1,25 @@
 --[[
      Load Paq
 ]]
-vim.cmd 'packadd paq-nvim'
+success, value = pcall(exec, 'packadd paq-nvim')
+
+if success == false then
+	print("Installing paq.nvim")
+	if system_name == "Linux" or system_name == "macOS" then
+		exec'!git clone https://github.com/savq/paq-nvim.git "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/pack/paqs/opt/paq-nvim'
+	elseif system_name == "Windows" then
+		exec'!git clone https://github.com/savq/paq-nvim.git "$env:LOCALAPPDATA\\nvim-data\\site\\pack\\paqs\\opt\\paq-nvim"'
+	end
+	exec'packadd paq-nvim'
+end
+
 local paq = require'paq-nvim'.paq
 paq{'savq/paq-nvim', opt=true}
 
 --[[
      Plugins
 ]]
+paq'kyazdani42/nvim-web-devicons'
 paq'nvim-treesitter/nvim-treesitter'
 paq'kyazdani42/nvim-tree.lua'
 paq'tjdevries/colorbuddy.vim'
@@ -30,13 +42,17 @@ paq'b3nj5m1n/kommentary'
 paq'glepnir/galaxyline.nvim'
 paq'mfussenegger/nvim-dap'
 paq'theHamsta/nvim-dap-virtual-text'
+paq'mhinz/vim-startify'
+paq'nvim-lua/lsp-status.nvim'
 
+if success == false then
+	exec'PaqInstall'
+else
 --[[
      Plugin configs
 ]]
---require'plugins/colorbuddy'
-require'plugins/lualine'
 require'plugins/colorizer'
+require'plugins/colorscheme'
 require'plugins/treesitter'
 require'plugins/lsp'
 require'plugins/lspkind'
@@ -48,3 +64,5 @@ require'plugins/autopairs'
 require'plugins/galaxyline'
 require'plugins/neogit'
 require'plugins/dap'
+end
+

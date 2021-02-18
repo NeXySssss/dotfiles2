@@ -1,5 +1,6 @@
 vim.cmd [[packadd galaxyline.nvim]]
 local gl = require('galaxyline')
+local lsp_status = require('lsp-status')
 
 local utils = {}
 
@@ -157,59 +158,46 @@ gls.left[3] = {
 		provider = get_current_file_name,
 		condition = buffer_not_empty,
 		highlight = {colors.fg, colors.section_bg},
+	}
+}
+gls.left[4] = {
+	LspDiagnostics = {
+		provider = lsp_diagnostics,
+		highlight = {colors.fg, colors.bg},
 		separator = '',
 		separator_highlight = {colors.section_bg, colors.bg}
 	}
 }
-gls.left[4] = {
+gls.left[5] = {
+	LspDiagnostics = {
+		provider = lsp_message,
+		highlight = {colors.red1, colors.bg},
+	}
+}
+gls.left[6] = {
 	WhiteSpace = {
 		provider = trailing_whitespace,
 		condition = buffer_not_empty,
 		highlight = {colors.fg, colors.bg}
 	}
 }
-gls.left[5] = {
+gls.left[7] = {
 	TabIndent = {
 		provider = tab_indent,
 		condition = buffer_not_empty,
-		highlight = {colors.fg, colors.bg}
+		highlight = {colors.fg, colors.bg},
+		--[[ separator = '',
+		separator_highlight = {colors.section_bg, colors.bg} ]]
 	}
 }
-gls.left[9] = {
-	DiagnosticError = {
-		provider = 'DiagnosticError',
-		icon = '  ',
-		highlight = {colors.red1, colors.bg}
-	}
-}
-gls.left[10] = {
-	Space = {
-		provider = function() return ' ' end,
-		highlight = {colors.section_bg, colors.bg}
-	}
-}
-gls.left[11] = {
-	DiagnosticWarn = {
-		provider = 'DiagnosticWarn',
-		icon = '  ',
-		highlight = {colors.orange, colors.bg}
-	}
-}
-gls.left[12] = {
-	Space = {
-		provider = function() return ' ' end,
-		highlight = {colors.section_bg, colors.bg}
-	}
-}
-gls.left[13] = {
-	DiagnosticInfo = {
-		provider = 'DiagnosticInfo',
-		icon = '  ',
-		highlight = {colors.blue, colors.section_bg},
-		separator = ' ',
-		separator_highlight = {colors.section_bg, colors.bg}
-	}
-}
+
+local function lsp_diagnostics()
+	return '';
+end
+
+local function lsp_message()
+	return '';
+end
 
 -- Right side
 gls.right[1] = {
