@@ -19,7 +19,7 @@ map("n", "gr", "<cmd>Lspsaga rename<CR>", opts)
 -- preview definition
 map("n", "gd", "<cmd>Lspsaga preview_definition<CR>", opts)
 -- show line diagnostics
-map("n", "<leader>d", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
+map("n", "<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
 -- jump diagnostics
 map("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 map("n", "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)

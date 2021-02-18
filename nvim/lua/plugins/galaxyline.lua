@@ -15,7 +15,7 @@ function utils.has_width_gt(cols)
 end
 
 local gls = gl.section
-gl.short_line_list = {'defx', 'packager', 'vista', 'NvimTree'}
+gl.short_line_list = {'defx', 'packager', 'vista', 'NvimTree', 'NeogitStatus'}
 
 local colors = {
 	bg = '#282c34',

@@ -1,12 +1,5 @@
 local nvim_lsp = require('lspconfig')
 local lsp_status = require('lsp-status')
--- completion_customize_lsp_label as used in completion-nvim
--- Optional: customize the kind labels used in identifying the current function.
--- g:completion_customize_lsp_label is a dict mapping from LSP symbol kind 
--- to the string you want to display as a label
--- lsp_status.config { kind_labels = vim.g.completion_customize_lsp_label }
-
--- Register the progress handler
 lsp_status.register_progress()
 
 local on_attach = function(client, bufnr)
@@ -17,9 +10,9 @@ local on_attach = function(client, bufnr)
 
 	-- Mappings.
 	local opts = {noremap = true, silent = true}
-	buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+	--[[ buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
 	buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-	buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+	buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts) ]]
 	buf_set_keymap('n', '<leader>wa',
                	'<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
 	buf_set_keymap('n', '<leader>wr',
@@ -27,8 +20,8 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap('n', '<leader>wl',
                	'<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',
                	opts)
-	buf_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>',
-               	opts)
+	--[[ buf_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>',
+               	opts) ]]
 	buf_set_keymap('n', '<leader>q',
                	'<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
 
