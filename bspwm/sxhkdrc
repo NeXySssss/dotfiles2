@@ -1,0 +1,180 @@
+# vim: foldmethod=marker
+
+# Windows {{{
+
+# Focus window
+super + {a,s,d,w}
+	bspc node --focus {west,south,east,north}
+
+# Cycle windows
+super + {_ shift + }z
+	bspc node -f {next,prev}.local
+
+# Move tiled or floating windows
+super + shift + {a,s,d,w}
+	~/.config/bspwm/scripts/move {left,down,right,up}
+
+# Expand window
+super + control + {a,s,w,d}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# Contract window
+super + control + shift + {a,s,w,d}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# Move window to desktop
+super + shift + {1-9,0}
+	id=$(bspc query -N -n); bspc node -d ^{1-9,10}; bspc node -f ${id}}
+
+# Fullscreen window
+super + shift + f
+	bspc node --state \~fullscreen
+
+# Pseudo-tile window
+super + p
+	bspc node --state \~pseudo_tiled
+
+# Float window
+super + f
+	bspc node --state \~floating
+
+# Tile window
+super + n
+	bspc node --state tiled
+
+# Sticky window
+super + k
+	bspc node --flag sticky
+
+# Cycle window modes
+super + m
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# Close window
+super + q
+	bspc node -c
+
+# }}}
+
+# Workspaces {{{
+
+# Switch to workspace
+super + {1-9,0}
+	bspc desktop -f '^{1-9,10}'
+
+# Cycle workspaces
+super {_, + shift} + Tab
+	bspc desktop {next,prev} --focus
+
+# Rotate workspace
+super + {_ shift + }x
+	bspc node @/ --rotate {90,-90}
+
+# Flip workspace
+super + {_ shift + }v
+	bspc node @/ --flip {vertical,horizontal}
+
+# }}}
+
+# Preselects {{{
+
+# Preseleft direction
+super + alt + {a,s,w,d}
+	bspc node -p {west,south,north,east}
+
+# Preselect ratio
+super + alt + {1-9}
+	bspc node -o 0.{1-9}
+
+# Cancel preselection
+super + alt + z
+	bspc node -p cancel
+
+# Cancel preselection for focused desktop
+super + control + alt + z
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+# }}}
+
+# Launchers {{{
+
+ctrl + alt + f
+	~/.config/bspwm/scripts/run browser
+
+Print
+	~/.config/bspwm/scripts/run screeot-area
+
+super + l
+	~/.config/bspwm/scripts/run lock
+
+super + Return
+	~/.config/bspwm/scripts/run term
+
+super + shift + Return
+	~/.config/bspwm/scripts/run filemanager
+
+{alt,super} + space
+	~/.config/bspwm/scripts/run menu
+
+super + r
+	~/.config/bspwm/scripts/run menu
+
+super + e
+	~/.config/bspwm/scripts/run emoji-picker
+
+ctrl + alt + c
+	chatterino
+
+super + control + q
+	bspc quit
+
+super + o
+	mpv "$(xclip -sel c -o)"
+
+# }}}
+
+# Multimedia Keys {{{
+
+XF86AudioRaiseVolume
+		pamixer -i 10
+
+XF86AudioLowerVolume
+		pamixer -d 10
+
+super + XF86AudioStop
+		pamixer -t
+
+XF86AudioMute
+		pamixer -t
+
+XF86AudioPlay
+		playerctl play-pause
+
+XF86AudioNext
+		playerctl next
+
+XF86AudioPrev
+		playerctl previous
+
+XF86AudioStop
+		playerctl stop
+
+super + XF86AudioRaiseVolume
+		light -A 10
+
+super + XF86AudioLowerVolume
+		light -U 10
+
+# }}}
+
+# Other {{{
+
+# Reload bspwm config
+super + control + r
+	bspc wm -r
+
+# Reload sxhkd
+super + shift + r
+	pkill -USR1 -x sxhkd
+
+# }}}

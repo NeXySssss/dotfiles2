@@ -1,0 +1,12 @@
+#! /bin/sh
+
+case $1 in
+	term) kitty -1 & disown ;;
+	menu) rofi -show drun & disown ;;
+	screenshot-area) flameshot gui & disown ;;
+	browser) firefox & disown ;;
+	filemanager) dolphin & disown ;;
+	emoji-picker) rofimoji -c & disown ;;
+	lock) betterlockscreen --lock & disown ;;
+	*) ;;
+esac

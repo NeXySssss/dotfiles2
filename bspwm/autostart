@@ -1,0 +1,39 @@
+#!/bin/sh
+
+run() {
+  if ! pgrep "$1" ;
+  then
+    "$@"&
+  fi
+}
+
+# Set background
+hsetroot -cover ~/.local/share/wallpaper &
+# Set cursor
+xsetroot -cursor_name left_ptr &
+# Alt + shift to switch keyboard layout
+setxkbmap -model pc105 -layout us,ru,ua -variant qwerty -option grp:alt_shift_toggle &
+# Numblock on
+numlockx on &
+# Hotkey daemon
+killall sxhkd -q
+sxhkd -c ~/.config/bspwm/sxhkdrc &
+# Start polybar
+~/.config/polybar/launch.sh &
+# Compositor
+picom --config ~/.config/picom/picom.conf --experimental-backends -b
+# Network Manager Applet
+run nm-applet
+# Notification daemon
+run dunst
+# Power manager
+run xfce4-power-manager
+# PolicyKit
+run lxpolkit
+# Bluetooth Tray Icon
+# run blueman-tray
+# XDG Autostart
+dex -a &
+
+# Auto nightbot link filter bypass
+~/Scripts/autolinkbypass.sh &
