@@ -45,6 +45,7 @@ paq 'mfussenegger/nvim-dap'
 paq 'puremourning/vimspector'
 paq 'theHamsta/nvim-dap-virtual-text'
 paq 'mhinz/vim-startify'
+paq 'wsdjeg/vim-todo'
 
 if success == false then
 	exec 'PaqInstall'

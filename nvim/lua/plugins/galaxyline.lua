@@ -113,6 +113,9 @@ local function buffers_count()
 end
 
 local function lsp_diagnostics()
+	if vim.lsp.buf.server_ready() == false then
+		return
+	end
 	local d = lsp_status.diagnostics()
 	return '  ' .. d.errors .. '  ' .. d.warnings .. '  ' .. d.info;
 end
@@ -187,6 +190,7 @@ gls.left[3] = {
 gls.left[4] = {
 	LspDiagnostics = {
 		provider = lsp_diagnostics,
+		-- condition = vim.lsp.buf.server_ready,
 		highlight = {colors.fg, colors.bg},
 		separator = ' ',
 		separator_highlight = {colors.section_bg, colors.bg}

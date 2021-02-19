@@ -7,7 +7,7 @@ map("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
 map("n", "<leader>a", "<cmd>Lspsaga code_action<CR>", opts)
 map("v", "<leader>a", "<cmd><C-U>Lspsaga range_code_action<CR>", opts)
 -- hover doc
-map("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+map("n", "D", "<cmd>Lspsaga hover_doc<CR>", opts)
 map("n", "<C-f>",
     "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", opts)
 map("n", "<C-b>",

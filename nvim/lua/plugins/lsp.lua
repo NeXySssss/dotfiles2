@@ -115,7 +115,7 @@ nvim_lsp.jsonls.setup {
 
 local pid = vim.fn.getpid()
 nvim_lsp.omnisharp.setup {
-	cmd = {"omnisharp", "--languageserver", "--hostPID", tostring(pid)},
+	cmd = {vim.loop.os_homedir() .. "/Documents/omnisharp/run", "--languageserver", "--hostPID", tostring(pid)},
 	capabilities = capabilities,
 	on_attach = on_attach
 }
