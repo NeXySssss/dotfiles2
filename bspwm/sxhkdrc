@@ -7,7 +7,7 @@ super + {a,s,d,w}
 	bspc node --focus {west,south,east,north}
 
 # Cycle windows
-super + {_ shift + }z
+super + {_, shift + }z
 	bspc node -f {next,prev}.local
 
 # Move tiled or floating windows
@@ -67,11 +67,11 @@ super {_, + shift} + Tab
 	bspc desktop {next,prev} --focus
 
 # Rotate workspace
-super + {_ shift + }x
+super + {_, shift + }x
 	bspc node @/ --rotate {90,-90}
 
 # Flip workspace
-super + {_ shift + }v
+super + {_, shift + }v
 	bspc node @/ --flip {vertical,horizontal}
 
 # }}}
