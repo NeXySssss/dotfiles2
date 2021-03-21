@@ -24,8 +24,8 @@ alias vi="nvim"
 
 # Add default options {{{
 alias mkdir="mkdir -pv"
-alias kkfetch="neofetch --ascii $ZDOTDIR/33kk.ascii"
-alias ckkfetch="clear && neofetch --ascii $ZDOTDIR/33kk.ascii"
+alias neofetch="neofetch | lolcat"
+alias cfetch="clear && neofetch | lolcat"
 alias ping="ping -c 5"
 # }}}
 
