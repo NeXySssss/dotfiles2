@@ -27,6 +27,7 @@ alias mkdir="mkdir -pv"
 alias neofetch="neofetch | lolcat"
 alias cfetch="clear && neofetch | lolcat"
 alias ping="ping -c 5"
+alias qmv="qmv -f do"
 # }}}
 
 # Shorten long commands {{{
@@ -49,6 +50,8 @@ jc() { cat $@ | jq | bat --file-name $@ }
 # }}}
 
 # Clear command history {{{
+alias clear="printf \\\ec"
+
 alias clh="function erase_history { local HISTSIZE=0; } && erase_history && rm $HISTFILE"
 alias clhe="rm $HISTFILE && exit"
 

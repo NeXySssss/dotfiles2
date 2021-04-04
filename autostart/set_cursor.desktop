@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/xsetroot -cursor_name left_ptr
+NoDisplay=true
+OnlyShowIn=bspwm
+Icon=xsetroot
+Name=Set cursor

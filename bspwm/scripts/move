@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 if bspc query --tree --node | grep --silent '"state":"floating"'; then
 	case $1 in

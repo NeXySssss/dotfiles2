@@ -9,7 +9,7 @@ killall -q polybar
 while pgrep -u $UID -x polybar > /dev/null; do sleep 1; done
 
 case $DESKTOP_SESSION in
-	bspwm|/usr/share/xsessions/bspwm)
+	none+bspwm|bspwm|/usr/share/xsessions/bspwm)
 		if type "xrandr" > /dev/null; then
 			for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
 				MONITOR=$m exec polybar --reload bspwm -c ~/.config/polybar/config.ini &
@@ -18,7 +18,7 @@ case $DESKTOP_SESSION in
 			exec polybar --reload bspwm -c ~/.config/polybar/config.ini &
 		fi
 		;;
-	i3|/usr/share/xsessions/i3)
+	none+i3|i3|/usr/share/xsessions/i3)
 		if type "xrandr" > /dev/null; then
 			for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
 				MONITOR=$m exec polybar --reload i3 -c ~/.config/polybar/config.ini &

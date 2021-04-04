@@ -1,6 +1,7 @@
 vim.cmd [[packadd galaxyline.nvim]]
 local gl = require('galaxyline')
 local lsp_status = require('lsp-status')
+local math = require('math')
 
 local utils = {}
 
@@ -12,6 +13,10 @@ end
 function utils.has_width_gt(cols)
 	-- Check if the windows width is greater than a given number of columns
 	return vim.fn.winwidth(0) / 2 > cols
+end
+
+function utils.round(n)
+  return math.floor((math.floor(n*2) + 1)/2)
 end
 
 local gls = gl.section
@@ -127,7 +132,7 @@ local function lsp_messages()
 		if v.name then str = '[' .. v.name .. '] ' end
 		if v.title then str = str .. v.title end
 		if v.percentage then
-			str = str .. ' (' .. v.percentage .. '%): '
+			str = str .. ' (' .. utils.round(v.percentage) .. '%): '
 		else
 			str = str .. ': '
 		end

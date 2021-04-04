@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=setxkbmap -model pc105 -layout us,ru,ua -variant qwerty -option grp:alt_shift_toggle
+NoDisplay=true
+OnlyShowIn=bspwm
+Icon=setxkbmap
+Name=Bind Alt+Shift to switch keyboard layouts

@@ -46,6 +46,10 @@ paq 'puremourning/vimspector'
 paq 'theHamsta/nvim-dap-virtual-text'
 paq 'mhinz/vim-startify'
 paq 'wsdjeg/vim-todo'
+paq 'editorconfig/editorconfig-vim'
+paq 'zsugabubus/crazy8.nvim'
+--paq 'dstein64/nvim-scrollview'
+--paq 'akinsho/nvim-bufferline.lua'
 
 if success == false then
 	exec 'PaqInstall'
@@ -67,5 +71,6 @@ else
 	require 'plugins/neogit'
 	-- require 'plugins/dap'
 	require 'plugins/vimspector'
+	--require 'plugins/bufferline'
 end
 

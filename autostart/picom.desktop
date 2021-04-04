@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/picom --experimental-backends
+NoDisplay=true
+OnlyShowIn=bspwm
+Icon=picom
+Name=picom
