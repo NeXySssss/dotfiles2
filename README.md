@@ -23,7 +23,6 @@
 	- syntax highlighting
 	- completions
 	- suggestions
-	- aliases
 	- zoxide
 	- sources ~/.profile
 - qt5ct
