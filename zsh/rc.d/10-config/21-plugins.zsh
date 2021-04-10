@@ -25,8 +25,8 @@ zinit ice depth=1
 zinit light momo-lab/zsh-abbrev-alias
 zinit ice depth=1
 zinit light momo-lab/zsh-replace-multiple-dots
-zinit ice depth=1
-zinit light skywind3000/z.lua
+# zinit ice depth=1
+# zinit light skywind3000/z.lua
 #zinit ice depth=1
 #zinit light RobSis/zsh-completion-generator
 
@@ -41,3 +41,8 @@ zinit light romkatv/powerlevel10k
 
 # }}}
 
+# Zoxide{{{
+if [ -x "$(command -v zoxide)" ]; then
+  eval "$(zoxide init zsh)"
+fi
+# }}}

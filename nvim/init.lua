@@ -110,4 +110,10 @@ map('v', '<C-A-Down>', ':m \'>+1<CR>gv=gv', {noremap = true, silent = true})
 map('v', '<C-A-k>', ':m \'<-2<CR>gv=gv', {noremap = true, silent = true})
 map('v', '<C-A-Up>', ':m \'<-2<CR>gv=gv', {noremap = true, silent = true})
 
+
+-- Don't yank deleted text
+map('n', '<leader>d', '"_d', {noremap = true, silent = true})
+map('v', '<leader>d', '"_d', {noremap = true, silent = true})
+map('v', 'p', '"_dp', {noremap = true, silent = true})
+
 require("plugins")

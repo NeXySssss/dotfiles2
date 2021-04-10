@@ -44,12 +44,13 @@ bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 # Set wmname to LG3D so java apps work properly
 wmname LG3D
+# }}}
 
 # Rules {{{
 bspc rule -a flameshot state=floating
 bspc rule -a Yad state=floating
 # }}}
 
-# Autostart
+# Autostart {{{
 dex -a -v -e bspwm &
 # }}}
