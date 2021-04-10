@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Exec=sh -c 'kitty node ~/Documents/freezerpc/app/main.js'
+Icon=deezer
+Name=Freezer
