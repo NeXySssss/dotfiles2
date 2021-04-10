@@ -3,6 +3,7 @@
 ## Contents
 
 - bspwm
+- sxhkd
 - polybar
 	- modular config
 	- optimus-manager module
@@ -11,7 +12,6 @@
 - dunst
 	- use rofi for context menu
 	- show icons
-- sxhkd
 - fish
 	- tide prompt
 	- fzf integration
@@ -55,4 +55,7 @@
 
 ## Screenshots
 
-
+![Desktop](.screenshots/1.png)
+![Kitty terminal and Fish shell](.screenshots/2.png)
+![Neovim, Dunst, Zsh](.screenshots/3.png)
+![Dolphin, qt5ct, lxappearance](.screenshots/4.png)
