@@ -1,0 +1,29 @@
+#!/usr/bin/env sh
+
+case "$1" in
+	set)
+		if [ "$2" != "" ]; then
+			hsetroot -cover "$2"
+		else
+			echo "No path specified."
+			exit 2
+		fi
+		;;
+	save) 
+		if [ "$2" != "" ]; then
+			cp "$2" "$HOME/.local/share/wallpaper"
+			hsetroot -cover "$HOME/.local/share/wallpaper"
+		else
+			echo "No path specified."
+			exit 2
+		fi
+		;;
+	reset)
+		hsetroot -cover "$HOME/.local/share/wallpaper"
+		;;
+	*) 
+		echo "Unknown command. Commands available: set, save"
+		exit 1
+		;;
+esac
+
