@@ -1,0 +1,18 @@
+[Desktop Entry]
+Type=Service
+Icon=background
+MimeType=image/png;image/jpeg;
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin
+X-KDE-Submenu=Wallpaper
+X-KDE-MaxNumberOfUrls=1
+Actions=setAsWallpaper;saveAndSetAsWallpaper;
+
+[Desktop Action setAsWallpaper]
+Name=Set
+Icon=background
+Exec=wp set %F
+
+[Desktop Action saveAndSetAsWallpaper]
+Name=Save
+Icon=filesave
+Exec=wp save %F
