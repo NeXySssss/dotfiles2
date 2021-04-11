@@ -4,6 +4,7 @@
 
 zinit snippet OMZ::lib/git.zsh
 zinit snippet OMZ::lib/key-bindings.zsh
+zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit snippet http://github.com/zimfw/completion/raw/master/init.zsh
 #zinit snippet OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
 
