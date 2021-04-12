@@ -50,8 +50,12 @@ opt.expandtab = false
 opt.splitbelow = true
 opt.splitright = true
 opt.foldlevelstart = 9999
+opt.langremap = true
+opt.langmap = "ЙЦУКЕНГШЩЗХЪЇҐФЫІВАПРОЛДЖЭЄЯЧСМИТЬБЮ\\,;QWERTYUIOP{}}\\\\ASSDFGHJKL:\"\"ZXCVBNM<>?,йцукенгшщзхъїґфыівапролджэєячсмитьбю.;qwertyuiop[]]\\\\assdfghjkl\\;''zxcvbnm\\,./"
 
 if vim.fn.has("termguicolors") == 1 then opt.termguicolors = true end
+
+vim.g.neovide_transparency = 0.8
 
 vim.g.mapleader = ";"
 
@@ -117,3 +121,4 @@ map('v', '<leader>d', '"_d', {noremap = true, silent = true})
 map('v', 'p', '"_dp', {noremap = true, silent = true})
 
 require("plugins")
+

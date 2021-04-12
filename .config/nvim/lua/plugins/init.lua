@@ -20,10 +20,7 @@ paq {'savq/paq-nvim', opt = true}
 ]]
 paq 'kyazdani42/nvim-web-devicons'
 paq 'nvim-treesitter/nvim-treesitter'
-paq 'kyazdani42/nvim-tree.lua'
 paq 'tjdevries/colorbuddy.vim'
-paq 'Th3Whit3Wolf/onebuddy'
-paq 'bluz71/vim-moonfly-colors'
 paq 'christianchiarulli/nvcode-color-schemes.vim'
 paq 'neovim/nvim-lspconfig'
 paq 'glepnir/lspsaga.nvim'
@@ -48,8 +45,15 @@ paq 'mhinz/vim-startify'
 paq 'wsdjeg/vim-todo'
 paq 'editorconfig/editorconfig-vim'
 paq 'zsugabubus/crazy8.nvim'
---paq 'dstein64/nvim-scrollview'
---paq 'akinsho/nvim-bufferline.lua'
+paq 'junegunn/fzf'
+paq 'junegunn/fzf.vim'
+paq {'glacambre/firenvim', run=(function()
+	exec[[
+	packadd firenvim
+	call firenvim#install(0)
+	]]
+end)}
+paq {'ms-jpq/chadtree', run='python3 -m chadtree deps'}
 
 if success == false then
 	exec 'PaqInstall'
@@ -69,8 +73,7 @@ else
 	require 'plugins/autopairs'
 	require 'plugins/galaxyline'
 	require 'plugins/neogit'
-	-- require 'plugins/dap'
+	require 'plugins/dap'
 	require 'plugins/vimspector'
-	--require 'plugins/bufferline'
 end
 

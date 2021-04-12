@@ -58,7 +58,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities = vim.tbl_extend('keep', capabilities or {},
                               lsp_status.capabilities)
 
-nvim_lsp.sumneko_lua.setup {
+--[[ nvim_lsp.sumneko_lua.setup {
 	cmd = {"lua-language-server"},
 	settings = {
 		Lua = {
@@ -86,7 +86,7 @@ nvim_lsp.sumneko_lua.setup {
 	filetypes = {"lua"},
 	capabilities = capabilities,
 	on_attach = on_attach
-}
+} ]]
 
 nvim_lsp.tsserver.setup {
 	filetypes = {
