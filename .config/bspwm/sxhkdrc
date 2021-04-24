@@ -159,6 +159,12 @@ XF86AudioPrev
 XF86AudioStop
 		playerctl stop
 
+XF86Tools
+		~/.config/bspwm/scripts/run menu
+
+XF86Calculator
+		~/.config/bspwm/scripts/run calculator
+
 super + XF86AudioRaiseVolume
 		light -A 10
 

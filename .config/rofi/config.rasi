@@ -2,6 +2,6 @@
 
 configuration {
   show-icons:         true;
-  icon-theme:         "Papirus";
+  icon-theme:         "Papirus-Dark";
 }
 @import "/usr/share/rofi/themes/Arc-Dark.rasi"

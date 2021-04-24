@@ -48,6 +48,7 @@ wmname LG3D
 
 # Rules {{{
 bspc rule -a flameshot state=floating
+bspc rule -a Qalculate-gtk state=floating
 bspc rule -a Yad state=floating
 # }}}
 

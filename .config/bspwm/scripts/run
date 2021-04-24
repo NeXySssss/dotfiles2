@@ -6,6 +6,7 @@ case $1 in
 	screenshot-area) flameshot gui & disown ;;
 	browser) firefox & disown ;;
 	filemanager) dolphin & disown ;;
+	calculator) qalculate-gtk & disown ;;
 	emoji-picker) rofimoji --action copy --skin-tone neutral --rofi-args "-theme Arc-Dark" & disown ;;
 	lock) betterlockscreen --lock & disown ;;
 	*) ;;
