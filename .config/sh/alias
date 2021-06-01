@@ -59,3 +59,7 @@ alias rmnode="rm -rf ./**/node_modules"
 
 # Dotfiles git bare repo
 alias config='/usr/bin/git --git-dir=/home/marko/.cfg/ --work-tree=/home/marko'
+
+# Imagine not supporting XDG Base Directory specs
+alias mitmproxy="mitmproxy --set confdir=$XDG_CONFIG_HOME/mitmproxy"
+alias mitmweb="mitmweb --set confdir=$XDG_CONFIG_HOME/mitmproxy"
