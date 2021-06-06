@@ -55,7 +55,7 @@
 ## Packages
 
 ```
-dex bspwm sxhkd polybar rofi dunst hsetroot kvantum-qt5 qt5ct betterlockscreen dolphin rofimoji kitty pamixer playerctl light lxqt-policykit numlockx picom redshift xorg-xsetroot zsh yad layan-cursor-theme-git papirus-icon-theme ttf-jetbrains-mono ttf-joypixels ttf-font-awesome nerd-fonts-jetbrains-mono nerd-fonts-fira-mono ttf-cascadia-code
+dex bspwm sxhkd polybar rofi dunst hsetroot kvantum-qt5 qt5ct betterlockscreen dolphin rofimoji kitty pamixer playerctl light lxqt-policykit numlockx picom-git redshift xorg-xsetroot zsh yad layan-cursor-theme-git papirus-icon-theme ttf-jetbrains-mono ttf-joypixels ttf-font-awesome nerd-fonts-jetbrains-mono nerd-fonts-fira-mono ttf-cascadia-code
 ```
 
 ## Screenshots
