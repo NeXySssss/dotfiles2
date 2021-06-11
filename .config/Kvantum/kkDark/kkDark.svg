@@ -32,8 +32,8 @@
      gridtolerance="10"
      guidetolerance="10"
      inkscape:current-layer="svg1604"
-     inkscape:cx="66.514606"
-     inkscape:cy="953.39294"
+     inkscape:cx="80.135494"
+     inkscape:cy="587.98342"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-height="1055"
@@ -41,7 +41,7 @@
      inkscape:window-width="1920"
      inkscape:window-x="0"
      inkscape:window-y="25"
-     inkscape:zoom="9.8474612"
+     inkscape:zoom="13.926413"
      objecttolerance="10"
      pagecolor="#323232"
      showgrid="true"
@@ -1832,8 +1832,7 @@
      id="menu-normal"
      d="m112 576h48v48h-48z"
      fill-rule="evenodd"
-     opacity=".8"
-     style="fill:#202020;fill-opacity:1;opacity:1" />
+     style="fill:#202020;fill-opacity:1" />
   <g
      id="menu-normal-left"
      transform="translate(-10.257 -127.75)">
@@ -1841,8 +1840,7 @@
        id="menu-normal-left0"
        d="m116.26 703.75h6v48h-6z"
        fill-rule="evenodd"
-       opacity=".8"
-       style="fill:#202020;fill-opacity:1;opacity:1" />
+       style="fill:#202020;fill-opacity:1" />
   </g>
   <g
      id="menu-normal-topleft"
@@ -1944,7 +1942,7 @@
        transform="matrix(1,0,0,0.57142,-127.25,735.45)"
        id="top">
       <path
-         style="opacity:1;fill:#202020;fill-opacity:1"
+         style="fill:#202020;fill-opacity:1"
          inkscape:connector-curvature="0"
          d="m 190,252 h 50 v 10.5 h -50 z"
          id="path4382-5" />
@@ -1978,7 +1976,7 @@
            id="path3595" />
         <path
            inkscape:connector-curvature="0"
-           style="color:#000000;opacity:1;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#202020;fill-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;fill-opacity:1"
+           style="fill:#202020;fill-opacity:1"
            d="m 9.0003,47.939 a 6,6 0 0 0 -6,6 h 6 z"
            id="path4714-2" />
       </g>
