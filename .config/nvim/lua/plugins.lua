@@ -125,6 +125,7 @@ require("paq-nvim")({
 function load()
 	require("plugins/colorscheme")
 	require("plugins/tree-sitter")
+	require("plugins/trouble")
 	require("plugins/todo-comments")
 	require("plugins/kommentary")
 	require("plugins/lsp")
