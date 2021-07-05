@@ -22,7 +22,7 @@ case "$1" in
 		hsetroot -cover "$HOME/.local/share/wallpaper"
 		;;
 	*) 
-		echo "Unknown command. Commands available: set, save"
+		echo "Unknown command. Commands available: set, reset, save"
 		exit 1
 		;;
 esac
