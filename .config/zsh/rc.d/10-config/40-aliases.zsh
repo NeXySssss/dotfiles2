@@ -1,3 +1,5 @@
+alias cd=z
+
 ghcl() { git clone "https://github.com/$*"; }
 ytp() { vlc "$(youtube-dl -g "$*")"; }
 jc() { jq "." "$*" | bat --file-name "$*"; }

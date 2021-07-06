@@ -78,7 +78,7 @@ lspconfig.omnisharp.setup(defaults({
 lspconfig.svelte.setup(defaults({
 	cmd = {
 		"node",
-		"/home/marko/Documents/language-tools/packages/language-server/bin/server.js",
+		vim.loop.os_homedir() .. "/Documents/svelte-language-tools/packages/language-server/bin/server.js",
 		"--experimental-modules",
 		"--stdio",
 	},

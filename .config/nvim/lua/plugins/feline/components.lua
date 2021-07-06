@@ -63,16 +63,16 @@ M.vi_mode = {
 
 M.file_type = {
 	provider = "file_type",
-	hl = { fg = colors.fg, bg = colors.gray_dark, style = "bold" },
-	left_sep = { str = "█", hl = { fg = colors.gray_dark } },
-	right_sep = { str = " ", hl = { bg = colors.gray_dark } },
+	hl = { fg = colors.fg, bg = colors.gray, style = "bold" },
+	left_sep = { str = "█", hl = { fg = colors.gray } },
+	right_sep = { str = " ", hl = { bg = colors.gray } },
 }
 
 M.file_info = {
 	provider = "file_info",
-	hl = { fg = colors.fg, bg = colors.gray_dark, style = "bold" },
-	left_sep = { str = " ", hl = { bg = colors.gray_dark } },
-	right_sep = { str = " ", hl = { fg = colors.gray_dark } },
+	hl = { fg = colors.fg, bg = colors.gray, style = "bold" },
+	left_sep = { str = " ", hl = { bg = colors.gray } },
+	right_sep = { str = " ", hl = { fg = colors.gray } },
 }
 
 M.file_size = {
@@ -201,5 +201,5 @@ M.line_percentage = {
 	right_sep = " ",
 }
 
-M.scroll_bar = { provider = "scroll_bar", hl = { fg = "skyblue", style = "bold" } }
+M.scroll_bar = { provider = "scroll_bar", hl = { fg = colors.fg, style = "bold" } }
 return M

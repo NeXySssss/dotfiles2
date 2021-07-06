@@ -81,6 +81,8 @@ require("paq-nvim")({
 	"winston0410/range-highlight.nvim",
 	-- Preview registers
 	"tversteeg/registers.nvim",
+	-- Zoxide integration
+	"nanotee/zoxide.vim",
 	-- Save with sudo
 	"lambdalisue/suda.vim",
 	-- Org mode alternative
