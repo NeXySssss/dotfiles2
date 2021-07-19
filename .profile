@@ -4,7 +4,9 @@ export XDG_DATA_HOME="$HOME/.local/share"
 
 export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export GOPATH="$XDG_DATA_HOME"/go
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages
 export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
@@ -20,6 +22,12 @@ export PAGER="less"
 
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export GTK_USE_PORTAL=1
-#export MOZ_X11_EGL=1
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export _JAVA_AWT_WM_NONREPARENTING=1
+#export MOZ_X11_EGL=1
+
+export XBPS_MAKEJOBS=$(nproc)
+
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+	exec sx
+fi

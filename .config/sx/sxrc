@@ -1,0 +1,7 @@
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+
+DE=bspwm
+
+export DESKTOP_SESSION="$DE"
+exec dbus-run-session "$DE"

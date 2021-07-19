@@ -46,7 +46,7 @@ local on_attach = function(client, bufnr)
 	lsp_status.on_attach(client)
 end
 
-function defaults(config)
+local function defaults(config)
 	local defaults = {
 		capabilities = capabilities,
 		on_attach = on_attach,
@@ -62,7 +62,44 @@ lspconfig.tsserver.setup(defaults({}))
 lspconfig.vuels.setup(defaults({}))
 lspconfig.html.setup(defaults({}))
 lspconfig.cssls.setup(defaults({}))
-lspconfig.jsonls.setup(defaults({}))
+lspconfig.jsonls.setup(defaults({
+	settings = {
+		json = {
+			schemas = {
+				{
+					fileMatch = { "package.json" },
+					url = "https://json.schemastore.org/package.json",
+				},
+				{
+					fileMatch = { "tsconfig*.json" },
+					url = "https://json.schemastore.org/tsconfig.json",
+				},
+				{
+					fileMatch = { ".eslintrc.json" },
+					url = "https://json.schemastore.org/eslintrc.json",
+				},
+				{
+					fileMatch = { ".eslintrc.json" },
+					url = "https://json.schemastore.org/eslintrc.json",
+				},
+				{
+					fileMatch = { "*.schema.json" },
+					url = "http://json-schema.org/draft-07/schema#",
+				},
+			},
+		},
+	},
+}))
+lspconfig.yamlls.setup(defaults({
+	settings = {
+		yaml = {
+			schemaStore = {
+				enable = true,
+				url = "https://www.schemastore.org/api/json/catalog.json"
+			}
+		}
+	}
+}))
 lspconfig.rust_analyzer.setup(defaults({}))
 lspconfig.clangd.setup(defaults({
 	handlers = lsp_status.extensions.clangd.setup(),

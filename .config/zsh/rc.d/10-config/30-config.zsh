@@ -2,13 +2,12 @@
 autoload -Uz compinit
 compinit
 zinit cdreplay -q
+# Default completion
+compdef _gnu_generic -default-
 
 autoload zcalc
 # Mass rename
 autoload zmv
-
-# Default autocompletion
-compdef _gnu_generic -default-
 
 # History settings
 HISTFILE=$ZDOTDIR/history

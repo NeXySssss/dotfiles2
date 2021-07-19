@@ -64,7 +64,7 @@ M.vi_mode = {
 M.file_type = {
 	provider = "file_type",
 	hl = { fg = colors.fg, bg = colors.gray, style = "bold" },
-	left_sep = { str = "█", hl = { fg = colors.gray } },
+	left_sep = { str = "█", hl = { fg = colors.gray } },
 	right_sep = { str = " ", hl = { bg = colors.gray } },
 }
 
@@ -72,7 +72,7 @@ M.file_info = {
 	provider = "file_info",
 	hl = { fg = colors.fg, bg = colors.gray, style = "bold" },
 	left_sep = { str = " ", hl = { bg = colors.gray } },
-	right_sep = { str = " ", hl = { fg = colors.gray } },
+	right_sep = { str = " ", hl = { fg = colors.gray } },
 }
 
 M.file_size = {
@@ -80,13 +80,13 @@ M.file_size = {
 	enabled = function()
 		return fn.getfsize(fn.expand("%:p")) > 0
 	end,
-	right_sep = { " ", "slant_left_2_thin" },
+	right_sep = { " ", { str = "", hl = { fg = colors.gray }} },
 }
 
 M.position = {
 	provider = "position",
 	left_sep = " ",
-	right_sep = { " ", "slant_left_2_thin" },
+	right_sep = { " ", { str = "", hl = { fg = colors.gray }} },
 }
 
 M.diagnostic_errors = {

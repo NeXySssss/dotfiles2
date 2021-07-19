@@ -1,12 +1,7 @@
 # vim: foldmethod=marker
 
 # Pacman {{{
-alias pacman="sudo pacman"
-alias pci="sudo pacman -Syu"
-alias pcs="sudo pacman -S"
-alias pcr="sudo pacman -Rns"
-alias pcrdb="sudo rm /var/lib/pacman/db.lck"
-alias yay="paru"
+alias p-unlock="sudo rm /var/lib/pacman/db.lck"
 alias p="paru"
 # }}}
 
@@ -17,37 +12,28 @@ alias la="exa -la"
 alias ls="exa"
 alias cat="bat"
 alias grep="rg"
-alias nano="nvim"
-alias vim="nvim"
-alias vi="nvim"
 # }}}
 
 # Add default options {{{
 alias mkdir="mkdir -pv"
-alias neofetch="neofetch | lolcat"
-alias cfetch="clear && neofetch | lolcat"
 alias ping="ping -c 5"
 alias qmv="qmv -f do"
 # }}}
 
 # Shorten long commands {{{
-alias t="touch"
 alias h="history"
-alias j="jobs -l"
-alias c="clear"
-alias x="exit"
+alias jl="jobs -l"
 alias q="exit"
+alias :q="exit"
 alias sl="streamlink"
-alias ytd="youtube-dl"
 alias icat="kitty +kitten icat"
-alias v="nvim"
 alias n="nvim"
 alias r="ranger"
-alias nextbg="~/Scripts/wall.sh"
-alias vpn="sudo openvpn --config $HOME/Documents/zaborona.ovpn"
 # }}}
 
+# Clear scrollback
 alias clear="printf \\\ec"
+alias c="printf \\\ec"
 
 # Get currently used gpu
 alias gpu="glxinfo | grep 'OpenGL renderer' | sed 's/.*: //'"
@@ -55,11 +41,8 @@ alias gpu="glxinfo | grep 'OpenGL renderer' | sed 's/.*: //'"
 # Alt+shift to toggle keyboard layouts
 alias kbbind="setxkbmap -model pc105 -layout us,ru,ua -variant qwerty -option grp:alt_shift_toggle"
 
-# Delete all node_modules in cwd
-alias rmnode="rm -rf ./**/node_modules"
-
 # Dotfiles git bare repo
-alias config='/usr/bin/git --git-dir=/home/marko/.cfg/ --work-tree=/home/marko'
+alias config='git --bare --git-dir=$HOME/.dotfiles/git --work-tree=$HOME'
 
 # Imagine not supporting XDG Base Directory specs
 alias mitmproxy="mitmproxy --set confdir=$XDG_CONFIG_HOME/mitmproxy"

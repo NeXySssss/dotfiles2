@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/pipewire
+NoDisplay=true
+OnlyShowIn=bspwm
+Icon=pipewire
+Name=pipewire

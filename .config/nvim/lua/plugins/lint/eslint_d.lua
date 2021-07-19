@@ -22,7 +22,7 @@ return {
 		local diagnostics = {}
 		for _, item in ipairs(decoded or {}) do
 			if item.filePath == bufname then
-				for _, diag in ipairs(item.messages) do
+				for _, diag in ipairs(item.messages or {}) do
 					table.insert(diagnostics, {
 						range = {
 							["start"] = {

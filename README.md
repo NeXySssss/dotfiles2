@@ -5,18 +5,10 @@
 - bspwm
 - sxhkd
 - polybar
-	- modular config
-	- optimus-manager module
 - kitty
-	- codicons font
 - dunst
 	- use rofi for context menu
 	- show icons
-- fish
-	- tide prompt
-	- fzf integration
-	- zoxide
-	- sources ~/.profile
 - zsh
 	- zinit plugin manager
 	- powerlevel10k
@@ -26,7 +18,7 @@
 	- zoxide
 	- sources ~/.profile
 - qt5ct
-	- use kvantum
+	- kvantum
 	- Papirus-Dark icons
 - gtk, oomox
 	- kkDark theme
@@ -44,13 +36,9 @@
 	- anime4k
 - nvim
 	- lua config
-	- codicons for completion
-	- autopairs
-	- codedark colorscheme
-	- lsp completion
-	- galaxyline statusline
-	- nvim-tree file explorer
-	- startify
+	- lsp
+	- feline statusline
+	- kkDark colorscheme
 
 ## Packages
 
@@ -60,7 +48,7 @@ dex bspwm sxhkd polybar rofi dunst hsetroot kvantum-qt5 qt5ct betterlockscreen d
 
 ## Screenshots
 
-![Desktop](.screenshots/1.png)
-![Kitty terminal and Fish shell](.screenshots/2.png)
-![Neovim, Dunst, Zsh](.screenshots/3.png)
-![Dolphin, qt5ct, lxappearance](.screenshots/4.png)
+![Desktop](.dotfiles/screenshots/1.png)
+![Kitty terminal and Fish shell](.dotfiles/screenshots/2.png)
+![Neovim, Dunst, Zsh](.dotfiles/screenshots/3.png)
+![Dolphin, qt5ct, lxappearance](.dotfiles/screenshots/4.png)

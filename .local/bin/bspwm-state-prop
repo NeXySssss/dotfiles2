@@ -1,0 +1,35 @@
+#!/bin/bash
+
+get_node_state() {
+	bspc query -n "$1" -T | jq -r .client.state
+}
+
+get_window_id() {
+	bspc query -n "$1" -T | jq .id
+}
+
+set_window_prop() {
+	if [ "$2" = "on" ]; then
+		xprop -id "$1" -f BSPWM_TILED 8c -set BSPWM_TILED 1
+	else
+		xprop -id "$1" -f BSPWM_TILED 8c -set BSPWM_TILED 0
+	fi
+}
+
+bspc subscribe node_state node_add | while read -ra event; do
+		case "${event[0]}" in
+			"node_state")
+				if [ "${event[4]}" = "tiled" ]; then
+					window_id="$(get_window_id "${event[3]}")"
+					set_window_prop "$window_id" "${event[5]}"
+				fi
+			;;
+			"node_add")
+				state="$(get_node_state "${event[4]}")"
+				if [ "$state" = "tiled" ]; then
+					window_id="$(get_window_id "${event[4]}")"
+					set_window_prop "$window_id" "on"
+				fi
+			;;
+		esac
+done
