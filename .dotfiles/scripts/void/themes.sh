@@ -1,9 +1,11 @@
-sudo xbps-install -S papirus-icon-theme
+#!/usr/bin/env sh
+
+sudo xbps-install -S git papirus-icon-theme
 
 TMP=$(mktemp -d)
 cd $TMP
 
-git clone "https://github.com/vinceliuice/Layan-cursors" "$TMP"
+git clone --single-branch --depth=1 "https://github.com/vinceliuice/Layan-cursors" "$TMP"
 
 ./install.sh
 

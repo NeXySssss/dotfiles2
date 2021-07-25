@@ -12,7 +12,7 @@ super + {_, shift + }z
 
 # Move tiled or floating windows
 super + shift + {a,s,d,w}
-	~/.config/bspwm/scripts/move {left,down,right,up}
+	bspwm-move {left,down,right,up}
 
 # Expand window
 super + control + {a,s,w,d}
@@ -53,6 +53,10 @@ super + m
 # Close window
 super + q
 	bspc node -c
+
+# Kill window
+super + F4
+	bspc node -k
 
 # }}}
 
@@ -99,28 +103,28 @@ super + control + alt + z
 # Launchers {{{
 
 ctrl + alt + f
-	~/.config/bspwm/scripts/run browser
+	x-www-browser
 
 Print
-	~/.config/bspwm/scripts/run screenshot-area
+	flameshot gui
 
 super + l
-	~/.config/bspwm/scripts/run lock
+	loginctl lock-session self
 
 super + Return
-	~/.config/bspwm/scripts/run term
+	x-terminal-emulator
 
 super + shift + Return
-	~/.config/bspwm/scripts/run filemanager
+	x-file-manager
 
 {alt,super} + space
-	~/.config/bspwm/scripts/run menu
+	x-launcher
 
 super + r
-	~/.config/bspwm/scripts/run menu
+	x-launcher
 
 super + e
-	~/.config/bspwm/scripts/run emoji-picker
+	rofimoji --action copy --skin-tone neutral --rofi-args "-theme Arc-Dark"
 
 ctrl + alt + c
 	chatterino
@@ -136,10 +140,10 @@ super + o
 # Multimedia Keys {{{
 
 XF86AudioRaiseVolume
-		pamixer -i 10
+		pamixer -i 5
 
 XF86AudioLowerVolume
-		pamixer -d 10
+		pamixer -d 5
 
 super + XF86AudioStop
 		pamixer -t
@@ -160,10 +164,10 @@ XF86AudioStop
 		playerctl stop
 
 XF86Tools
-		~/.config/bspwm/scripts/run menu
+		x-launcher
 
 XF86Calculator
-		~/.config/bspwm/scripts/run calculator
+		x-calculator
 
 super + XF86AudioRaiseVolume
 		light -A 10

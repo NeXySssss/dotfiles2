@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/sh -c "exec xss-lock $HOME/.local/bin/x-lock"
+NoDisplay=true
+OnlyShowIn=bspwm
+Icon=xss-lock
+Name=xss-lock

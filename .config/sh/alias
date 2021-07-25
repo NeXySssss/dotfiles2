@@ -1,5 +1,14 @@
 # vim: foldmethod=marker
 
+# Loginctl {{{
+alias reboot="loginctl reboot"
+alias poweroff="loginctl poweroff"
+alias shutdown="loginctl poweroff"
+alias suspend="loginctl suspend"
+alias hibernate="loginctl hibernate"
+alias suspend_then_hibernate="loginctl suspend-then-hibernate"
+# }}}
+
 # Pacman {{{
 alias p-unlock="sudo rm /var/lib/pacman/db.lck"
 alias p="paru"
@@ -47,3 +56,4 @@ alias config='git --bare --git-dir=$HOME/.dotfiles/git --work-tree=$HOME'
 # Imagine not supporting XDG Base Directory specs
 alias mitmproxy="mitmproxy --set confdir=$XDG_CONFIG_HOME/mitmproxy"
 alias mitmweb="mitmweb --set confdir=$XDG_CONFIG_HOME/mitmproxy"
+alias nvidia-settings="nvidia-settings --config='$XDG_CONFIG_HOME/nvidia/settings'"

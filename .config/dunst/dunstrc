@@ -186,19 +186,19 @@ context = ctrl+shift+period
 # Otherwise the "#" and following would be interpreted as a comment.
 frame_color = "#909090"
 foreground = "#FFFFFF"
-background = "#121212"
+background = "#111111"
 timeout = 4
 
 [urgency_normal]
 frame_color = "#FFFFFF"
 foreground = "#FFFFFF"
-background = "#121212"
+background = "#111111"
 timeout = 6
 
 [urgency_critical]
 frame_color = "#F11C1C"
 foreground = "#FFFFFF"
-background = "#121212"
+background = "#111111"
 timeout = 30
 
 

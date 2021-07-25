@@ -1,4 +1,4 @@
 BROWSER="firefox"
 M3U="vlc"
-IMAGE="ppic-curl"
+IMAGE="gwenview"
 VIDEO="mpv"

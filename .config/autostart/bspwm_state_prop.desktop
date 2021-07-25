@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Exec=/usr/bin/sh -c "exec $HOME/.local/bin/bspwm-state-prop"
-NoDisplay=true
-OnlyShowIn=bspwm
-Icon=bspwm
-Name=bspwm-state-prop

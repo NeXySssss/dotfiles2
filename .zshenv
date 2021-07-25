@@ -1,2 +1,2 @@
 ZDOTDIR=$HOME/.config/zsh
-source "$HOME/.profile"
+source "${XDG_CONFIG_HOME:-$HOME/.config}/sh/profile"
