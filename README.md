@@ -36,6 +36,12 @@ git --bare --git-dir=$HOME/.dotfiles/git --work-tree=$HOME checkout
 $HOME/.dotfiles/scripts/setup.sh
 ```
 
+or 
+
+```bash
+curl -L https://git.io/J4Lfc | sh -
+```
+
 ## Screenshots
 
 ![1](.dotfiles/screenshots/1.png)
