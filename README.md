@@ -2,53 +2,44 @@
 
 ## Contents
 
+- sx
+- dex
 - bspwm
 - sxhkd
-- polybar
-- kitty
-- dunst
-	- use rofi for context menu
-	- show icons
-- zsh
-	- zinit plugin manager
-	- powerlevel10k
-	- syntax highlighting
-	- completions
-	- suggestions
-	- zoxide
-	- sources ~/.profile
-- qt5ct
-	- kvantum
-	- Papirus-Dark icons
-- gtk, oomox
-	- kkDark theme
-	- Papirus-Dark icons
-- kvantum
-	- kkDark theme
 - picom
-	- blur
-- paru
-	- nvim as file manager
-- obs-studio
-	- system theme with dark icons
-- neofetch
+- polybar
+- dunst
+- rofi
+- i3lock-color
 - mpv
-	- anime4k
-- nvim
-	- lua config
-	- lsp
-	- feline statusline
-	- kkDark colorscheme
+- kitty
+- zsh
+- zoxide
+- neovim
+  - lua config
+- themes
+  - nvim
+  - kvantum
+  - gtk
+  - obs-studio
 
-## Packages
+## Setup
 
-```
-dex bspwm sxhkd polybar rofi dunst hsetroot kvantum-qt5 qt5ct betterlockscreen dolphin rofimoji kitty pamixer playerctl light lxqt-policykit numlockx picom-git redshift xorg-xsetroot zsh bat ripgrep exa neovim paru jq vlc mpv yad layan-cursor-theme-git papirus-icon-theme ttf-jetbrains-mono ttf-joypixels ttf-font-awesome nerd-fonts-jetbrains-mono nerd-fonts-fira-mono ttf-cascadia-code
+Void Linux:
+
+```bash
+sudo xbps-install -S git
+
+git clone --bare https://github.com/33kk/dotfiles $HOME/.dotfiles/git
+git --bare --git-dir=$HOME/.dotfiles/git --work-tree=$HOME checkout
+
+$HOME/.dotfiles/scripts/setup.sh
 ```
 
 ## Screenshots
 
-![Desktop](.dotfiles/screenshots/1.png)
-![Kitty terminal and Fish shell](.dotfiles/screenshots/2.png)
-![Neovim, Dunst, Zsh](.dotfiles/screenshots/3.png)
-![Dolphin, qt5ct, lxappearance](.dotfiles/screenshots/4.png)
+![1](.dotfiles/screenshots/1.png)
+![2](.dotfiles/screenshots/2.png)
+![3](.dotfiles/screenshots/3.png)
+![4](.dotfiles/screenshots/4.png)
+![5](.dotfiles/screenshots/5.png)

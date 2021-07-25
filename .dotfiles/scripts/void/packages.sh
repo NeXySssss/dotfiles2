@@ -11,6 +11,11 @@ sudo xbps-install -S dex bspwm sxhkd polybar dunst rofi i3lock-color yad \
                      xorg-minimal sx xclip xsel xsetroot xprop setxkbmap \
                      hsetroot kvantum qt5ct papirus-icon-theme
 
+case "$SHELL" in
+	*zsh*) ;;
+                     *) chsh -s /usr/bin/zsh ;;
+esac
+
 ln -s /etc/sv/dbus /var/service
 ln -s /etc/sv/chronyd /var/service
 ln -s /etc/sv/elogind /var/service
