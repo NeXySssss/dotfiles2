@@ -40,6 +40,7 @@ or
 
 ```bash
 curl -L https://git.io/J4Lfc | sh -
+~/.dotfiles/scripts/setup.sh
 ```
 
 ## Screenshots
