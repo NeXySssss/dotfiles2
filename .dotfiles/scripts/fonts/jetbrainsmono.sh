@@ -7,7 +7,7 @@ cleanup() {
 }
 trap cleanup EXIT TERM INT
 
-FONTS_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/fonts/JetBrainsMono"
+FONTS_DIR="${XDG_DATA_HOME:-$HOME/.local/share}"/fonts/JetBrainsMono
 
 if [ ! -d "$FONTS_DIR" ]; then
 	mkdir -p "$FONTS_DIR"
@@ -30,8 +30,8 @@ download_zip() {
 
 TMP_FONT_DIR="$(download_tmp_zip "$URL")"
 
-mv "$TMP_FONT_DIR/fonts/ttf/"* "$FONTS_DIR"
-mv "$TMP_FONT_DIR/fonts/variable/"* "$FONTS_DIR"
-mv "$TMP_FONT_DIR/fonts/webfonts/"* "$FONTS_DIR"
+mv "$TMP_FONT_DIR"/fonts/ttf/* "$FONTS_DIR"
+mv "$TMP_FONT_DIR"/fonts/variable/* "$FONTS_DIR"
+mv "$TMP_FONT_DIR"/fonts/webfonts/* "$FONTS_DIR"
 
 echo "$FONTS_DIR"

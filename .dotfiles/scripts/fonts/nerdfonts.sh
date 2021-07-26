@@ -7,7 +7,7 @@ cleanup() {
 }
 trap cleanup EXIT TERM INT
 
-FONTS_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/fonts/NerdFonts"
+FONTS_DIR="${XDG_DATA_HOME:-$HOME/.local/share}"/fonts/NerdFonts
 
 if [ ! -d "$FONTS_DIR" ]; then
 	mkdir -p "$FONTS_DIR"

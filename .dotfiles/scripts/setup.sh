@@ -6,20 +6,20 @@ DIR=$( cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P )
 echo "######################"
 echo " Installing packages"
 echo "######################"
-$DIR/$ID/packages.sh
+"$DIR"/"$ID"/packages.sh
 echo "######################"
 echo " Installing fonts"
 echo "######################"
-$DIR/$ID/fonts.sh
+"$DIR"/"$ID"/fonts.sh
 echo "######################"
 echo " Installing themes"
 echo "######################"
-$DIR/$ID/themes.sh
+"$DIR"/"$ID"/themes.sh
 echo "######################"
 echo " Configuring hardware"
 echo "######################"
-$DIR/$ID/hardware.sh
+"$DIR"/"$ID"/hardware.sh
 echo "######################"
 echo " Configuring system"
 echo "######################"
-$DIR/$ID/system.sh
+"$DIR"/"$ID"/system.sh

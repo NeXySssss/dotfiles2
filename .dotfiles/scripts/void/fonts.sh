@@ -6,14 +6,14 @@ sudo xbps-install -S curl jq unzip noto-fonts-ttf noto-fonts-cjk
 echo "=============================="
 echo " Installing codicons"
 echo "=============================="
-$DIR/../fonts/codicons.sh
+"$DIR"/../fonts/codicons.sh
 echo "=============================="
 echo " Installing JetBrainsMono"
 echo "=============================="
-$DIR/../fonts/jetbrainsmono.sh
+"$DIR"/../fonts/jetbrainsmono.sh
 echo "=============================="
 echo " Installing NerdFonts"
 echo "=============================="
-$DIR/../fonts/nerdfonts.sh JetBrainsMono
+"$DIR"/../fonts/nerdfonts.sh JetBrainsMono
 
 fc-cache

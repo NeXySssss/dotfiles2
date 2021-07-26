@@ -1,10 +1,10 @@
 #!/usr/bin/env sh
-DIR="${XDG_DOCUMENTS_DIR:=$HOME/Documents}/void-packages"
+DIR="${XDG_DOCUMENTS_DIR:=$HOME/Documents}"/void-packages
 
 sudo xbps-install -S git xtools
 
-git clone --single-branch --depth=1 --recurse-submodules "https://github.com/33kk/void-packages" "$DIR"
-cd "$DIR"
+git clone --branch my-pkgs --single-branch --depth=1 --recurse-submodules "https://github.com/33kk/void-packages" "$DIR"
+cd "$DIR" || exit
 
 ./xbps-src binary-bootstrap
 

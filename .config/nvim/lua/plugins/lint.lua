@@ -7,5 +7,5 @@ require("lint").linters_by_ft = {
 	js = { "eslint_d" },
 }
 exec([[
-	au BufRead,TextChanged <buffer> lua require('lint').try_lint()
+	au BufEnter,TextChanged,InsertLeave <buffer> lua require('lint').try_lint()
 ]])

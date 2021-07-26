@@ -11,5 +11,3 @@ alias clhe="rm $HISTFILE && exit"
 if [ -x "$(command -v thefuck)" ]; then
   eval "$(thefuck --alias)"
 fi
-
-source "$HOME/.config/sh/alias"

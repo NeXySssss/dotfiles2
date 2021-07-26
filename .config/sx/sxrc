@@ -1,6 +1,8 @@
-xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --auto
-xrandr --dpi 96
+if [ -f "/etc/X11/xorg.conf.d/10-nvidia-optimus.conf" ]; then
+	xrandr --setprovideroutputsource modesetting NVIDIA-0
+	xrandr --auto
+	xrandr --dpi 96
+fi
 
 DE=bspwm
 

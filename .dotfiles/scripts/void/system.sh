@@ -19,5 +19,4 @@ sudo mkdir -p /etc/X11/xorg.conf.d
 echo "=============================="
 echo " Disabling mouse acceleration"
 echo "=============================="
-sudo cp $DIR/../../config/x11-mouse-acceleration.conf /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
-
+sudo cp "$DIR"/../../config/x11-mouse-acceleration.conf /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
