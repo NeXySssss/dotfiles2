@@ -100,7 +100,9 @@ lspconfig.yamlls.setup(defaults({
 		}
 	}
 }))
-lspconfig.rust_analyzer.setup(defaults({}))
+lspconfig.rust_analyzer.setup(defaults({
+	cmd = { "rustup", "run", "nightly", "rust-analyzer" }
+}))
 lspconfig.clangd.setup(defaults({
 	handlers = lsp_status.extensions.clangd.setup(),
 }))
