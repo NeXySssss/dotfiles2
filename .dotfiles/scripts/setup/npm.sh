@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}"/npm
+
 echo "cache=${XDG_CACHE_HOME:-$HOME/.cache}/npm" > "${XDG_CONFIG_HOME:-$HOME/.config}"/npm/npmrc
 {
 	echo "tmp=/run/user/$(id -u)/npm"
