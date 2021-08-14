@@ -11,3 +11,4 @@ export DISTRO="$ID"
 "$DIR"/nvidia/setup.sh
 "$DIR"/xorg/setup.sh
 "$DIR"/bspwm/setup.sh
+"$DIR"/npm.sh

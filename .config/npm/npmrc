@@ -1,4 +1,0 @@
-cache=/home/marko/.cache/npm
-tmp=/run/user/1000/npm
-init-module=/home/marko/.config/npm/config/npm-init.js
-store-dir=/home/marko/.local/share/pnpm-store

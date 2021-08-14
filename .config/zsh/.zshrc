@@ -1,7 +1,3 @@
-for file in "${XDG_CONFIG_HOME:-~/.config}"/sh/rc.d/**/*; do
+for file in "${XDG_CONFIG_HOME:-~/.config}"/sh/rc.d/**/* "$ZDOTDIR"/rc.d/**/*.zsh; do
 	source "$file"
-done
-
-for file in "$ZDOTDIR"/rc.d/**/*.zsh; do
-	source "$file"
-done
+done; unset file
