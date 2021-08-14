@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
-DIR="${XDG_DOCUMENTS_DIR:=$HOME/Documents}"/void-packages
+sudo xbps-install -S git xtools xdg-user-dirs xdg-utils
 
-sudo xbps-install -S git xtools
+DIR="${XDG_DOCUMENTS_DIR:-$(xdg-user-dir DOCUMENTS)}"/void-packages
 
 git clone --branch my-pkgs --single-branch --depth=1 --recurse-submodules "https://github.com/33kk/void-packages" "$DIR"
 cd "$DIR" || exit
@@ -9,6 +9,7 @@ cd "$DIR" || exit
 ./xbps-src binary-bootstrap
 
 echo "XBPS_MAKEJOBS=$(nproc)" > etc/conf
+echo "XBPS_ALLOW_RESTRICTED=yes" >> etc/conf
 
 if ! xi picom; then
 	./xbps-src pkg picom
