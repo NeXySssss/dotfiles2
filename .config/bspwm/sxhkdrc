@@ -124,7 +124,7 @@ super + r
 	x-launcher
 
 super + e
-	rofimoji --action copy --skin-tone neutral --rofi-args "-theme Arc-Dark"
+	x-emoji-picker
 
 ctrl + alt + c
 	chatterino
