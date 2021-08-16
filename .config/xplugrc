@@ -1,0 +1,5 @@
+#!/bin/sh
+if [ "$1" = "keyboard" ]; then
+    xorg-layouts
+    exit 0
+fi

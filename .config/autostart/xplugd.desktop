@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Exec=xplugd
+NoDisplay=true
+OnlyShowIn=bspwm
+Name=xplugd
