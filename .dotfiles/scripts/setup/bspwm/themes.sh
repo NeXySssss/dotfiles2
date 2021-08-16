@@ -10,7 +10,9 @@ git clone --single-branch --depth=1 "https://github.com/vinceliuice/Layan-cursor
 
 ICONS_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/icons"
 
-mkdir -p "$ICONS_DIR"
+if [ ! -d "$ICONS_DIR" ]; then
+	mkdir -p "$ICONS_DIR"
+fi
 
 cp -r dist/ "$ICONS_DIR"/Layan-cursors
 cp -r dist-border/ "$ICONS_DIR"/Layan-border-cursors
