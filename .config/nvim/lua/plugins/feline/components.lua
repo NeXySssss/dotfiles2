@@ -140,7 +140,7 @@ function lsp_messages()
 			str = str .. " " .. v.title
 		end
 		if v.percentage then
-			str = str .. " (" .. v.percentage .. "%%)"
+			str = str .. " (" .. round(v.percentage) .. "%%)"
 		end
 		if v.message then
 			str = str .. ": " .. v.message
