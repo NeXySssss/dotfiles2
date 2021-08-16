@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Exec=/usr/bin/sh -c "export SXHKD_SHELL=/usr/bin/sh && exec /usr/bin/sxhkd -c $HOME/.config/bspwm/sxhkdrc"
-NoDisplay=true
-OnlyShowIn=bspwm
-Icon=sxhkd
-Name=sxhkd

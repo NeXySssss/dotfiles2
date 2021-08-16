@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Exec=/usr/bin/sh -c "exec /usr/bin/hsetroot -cover ~/.local/share/wallpaper"
-NoDisplay=true
-OnlyShowIn=bspwm
-Icon=hsetroot
-Name=Set wallpaper

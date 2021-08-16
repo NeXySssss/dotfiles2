@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Exec=/usr/bin/sh -c "exec $HOME/.config/polybar/launch.sh"
-NoDisplay=true
-OnlyShowIn=bspwm
-Icon=polybar
-Name=polybar

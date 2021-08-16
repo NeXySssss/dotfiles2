@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Exec=/usr/bin/dunst
-NoDisplay=true
-OnlyShowIn=bspwm
-Icon=dunst
-Name=dunst

@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Exec=/usr/bin/pipewire-pulse
-NoDisplay=true
-OnlyShowIn=bspwm
-Icon=pipewire-pulse
-Name=pipewire-pulse
