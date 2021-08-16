@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 sudo xbps-install -S git xtools xdg-user-dirs xdg-utils
 
+xdg-user-dirs-update
+
 DIR="${XDG_DOCUMENTS_DIR:-$(xdg-user-dir DOCUMENTS)}"/void-packages
 
 git clone --branch my-pkgs --single-branch --depth=1 --recurse-submodules "https://github.com/33kk/void-packages" "$DIR"
