@@ -13,7 +13,7 @@ cd "$DIR" || exit
 echo "XBPS_MAKEJOBS=$(nproc)" > etc/conf
 echo "XBPS_ALLOW_RESTRICTED=yes" >> etc/conf
 
-if ! xi picom; then
+if ! xi picom-8.3_1; then
 	./xbps-src pkg picom
 fi
 
