@@ -3,7 +3,7 @@
 # Snippets {{{
 zinit snippet OMZ::lib/git.zsh
 zinit snippet OMZ::lib/key-bindings.zsh
-zinit snippet OMZ::plugins/git/git.plugin.zsh
+#zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit snippet https://github.com/zimfw/completion/raw/master/init.zsh
 # }}}
 
