@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+
+sens=0
+
+if [ "$1" ]; then
+	sens="$1"
+	echo "$sens" > "${XDG_CONFIG_HOME:-$HOME/.config}"/sens
+elif [ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/sens ]; then
+	sens=$(cat "${XDG_CONFIG_HOME:-$HOME/.config}"/sens)
+fi
+
+if ! command -v xinput >/dev/null 2>&1; then
+	echo xinput not installed
+	exit 1
+fi
+
+for id in $(xinput list --id-only); do
+	if xinput list-props "$id" | grep "libinput Accel Speed" >/dev/null 2>&1; then
+		if ! xinput set-prop "$id" "libinput Accel Speed" "$sens"; then
+			echo enter a number between -1 and 1
+		fi
+	fi
+done

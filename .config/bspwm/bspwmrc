@@ -49,6 +49,7 @@ SXHKD_SHELL=/usr/bin/sh sxhkd -c "${XDG_CONFIG_HOME:-$HOME/.config}"/bspwm/sxhkd
 
 numlockx on
 xorg-layouts
+sens
 xplugd & disown
 xss-lock x-lock & disown
 dunst & disown
