@@ -40,9 +40,6 @@ alias n="nvim"
 alias r="ranger"
 # }}}
 
-# Void user services
-alias usv="SVDIR=$HOME/.local/share/service sv"
-
 # Clear scrollback
 alias clear="printf \\\ec"
 alias c="printf \\\ec"
