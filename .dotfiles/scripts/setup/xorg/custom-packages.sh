@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-sudo xbps-install -S git xtools xdg-user-dirs xdg-utils
+sudo xbps-install -Sy git xtools xdg-user-dirs xdg-utils
 
 xdg-user-dirs-update
 
