@@ -15,7 +15,7 @@
 - **Distro**: void
 - **Shell**: zsh
 - **Sound server**: pipewire
-- **Window Manager**: bspwm
+- **Window manager**: bspwm
 - **XDG autostart**: dex
 - **Hotkey daemon**: sxhkd
 - **Panel**: polybar
@@ -25,9 +25,9 @@
 
 ### Apps
 
-- **Terminal Emulator**: kitty
+- **Terminal emulator**: kitty
 - **Web browser**: firefox
-- **File Manager**: dolphin
+- **File manager**: dolphin
 - **Media players**: mpv, vlc
 - **Image viewer**: gwenview
 
