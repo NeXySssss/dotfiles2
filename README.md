@@ -78,6 +78,8 @@
 ## Todo
 
 - Update kvantum and gtk theme to fit in with kitty and polybar
+- Arch support
+- VM drivers installation
 
 ## Usage
 
