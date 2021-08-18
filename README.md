@@ -35,6 +35,7 @@
 
 - **Launcher**: rofi
 - **Clipboard manager**: copyq
+- **Color picker**: kcolorchooser
 - **Emoji picker**: rofi-emoji
 - **Volume control**: pavucontrol
 - **Pipewire routing**: qjackctl
