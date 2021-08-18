@@ -75,7 +75,13 @@
 - [Keyboard layouts](.local/bin/xorg-layouts) + [polybar module](.config/polybar/modules/xkeyboard.ini)
 - [Aliases](.config/sh/rc.d/alias)
 
-## Setup
+## Todo
+
+- Update kvantum and gtk theme to fit in with kitty and polybar
+
+## Usage
+
+### Setup
 
 Void Linux:
 
@@ -91,5 +97,12 @@ or
 ```bash
 sudo xbps-install curl
 curl -L https://git.io/J4Lfc | sh -
+~/.dotfiles/scripts/setup.sh
+```
+
+### Update
+
+```bash
+config pull
 ~/.dotfiles/scripts/setup.sh
 ```
