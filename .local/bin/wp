@@ -1,9 +1,13 @@
 #!/usr/bin/env sh
 
+set_wp() {
+	xwallpaper --zoom "$1"
+}
+
 case "$1" in
 	set)
 		if [ "$2" != "" ]; then
-			hsetroot -cover "$2"
+			set_wp "$2"
 		else
 			echo "No path specified."
 			exit 2
@@ -12,14 +16,14 @@ case "$1" in
 	save) 
 		if [ "$2" != "" ]; then
 			cp "$2" "$HOME/.local/share/wallpaper"
-			hsetroot -cover "$HOME/.local/share/wallpaper"
+			set_wp "$HOME/.local/share/wallpaper"
 		else
 			echo "No path specified."
 			exit 2
 		fi
 		;;
 	reset)
-		hsetroot -cover "$HOME/.local/share/wallpaper"
+		set_wp "$HOME/.local/share/wallpaper"
 		;;
 	*) 
 		echo "Unknown command. Commands available: set, reset, save"
