@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 if [ -f "/etc/X11/xorg.conf.d/10-nvidia-optimus.conf" ]; then
 	xrandr --setprovideroutputsource modesetting NVIDIA-0
 	xrandr --auto
