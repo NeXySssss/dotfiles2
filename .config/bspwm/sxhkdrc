@@ -20,7 +20,7 @@ super + shift + {w,a,s,d}
 
 # Move window to Nth desktop
 super + shift + {1-9,0}
-	bspc node --to-desktop "$(bspc query -m focused -T | perl -pe 's|.*?\"name\":\"(.*?)\".*|\1|'):^2" --focus
+	bspc node --to-desktop "$(bspc query -m focused -T | perl -pe 's|.*?\"name\":\"(.*?)\".*|\1|'):^{1-9,0}" --focus
 
 # Switch to monitor
 alt + {w,a,s,d}
