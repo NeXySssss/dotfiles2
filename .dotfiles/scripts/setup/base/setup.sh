@@ -2,7 +2,7 @@
 DIR=$( cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P )
 
 sudo xbps-install -Sy base-devel elogind chrony udisks2 eudev earlyoom \
-                     zsh zoxide git bat ripgrep exa neovim htop jq curl aria2 unzip neofetch \
+                     zsh zoxide git bat ripgrep exa neovim htop jq perl curl aria2 unzip neofetch \
                      xdg-user-dirs xdg-utils
 
 case "$SHELL" in
