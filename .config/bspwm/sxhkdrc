@@ -1,34 +1,62 @@
 # vim: foldmethod=marker
 
-# Windows {{{
+# Bspwm {{{
 
 # Focus window
-super + {a,s,d,w}
-	bspc node --focus {west,south,east,north}
+super + {w,a,s,d}
+	bspwm-focus {north,west,south,east}
 
-# Cycle windows
-super + {_, shift + }z
-	bspc node -f {next,prev}.local
+# Switch to Nth desktop
+super + {1-9,0}
+	bspc desktop "$(bspc query -m focused -T | perl -pe 's|.*?\"name\":\"(.*?)\".*|\1|'):^{1-9,10}" --focus
 
-# Move tiled or floating windows
-super + shift + {a,s,d,w}
-	bspwm-move {left,down,right,up}
+# Switch to next/prev desktop
+super + {_, shift +} Tab
+	bspc desktop {next,prev}.local --focus
+
+# Move window
+super + shift + {w,a,s,d}
+	bspwm-move {north,west,south,east}
+
+# Move window to Nth desktop
+super + shift + {1-9,0}
+	bspc node --to-desktop "$(bspc query -m focused -T | perl -pe 's|.*?\"name\":\"(.*?)\".*|\1|'):^2" --focus
+
+# Switch to monitor
+alt + {w,a,s,d}
+	bspc monitor {north,west,south,east} --focus
+
+# Switch to Nth monitor
+alt + {1-9,0}
+	bspc monitor "^{1-9,0}" --focus
+
+# Move window to monitor
+alt + ctrl + {w,a,s,d}
+	bspc node --to-monitor {north,west,south,east} --focus
+
+# Move window to Nth monitor
+alt + ctrl + {1-9,0}
+	bspc node --to-monitor "^{1-9,0}" --focus
+
+# Swap desktop with another monitor
+super + alt + {w,a,s,d}
+	bspwm-swap-desktop {north,west,south,east}
+
+# Swap desktop with another monitor
+super + alt + {1-9,0}
+	bspwm-swap-desktop "^{1-9,0}"
 
 # Expand window
-super + control + {a,s,w,d}
+super + ctrl + {w,a,s,d}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
-# Contract window
-super + control + shift + {a,s,w,d}
+# Shrink window
+super + ctrl + shift + {w,a,s,d}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
-# Move window to desktop
-super + shift + {1-9,0}
-	id=$(bspc query -N -n); bspc node -d ^{1-9,10}; bspc node -f ${id}}
-
-# Fullscreen window
-super + shift + f
-	bspc node --state \~fullscreen
+# Tile window
+super + n
+	bspc node --state tiled
 
 # Pseudo-tile window
 super + p
@@ -38,17 +66,25 @@ super + p
 super + f
 	bspc node --state \~floating
 
-# Tile window
-super + n
-	bspc node --state tiled
+# Fullscreen window
+super + shift + f
+	bspc node --state \~fullscreen
+
+# Cycle window states
+super + m
+	bspwm-cycle-state
 
 # Sticky window
 super + k
 	bspc node --flag sticky
 
-# Cycle window modes
-super + m
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+# Lock window
+super + shift + l
+	bspc node --flag sticky
+
+# Lock window position
+super + ctrl + l
+	bspc node --flag sticky
 
 # Close window
 super + q
@@ -58,41 +94,13 @@ super + q
 super + F4
 	bspc node -k
 
-# }}}
-
-# Workspaces {{{
-
-# Switch to workspace
-super + {1-9,0}
-	bspc desktop -f '^{1-9,10}'
-
-# Cycle workspaces
-super {_, + shift} + Tab
-	bspc desktop {next,prev} --focus
-
-# Rotate workspace
-super + {_, shift + }x
-	bspc node @/ --rotate {90,-90}
-
-# Flip workspace
-super + {_, shift + }v
-	bspc node @/ --flip {vertical,horizontal}
-
-# }}}
-
-# Preselects {{{
-
 # Preseleft direction
-super + alt + {a,s,w,d}
+super + ctrl + alt + {a,s,w,d}
 	bspc node -p {west,south,north,east}
 
 # Preselect ratio
-super + alt + {1-9}
+super + ctrl + alt + {1-9}
 	bspc node -o 0.{1-9}
-
-# Cancel preselection
-super + alt + z
-	bspc node -p cancel
 
 # Cancel preselection for focused desktop
 super + control + alt + z

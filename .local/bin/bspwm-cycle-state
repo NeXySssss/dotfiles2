@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+current_state=$(bspc query -n -T | perl -pe 's|.*?"state":"(.*?)".*|\1|')
+next_state="tiled"
+
+case $current_state in
+	tiled) next_state="pseudo_tiled" ;;
+	pseudo_tiled) next_state="floating" ;;
+	floating) next_state="fullscreen" ;;
+	*) next_state="tiled" ;;
+esac
+
+bspc node --state "$next_state"

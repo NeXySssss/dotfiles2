@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+if ! bspc node --focus "$1"; then
+	bspc monitor "$1" --focus
+fi

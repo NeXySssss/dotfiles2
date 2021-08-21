@@ -1,5 +1,20 @@
 #!/usr/bin/env sh
 
+find_monitor() {
+	monitors="$(bspc query -M --names)"
+	for m in $monitors; do
+		if bspc query -m "$m" -T | grep "$1" >/dev/null 2>&1; then
+			echo "$m"
+		fi
+	done
+}
+
+swap() {
+	if ! bspc node --swap "$1".local --focus; then
+		bspc node --to-monitor "$1" --focus
+	fi
+}
+
 if bspc query --tree --node | grep --silent '"state":"floating"'; then
 	case $1 in
 		left|west) bspc node -v -20 0 ;;
@@ -9,10 +24,10 @@ if bspc query --tree --node | grep --silent '"state":"floating"'; then
 	esac
 else
 	case $1 in
-		left|west) bspc node --swap west ;;
-		down|south) bspc node --swap south ;;
-		right|east) bspc node --swap east ;;
-		up|north) bspc node --swap north ;;
+		left|west) swap west ;;
+		down|south) swap south ;;
+		right|east) swap east ;;
+		up|north) swap north ;;
 	esac
 fi
 

@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+monitor2="${1:-$(bspc query -m next -T | perl -pe 's|.*?"name":"(.*?)".*|\1|')}"
+
+desktop1="$(bspc query -d focused -T | perl -pe 's|.*?"id":(.*?),.*|\1|')"
+desktop2="$(bspc query -d "$monitor2":focused -T | perl -pe 's|.*?"id":(.*?),.*|\1|')"
+
+desktop1name="$(bspc query -d focused -T | perl -pe 's|.*?"name":"(.*?)".*|\1|')"
+desktop2name="$(bspc query -d "$monitor2":focused -T | perl -pe 's|.*?"name":"(.*?)".*|\1|')"
+
+bspc desktop --swap "$desktop2" --focus
+bspc desktop "$desktop1" --rename "$desktop2name"
+bspc desktop "$desktop2" --rename "$desktop1name"
