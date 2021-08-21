@@ -1,15 +1,25 @@
 #!/usr/bin/env bash
 
-kill $(pgrep -U $UID polybar)
-while pgrep -U $UID polybar > /dev/null; do sleep 1; done
+pids="$(pgrep -U "$UID" polybar)"
+kill $pids
+while pgrep -U "$UID" polybar >/dev/null; do sleep 1; done
 
 run() {
 	if type "xrandr" > /dev/null; then
-		for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-			MONITOR=$m exec polybar --reload $1 -c ~/.config/polybar/config.ini
-		done
+		primary="$(polybar -m | grep "(primary)" | cut -d ':' -f 1)"
+		monitors="$(polybar -m | grep --invert-match "(primary)" | cut -d ':' -f 1)"
+		if [ "$primary" ]; then
+			MONITOR=$primary polybar --reload "$1" -c ~/.config/polybar/config.ini & disown
+			for m in $monitors; do
+				MONITOR="$m" polybar --reload "$1"-side -c ~/.config/polybar/config.ini & disown
+			done
+		else
+			for m in $monitors; do
+				MONITOR="$m" polybar --reload "$1" -c ~/.config/polybar/config.ini & disown
+			done
+		fi
 	else
-		exec polybar --reload $1 -c ~/.config/polybar/config.ini
+		exec polybar --reload "$1" -c ~/.config/polybar/config.ini
 	fi
 }
 
