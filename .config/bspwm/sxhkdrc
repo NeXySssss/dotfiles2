@@ -110,6 +110,22 @@ super + ctrl + alt + {1-9}
 super + control + alt + z
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
+# Rotate desktop
+super + ctrl + {_, shift + }x
+	bspc node @/ --rotate {90,-90}
+
+# Rotate focused node's parent
+super + {_, shift + }x
+	bspc node @parent --rotate {90,-90}
+
+# Flip desktop
+super + ctrl + {_, shift + }v
+	bspc node @/ --flip {vertical,horizontal}
+
+# Flip focused node's parent
+super + {_, shift + }v
+	bspc node @parent --flip {vertical,horizontal}
+
 # }}}
 
 # Launchers {{{
