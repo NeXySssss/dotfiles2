@@ -6,6 +6,10 @@
 super + {w,a,s,d}
 	bspwm-focus {north,west,south,east}
 
+# Focus next node
+super {_,shift +} z
+	bspc node {next,prev}.local --focus
+
 # Switch to Nth desktop
 super + {1-9,0}
 	bspc desktop "$(bspc query -m focused -T | perl -pe 's|.*?\"name\":\"(.*?)\".*|\1|'):^{1-9,10}" --focus
@@ -48,11 +52,11 @@ super + alt + {1-9,0}
 
 # Expand window
 super + ctrl + {w,a,s,d}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+	bspc node -z {top 0 -20,left -20 0,bottom 0 20,right 20 0}
 
 # Shrink window
 super + ctrl + shift + {w,a,s,d}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+	bspc node -z {bottom 0 -20,right -20 0,top 0 20,left 20 0}
 
 # Tile window
 super + n
