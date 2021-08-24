@@ -26,5 +26,5 @@ run() {
 case $DESKTOP_SESSION in
 	*bspwm*) run bspwm ;;
 	*i3*) run i3 ;;
-	*) run base ;;
+	*) run default ;;
 esac
