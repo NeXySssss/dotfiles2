@@ -78,11 +78,6 @@
 - **OOM daemon**: earlyoom
 - **NTP daemon**: chronyd
 
-## Todo
-
-- Arch support
-- VM drivers installation
-
 ## Usage
 
 ### Setup
