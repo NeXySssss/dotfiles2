@@ -1,8 +1,6 @@
 #!/usr/bin/env sh
 DIR=$( cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P )
 
-sudo xbps-install -Sy git papirus-icon-theme
-
 TMP="$(mktemp -d)"
 cd "$TMP"
 
