@@ -14,7 +14,6 @@ case "$DISTRO" in
 		               xwallpaper kvantum-qt5 qt5ct papirus-icon-theme \
 		               playerctl light numlockx lxqt-policykit xplugd-git xss-lock wmname redshift rofi-emoji
 
-		"$DIR"/custom-packages.sh
 	;;
 esac
 
