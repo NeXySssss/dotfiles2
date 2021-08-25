@@ -8,10 +8,10 @@ case "$DISTRO" in
 		                     xdg-user-dirs xdg-utils
 	;;
 	arch)
-		sudo perl -i -p0e 's|^#\[multilib\]\n#I|[multilib]\nI|' /etc/pacman.conf
 		sudo pacman --needed --noconfirm  -Syu base-devel udisks2 earlyoom \
 		                 zsh zoxide git bat ripgrep exa neovim htop jq perl curl aria2 unzip neofetch \
 		                 xdg-user-dirs xdg-utils
+		sudo perl -i -p0e 's|^#\[multilib\]\n#I|[multilib]\nI|' /etc/pacman.conf
 	;;
 esac
 
