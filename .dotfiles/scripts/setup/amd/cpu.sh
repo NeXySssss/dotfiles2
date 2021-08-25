@@ -7,6 +7,6 @@ case "$DISTRO" in
 		sudo xbps-install -Sy linux-firmware-amd
 	;;
 	arch)
-		sudo pacman --needed -Syu amd-ucode
+		sudo pacman --needed --noconfirm  -Syu amd-ucode
 	;;
 esac

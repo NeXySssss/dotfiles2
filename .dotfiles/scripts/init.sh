@@ -8,7 +8,7 @@ case "$DISTRO" in
 		sudo xbps-install -Sy git
 	;;
 	arch)
-		sudo pacman --needed -Syu git
+		sudo pacman --needed --noconfirm  -Syu git
 	;;
 esac
 

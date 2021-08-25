@@ -7,6 +7,6 @@ case "$DISTRO" in
 		sudo xbps-install -Sy linux-firmware-intel intel-ucode
 	;;
 	arch)
-		sudo pacman --needed -Syu intel-ucode
+		sudo pacman --needed --noconfirm  -Syu intel-ucode
 	;;
 esac

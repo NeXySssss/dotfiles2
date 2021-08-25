@@ -7,7 +7,7 @@ case "$DISTRO" in
 		sudo xbps-install -Sy linux-firmware-intel intel-video-accel mesa-dri mesa-vulkan-intel
 	;;
 	arch)
-		sudo pacman --needed -Syu vulkan-intel libva-intel-driver intel-media-driver
+		sudo pacman --needed --noconfirm  -Syu vulkan-intel libva-intel-driver intel-media-driver
 	;;
 esac
 
