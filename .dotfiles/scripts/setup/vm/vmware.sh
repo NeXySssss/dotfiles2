@@ -6,6 +6,6 @@ case "$DISTRO" in
 		sudo xbps-install -Sy xf86-video-vmware
 	;;
 	arch)
-		sudo pacman -Syu xf86-video-vmware
+		sudo pacman --needed -Syu xf86-video-vmware
 	;;
 esac

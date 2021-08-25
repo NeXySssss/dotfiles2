@@ -7,6 +7,6 @@ case "$DISTRO" in
 		sudo xbps-install -Sy xf86-video-qxl xf86-video-qxl-32bit
 	;;
 	arch)
-		sudo pacman -Syu xf86-video-qxl
+		sudo pacman --needed -Syu xf86-video-qxl
 	;;
 esac

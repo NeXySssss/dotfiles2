@@ -9,7 +9,7 @@ case "$DISTRO" in
                               playerctl light numlockx lxqt-policykit xplugd xss-lock wmname redshift redshift-gtk rofi-emoji
 	;;
 	arch)
-		sudo paru -Syu dex bspwm sxhkd polybar dunst rofi i3lock-color yad \
+		sudo paru --needed -Syu dex bspwm sxhkd polybar dunst rofi i3lock-color yad \
 		               qjackctl pamixer pavucontrol \
 		               xwallpaper kvantum qt5ct papirus-icon-theme \
 		               playerctl light numlockx lxqt-policykit xplugd-git xss-lock wmname redshift rofi-emoji

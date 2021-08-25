@@ -9,7 +9,7 @@ case "$DISTRO" in
 	;;
 	arch)
 		sudo perl -i -p0e 's|^#\[multilib\]\n#I|[multilib]\nI|' /etc/pacman.conf
-		sudo pacman -Syu base-devel udisks2 earlyoom \
+		sudo pacman --needed -Syu base-devel udisks2 earlyoom \
 		                 zsh zoxide git bat ripgrep exa neovim htop jq perl curl aria2 unzip neofetch \
 		                 xdg-user-dirs xdg-utils
 	;;

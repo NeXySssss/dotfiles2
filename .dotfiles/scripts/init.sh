@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 . /etc/os-release
+
 export DISTRO="$ID"
 
 case "$DISTRO" in
@@ -7,7 +8,7 @@ case "$DISTRO" in
 		sudo xbps-install -Sy git
 	;;
 	arch)
-		sudo pacman -Syu git
+		sudo pacman --needed -Syu git
 	;;
 esac
 

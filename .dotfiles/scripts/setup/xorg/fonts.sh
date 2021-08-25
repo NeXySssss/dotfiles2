@@ -6,7 +6,7 @@ case "$DISTRO" in
 		sudo xbps-install -Sy curl jq unzip noto-fonts-ttf noto-fonts-cjk
 	;;
 	arch)
-		sudo pacman -Syu curl jq unzip noto-fonts noto-fonts-cjk
+		sudo pacman --needed -Syu curl jq unzip noto-fonts noto-fonts-cjk
 	;;
 esac
 

@@ -7,7 +7,7 @@ case "$DISTRO" in
 		sudo xbps-install -Sy linux-firmware-nvidia nvidia nvidia-libs nvidia-libs-32bit
 	;;
 	arch)
-		sudo pacman -Syu nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings libva-vdpau-driver
+		sudo pacman --needed -Syu nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings libva-vdpau-driver
 	;;
 esac
 
