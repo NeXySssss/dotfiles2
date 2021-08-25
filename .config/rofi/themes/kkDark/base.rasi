@@ -1,4 +1,3 @@
-
 * {
 	font: "Noto Sans Bold 12";
 	color: #eeeeee;
@@ -11,7 +10,6 @@
 window {
 	border: 1px;
 	border-color: @bg-sel-2;
-	border-radius: 0.5em;
 	transparency: "real";
 	anchor: center;
 	location: center;
@@ -39,7 +37,6 @@ entry {
 element {
 	padding: 0.5em;
 	spacing: 0.5em;
-	width: 50%;
 	border-radius: 0.5em;
 	orientation: vertical;
 	children: [ element-icon, element-text ];
