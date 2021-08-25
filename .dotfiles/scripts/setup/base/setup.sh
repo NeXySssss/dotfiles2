@@ -4,13 +4,13 @@ DIR=$( cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P )
 case "$DISTRO" in
 	void)
 		sudo xbps-install -Sy base-devel elogind chrony udisks2 eudev earlyoom \
-		                     zsh zoxide git bat ripgrep exa neovim htop jq perl curl aria2 unzip neofetch \
-		                     xdg-user-dirs xdg-utils
+			zsh zoxide git bat ripgrep exa neovim htop jq perl curl aria2 unzip neofetch \
+			xdg-user-dirs xdg-utils
 	;;
 	arch)
 		sudo pacman --needed --noconfirm  -Syu base-devel udisks2 earlyoom \
-		                 zsh zoxide git bat ripgrep exa neovim htop jq perl curl aria2 unzip neofetch \
-		                 xdg-user-dirs xdg-utils
+			zsh zoxide git bat ripgrep exa neovim htop jq perl curl aria2 unzip neofetch \
+			xdg-user-dirs xdg-utils
 		sudo perl -i -p0e 's|#\[multilib\]\n#I|[multilib]\nI|' /etc/pacman.conf
 	;;
 esac
