@@ -11,7 +11,7 @@ case "$DISTRO" in
 	arch)
 		paru --needed --noconfirm  -Syu dex bspwm sxhkd polybar dunst rofi i3lock-color yad \
 		               qjackctl pamixer pavucontrol \
-		               xwallpaper kvantum qt5ct papirus-icon-theme \
+		               xwallpaper kvantum-qt5 qt5ct papirus-icon-theme \
 		               playerctl light numlockx lxqt-policykit xplugd-git xss-lock wmname redshift rofi-emoji
 
 		"$DIR"/custom-packages.sh
