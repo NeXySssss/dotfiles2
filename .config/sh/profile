@@ -27,7 +27,6 @@ export TERMINAL="kitty"
 export EDITOR="nvim"
 export PAGER="less"
 
-export QT_QPA_PLATFORMTHEME="qt5ct"
 export GTK_USE_PORTAL=1
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export _JAVA_AWT_WM_NONREPARENTING=1

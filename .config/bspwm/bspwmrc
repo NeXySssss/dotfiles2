@@ -2,6 +2,8 @@
 # vim: foldmethod=marker
 DIR=$( cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P )
 
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
 # Config {{{
 bspc config single_monocle true
 bspc config split_ratio 0.50
