@@ -87,15 +87,15 @@ Void Linux:
 ```bash
 sudo xbps-install git
 git clone --bare https://github.com/33kk/dotfiles ~/.dotfiles/git
-git --bare --git-dir=~/.dotfiles/git --work-tree=~ checkout
+git --bare --git-dir="$HOME"/.dotfiles/git --work-tree="$HOME" checkout
 ~/.dotfiles/scripts/setup.sh
 ```
 
-or 
-
+Arch Linux:
 ```bash
-sudo xbps-install curl
-curl -L https://git.io/J4Lfc | sh -
+sudo pacman -Syu git
+git clone --bare https://github.com/33kk/dotfiles ~/.dotfiles/git
+git --bare --git-dir="$HOME"/.dotfiles/git --work-tree="$HOME" checkout
 ~/.dotfiles/scripts/setup.sh
 ```
 
