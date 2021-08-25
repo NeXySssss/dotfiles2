@@ -7,8 +7,17 @@
 ![3](.dotfiles/screenshots/3.png)
 ![4](.dotfiles/screenshots/4.png)
 ![5](.dotfiles/screenshots/5.png)
+![6](.dotfiles/screenshots/6.png)
+![7](.dotfiles/screenshots/7.png)
+![8](.dotfiles/screenshots/8.png)
+![9](.dotfiles/screenshots/9.png)
 
 ## Details
+
+- To set mouse sensitivity use `sens` script
+- To change keyboard layouts edit `.local/bin/xorg-layouts` and add icon in `.config/polybar/modules/xkeyboard.ini`
+- View and edit keybindings in `.config/bspwm/sxhkdrc`
+- View and edit aliases in `.config/sh/rc.d/alias`
 
 ### System
 
@@ -57,11 +66,6 @@
 - **xorg-layouts**: set xorg keyboard layouts
 - **x-\***: default graphical apps
 
-### Void stuff
-
-- **OOM daemon**: earlyoom
-- **NTP daemon**: chronyd
-
 ### Themes
 
 - **Qt**: kvantum
@@ -69,12 +73,10 @@
 - nvim
 - obs
 
-### Other
+### Void
 
-- [Mouse sensitivity](.local/bin/sens)
-- [Keybindings](.config/bspwm/sxhkdrc)
-- [Keyboard layouts](.local/bin/xorg-layouts) + [polybar module](.config/polybar/modules/xkeyboard.ini)
-- [Aliases](.config/sh/rc.d/alias)
+- **OOM daemon**: earlyoom
+- **NTP daemon**: chronyd
 
 ## Todo
 
