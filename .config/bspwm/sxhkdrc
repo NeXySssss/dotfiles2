@@ -63,7 +63,7 @@ super + n
 	bspc node --state tiled
 
 # Pseudo-tile window
-super + p
+super + t
 	bspc node --state \~pseudo_tiled
 
 # Float window
@@ -150,6 +150,9 @@ super + shift + Return
 
 super + r
 	x-launcher
+
+super + p
+	x-power-menu
 
 super + e
 	x-emoji-picker
