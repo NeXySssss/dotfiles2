@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+case "$DESKTOP_SESSION" in
+	*bspwm*) bspc quit ;;
+esac

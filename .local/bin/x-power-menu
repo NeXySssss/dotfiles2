@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+SELECTED="$(printf 'Lock\0icon\x1fsystem-lock-screen\nLog out\0icon\x1fsystem-log-out\nSleep\0icon\x1fsystem-suspend\nHibernate\0icon\x1fsystem-hibernate\nReboot\0icon\x1fsystem-reboot\nShutdown\0icon\x1fsystem-shutdown' | rofi -dmenu -no-custom -theme "${XDG_CONFIG_HOME:-$HOME/.config}"/rofi/themes/kkDark/power.rasi)"
+
+case $SELECTED in
+	"Lock") loginctl lock-session self ;;
+	"Log out") x-logout ;;
+	"Sleep") loginctl suspend ;;
+	"Hibernate") loginctl hibernate ;;
+	"Reboot") loginctl reboot ;;
+	"Shutdown") loginctl poweroff ;;
+esac

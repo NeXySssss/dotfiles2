@@ -1,0 +1,21 @@
+configuration {
+	show-icons: true;
+	drun-display-format: "{name}";
+}
+
+@import "base.rasi"
+
+window {
+	width: 40%;
+	children: [ listview ];
+}
+
+listview {
+	columns: 6;
+	lines: 1;
+}
+
+element-text {
+	horizontal-align: 0.5;
+	vertical-align: 0.5;
+}

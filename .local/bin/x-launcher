@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-exec rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/rofi/launchers/misc/blurry.rasi
+exec rofi -no-config -show drun -modi drun -theme ~/.config/rofi/themes/kkDark/launcher.rasi

@@ -1,0 +1,15 @@
+configuration {
+	show-icons: false;
+}
+
+@import "base.rasi"
+
+listview {
+	columns: 1;
+	lines: 10;
+}
+
+element-text {
+	horizontal-align: 0;
+	vertical-align: 0;
+}

@@ -1,0 +1,54 @@
+
+* {
+	font: "Noto Sans Bold 12";
+	color: #eeeeee;
+	background-color: transparent;
+	bg: #11111199;
+	bg-sel: #3b3b3b99;
+	bg-sel-2: #525252;
+}
+
+window {
+	border: 1px;
+	border-color: @bg-sel-2;
+	border-radius: 0.5em;
+	transparency: "real";
+	anchor: center;
+	location: center;
+	padding: 0.5em;
+	width: 40%;
+	children: [ inputbar, listview ];
+	spacing: 0.5em;
+	orientation: vertical;
+	background-color: @bg;
+}
+
+inputbar {
+	expand: false;
+	background-color: @bg-sel;
+	border-radius: 0.5em;
+	padding: 0.5em;
+	children: [ entry ];
+}
+
+entry {
+	width: 100%;
+	height: 2em;
+}
+
+element {
+	padding: 0.5em;
+	spacing: 0.5em;
+	width: 50%;
+	border-radius: 0.5em;
+	orientation: vertical;
+	children: [ element-icon, element-text ];
+}
+
+element selected {
+	background-color: @bg-sel;
+}
+
+element-icon {
+	size: 3em;
+}
