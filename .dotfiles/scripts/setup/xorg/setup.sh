@@ -14,7 +14,7 @@ case "$DISTRO" in
 		"$DIR"/custom-packages.sh
 	;;
 	arch)
-		sudo paru --needed --noconfirm  -Syu mesa lib32-mesa mesa-demos mesa-vdpau lib32-mesa-vdpau \
+		paru --needed --noconfirm  -Syu mesa lib32-mesa mesa-demos mesa-vdpau lib32-mesa-vdpau \
 		               vulkan-icd-loader lib32-vulkan-icd-loader vulkan-headers vulkan-validation-layers vulkan-tools \
 		               xorg-server xorg-setxkbmap xorg-xdpyinfo xorg-xinput xorg-xrandr xorg-xsetroot xorg-xprop sx xclip xsel \
 		               dbus-broker \
