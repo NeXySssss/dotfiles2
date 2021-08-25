@@ -15,7 +15,6 @@ case "$DISTRO" in
 	;;
 esac
 
-
 case "$SHELL" in
 	*zsh*) ;;
 	*) chsh -s /usr/bin/zsh ;;

@@ -10,7 +10,6 @@ case "$DISTRO" in
 	;;
 esac
 
-
 "$DIR"/../../fonts/codicons.sh
 "$DIR"/../../fonts/fontawesome.sh
 "$DIR"/../../fonts/materialdesignicons.sh

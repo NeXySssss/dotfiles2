@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
 DIR=$( cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P )
 
-
 case "$DISTRO" in
 	void)
 		sudo xbps-install -Sy void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree

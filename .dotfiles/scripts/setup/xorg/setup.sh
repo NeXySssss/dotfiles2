@@ -22,7 +22,7 @@ case "$DISTRO" in
 		               kitty firefox vlc mpv copyq ark dolphin gwenview kdeconnect kcolorchooser \
 		               pipewire lib32-pipewire pipewire-jack lib32-pipewire-jack pipewire-jack-dropin pipewire-pulse
 	;;
-	esac
+esac
 
 sudo cp "$DIR"/mouse-acceleration.conf /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 
