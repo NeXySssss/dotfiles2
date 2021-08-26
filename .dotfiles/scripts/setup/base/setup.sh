@@ -34,6 +34,8 @@ case "$DISTRO" in
 		sudo ln -s /etc/sv/chronyd /var/service
 		sudo ln -s /etc/sv/elogind /var/service
 		sudo ln -s /etc/sv/earlyoom /var/service
+
+		"$DIR"/user-svdir.sh
 	;;
 	arch)
 		sudo cp "$DIR"/earlyoom.conf /etc/default/earlyoom
