@@ -82,16 +82,17 @@
 
 ### Setup
 
-Void Linux:
+**Nvidia DKMS driver requires kernel headers**
 
+On a clean Void Linux system:
 ```bash
-sudo xbps-install git
+sudo xbps-install -S git
 git clone --bare https://github.com/33kk/dotfiles ~/.dotfiles/git
 git --bare --git-dir="$HOME"/.dotfiles/git --work-tree="$HOME" checkout
 ~/.dotfiles/scripts/setup.sh
 ```
 
-Arch Linux:
+On a clean Arch Linux system:
 ```bash
 sudo pacman -Syu git
 git clone --bare https://github.com/33kk/dotfiles ~/.dotfiles/git
