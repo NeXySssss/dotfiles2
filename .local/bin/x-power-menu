@@ -4,8 +4,8 @@ SELECTED="$(printf 'Lock\0icon\x1fsystem-lock-screen\nLog out\0icon\x1fsystem-lo
 case $SELECTED in
 	"Lock") loginctl lock-session self ;;
 	"Log out") x-logout ;;
-	"Sleep") loginctl suspend ;;
-	"Hibernate") loginctl hibernate ;;
-	"Reboot") loginctl reboot ;;
-	"Shutdown") loginctl poweroff ;;
+	"Sleep") powerctl suspend ;;
+	"Hibernate") powerctl hibernate ;;
+	"Reboot") powerctl reboot ;;
+	"Shutdown") powerctl poweroff ;;
 esac

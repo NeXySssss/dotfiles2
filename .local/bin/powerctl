@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+if command -v systemctl >/dev/null; then
+	systemctl "$@"
+elif command -v loginctl >/dev/null; then
+	loginctl "$@"
+else
+	sudo "$@"
+fi

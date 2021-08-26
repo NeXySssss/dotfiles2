@@ -1,12 +1,12 @@
 # vim: foldmethod=marker
 
 # Loginctl {{{
-alias reboot="loginctl reboot"
-alias poweroff="loginctl poweroff"
-alias shutdown="loginctl poweroff"
-alias suspend="loginctl suspend"
-alias hibernate="loginctl hibernate"
-alias suspend_then_hibernate="loginctl suspend-then-hibernate"
+alias reboot="powerctl reboot"
+alias poweroff="powerctl poweroff"
+alias shutdown="powerctl poweroff"
+alias suspend="powerctl suspend"
+alias hibernate="powerctl hibernate"
+alias suspend_then_hibernate="powerctl suspend-then-hibernate"
 # }}}
 
 # Pacman {{{
