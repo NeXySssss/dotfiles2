@@ -43,26 +43,29 @@ bspc rule -a Yad state=floating
 # Autostart {{{
 
 numlockx on
+xsetroot -cursor_name left_ptr
 xorg-layouts
 sens
+
 xplugd & disown
 xss-lock x-lock & disown
+bspwm-state-prop & disown
+
 dunst & disown
 
 SXHKD_SHELL=/usr/bin/sh sxhkd -c "${XDG_CONFIG_HOME:-$HOME/.config}"/bspwm/sxhkdrc & disown
 
-xsetroot -cursor_name left_ptr
 wp reset & disown
-
-bspwm-state-prop & disown
 picom -b --experimental-backends & disown
 
-pipewire & disown
-pipewire-pulse & disown
+if [ "$(distro-id)" = "void" ]; then
+	pipewire & disown
+	pipewire-pulse & disown
+fi
 
 dex -a -v -e bspwm & disown
 
-sleep 2
+sleep 1
 "${XDG_CONFIG_HOME:-$HOME/.config}"/polybar/launch.sh & disown
 
 # }}}
