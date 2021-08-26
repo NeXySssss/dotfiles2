@@ -4,7 +4,7 @@ DIR=$( cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P )
 . /etc/os-release
 export DISTRO="$ID"
 
-[ "$DISTRO" != "void" ] && [ "$DISTRO" != "arch" ] && echo Only Void and Arch Linux is currently supported && exit 1
+[ "$DISTRO" != "void" ] && [ "$DISTRO" != "arch" ] && echo Only Void and Arch Linux are currently supported && exit 1
 
 "$DIR"/base/setup.sh
 "$DIR"/intel/setup.sh
