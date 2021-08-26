@@ -7,3 +7,11 @@ if ! command -v paru; then
 	cd "$TMP"
 	makepkg -si
 fi
+
+if ! grep -E "^MAKEFLAGS" /etc/makepkg.conf; then
+	if grep -E "^#MAKEFLAGS" /etc/makepkg.conf; then
+		sudo sed -iE 's|^#MAKEFLAGS.*$|MAKEFLAGS="-j'"$(nproc)"'"|' /etc/makepkg.conf
+	else
+		echo "MAKEFLAGS=\"-j$(nproc)\"" | sudo tee -a /etc/makepkg.conf
+	fi
+fi
