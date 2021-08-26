@@ -6,7 +6,10 @@ if [ -f "/etc/X11/xorg.conf.d/10-nvidia-optimus.conf" ]; then
 	xrandr --dpi 96
 fi
 
-DE=bspwm
+export DESKTOP_SESSION="bspwm"
 
-export DESKTOP_SESSION="$DE"
-exec dbus-run-session "$DE"
+if command -v systemctl >/dev/null; then
+	exec "$DESKTOP_SESSION"
+else
+	exec dbus-run-session "$DESKTOP_SESSION"
+fi
