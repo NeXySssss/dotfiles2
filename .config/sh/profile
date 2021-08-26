@@ -5,14 +5,14 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 append_data_dir () {
-    case ":$XDG_DATA_DIRS:" in
-        *:"$1":*)
-            ;;
-        *)
-            XDG_DATA_DIRS="$1${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}"
-    esac
+	case ":$XDG_DATA_DIRS:" in
+		*:"$1":*)
+		;;
+		*)
+			XDG_DATA_DIRS="$1${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}"
+		;;
+	esac
 }
-
 
 append_data_dir /usr/share
 append_data_dir /usr/local/share
@@ -22,6 +22,22 @@ append_data_dir "$XDG_DATA_HOME"/flatpak/exports/share
 export XDG_DATA_DIRS
 
 unset -f append_data_dir
+
+append_path () {
+	case ":$PATH:" in
+		*:"$1":*)
+		;;
+		*)
+			PATH="$1${PATH:+:$PATH}"
+		;;
+	esac
+}
+
+append_path "$HOME"/.local/bin
+
+export PATH
+
+unset -f append_path
 
 export SVDIR="$XDG_DATA_HOME"/service
 
@@ -38,7 +54,6 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 export DOTNET_CLI_HOME="$XDG_DATA_HOME"/dotnet
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 
-export PATH="$PATH:$HOME/.local/bin"
 [ -f "$XDG_DATA_HOME/cargo/env" ] && . "$XDG_DATA_HOME"/cargo/env
 
 export TERMINAL="kitty"
