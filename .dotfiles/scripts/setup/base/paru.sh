@@ -5,7 +5,8 @@ if ! command -v paru; then
 	TMP=$(mktemp -d)
 	git clone https://aur.archlinux.org/paru.git "$TMP"
 	cd "$TMP"
-	makepkg -si
+	makepkg --needed --noconfirm -si
+	rm -rf "$TMP"
 fi
 
 if ! grep -E "^MAKEFLAGS" /etc/makepkg.conf; then
