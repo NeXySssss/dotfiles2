@@ -6,8 +6,12 @@
 super + {w,a,s,d}
 	bspwm-focus {north,west,south,east}
 
+# Focus next window
+super + {_,shift +} z
+	bspc node {next,prev}.window.local --focus
+
 # Focus next node
-super {_,shift +} z
+super + ctrl + {_,shift +} z
 	bspc node {next,prev}.local --focus
 
 # Switch to Nth desktop
