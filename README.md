@@ -18,6 +18,7 @@
 - To change keyboard layouts edit `.local/bin/xorg-layouts` and add icon in `.config/polybar/modules/xkeyboard.ini`
 - View and edit keybindings in `.config/bspwm/sxhkdrc`
 - View and edit aliases in `.config/sh/rc.d/alias`
+- To persist monitor configuration put your xrandr command in `.config/sx/sxrc` after `fi`
 
 ### System
 
