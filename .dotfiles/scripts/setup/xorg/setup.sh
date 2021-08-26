@@ -21,6 +21,7 @@ case "$DISTRO" in
 			xdg-desktop-portal xdg-desktop-portal-kde \
 			kitty firefox vlc mpv copyq ark dolphin gwenview kdeconnect kcolorchooser flameshot-33kk-git \
 			pipewire lib32-pipewire pipewire-jack lib32-pipewire-jack pipewire-jack-dropin pipewire-pulse
+		sudo systemctl enable --now dbus-broker
 	;;
 esac
 
