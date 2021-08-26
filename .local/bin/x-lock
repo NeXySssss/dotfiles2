@@ -12,15 +12,30 @@ term() {
 
 trap term TERM
 
-i3lock -n --blur 10 --ignore-empty-password \
-	--indicator --radius 120 \
-	--veriftext "" --locktext "" --wrongtext "" --noinputtext "" \
-	--ringcolor "#e7e1e2" --ringvercolor "#67a0ec" --ringwrongcolor "#e42c2e" \
-	--insidecolor "#111111" --insidevercolor "#111111" --insidewrongcolor "#111111" \
-	--separatorcolor "#73c6c5" --keyhlcolor "#67a0ec" --bshlcolor "#e42c2e" \
-	--force-clock --timecolor "#e7e1e2" --timesize=48 \
-	--datecolor "#eeeeee" --datesize=18 \
-	--keylayout 1 --layoutcolor "#e7e1e2" --layoutsize=18 &
+case "$(distro-id)" in
+	arch)
+		i3lock -n --blur 10 --ignore-empty-password \
+			--indicator --radius 120 \
+			--verif-text "" --lock-text "" --wrong-text "" --noinput-text "" \
+			--ring-color "#e7e1e2" --ringver-color "#67a0ec" --ringwrong-color "#e42c2e" \
+			--inside-color "#111111" --insidever-color "#111111" --insidewrong-color "#111111" \
+			--separator-color "#73c6c5" --keyhl-color "#67a0ec" --bshl-color "#e42c2e" \
+			--force-clock --time-color "#e7e1e2" --time-size=48 \
+			--date-color "#eeeeee" --date-size=18 \
+			--keylayout 1 --layout-color "#e7e1e2" --layout-size=18 &
+	;;
+	void)
+		i3lock -n --blur 10 --ignore-empty-password \
+			--indicator --radius 120 \
+			--veriftext "" --locktext "" --wrongtext "" --noinputtext "" \
+			--ringcolor "#e7e1e2" --ringvercolor "#67a0ec" --ringwrongcolor "#e42c2e" \
+			--insidecolor "#111111" --insidevercolor "#111111" --insidewrongcolor "#111111" \
+			--separatorcolor "#73c6c5" --keyhlcolor "#67a0ec" --bshlcolor "#e42c2e" \
+			--force-clock --timecolor "#e7e1e2" --timesize=48 \
+			--datecolor "#eeeeee" --datesize=18 \
+			--keylayout 1 --layoutcolor "#e7e1e2" --layoutsize=18 &
+	;;
+esac
 
 LOCK_PID="$!"
 wait $LOCK_PID
