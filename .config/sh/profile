@@ -1,9 +1,27 @@
 . /etc/profile
-export XDG_DATA_DIRS="$XDG_DATA_HOME"/flatpak/exports/share:"$XDG_DATA_HOME":"${XDG_DATA_DIRS:-/usr/local/share:/usr/share}"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
+
+append_data_dir () {
+    case ":$XDG_DATA_DIRS:" in
+        *:"$1":*)
+            ;;
+        *)
+            XDG_DATA_DIRS="$1${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}"
+    esac
+}
+
+
+append_data_dir /usr/share
+append_data_dir /usr/local/share
+append_data_dir "$XDG_DATA_HOME"
+append_data_dir "$XDG_DATA_HOME"/flatpak/exports/share
+
+export XDG_DATA_DIRS
+
+unset -f append_data_dir
 
 export SVDIR="$XDG_DATA_HOME"/service
 
