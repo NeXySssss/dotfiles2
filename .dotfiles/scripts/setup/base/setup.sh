@@ -5,6 +5,7 @@ case "$DISTRO" in
 	void)
 		sudo xbps-install -Sy base-devel elogind chrony udisks2 eudev earlyoom \
 			zsh zoxide git bat ripgrep exa neovim htop jq perl curl aria2 unzip neofetch \
+			dbus-elogind dbus-elogind-libs dbus-elogind-x11 \
 			xdg-user-dirs xdg-utils
 	;;
 	arch)
