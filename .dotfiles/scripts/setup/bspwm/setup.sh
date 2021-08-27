@@ -8,12 +8,14 @@ case "$DISTRO" in
 		sudo xbps-install -Sy dex bspwm sxhkd polybar dunst rofi i3lock-color yad \
 			qjackctl pamixer pavucontrol \
 			xwallpaper kvantum qt5ct papirus-icon-theme \
+			xdg-desktop-portal xdg-desktop-portal-kde \
 			playerctl light numlockx lxqt-policykit xplugd xss-lock wmname redshift redshift-gtk rofi-emoji || error "Failed to install packages"
 	;;
 	arch)
 		paru --needed --noconfirm  -Syu dex bspwm picom-git sxhkd polybar dunst rofi i3lock-color yad \
 			qjackctl pamixer pavucontrol \
 			xwallpaper kvantum-qt5 qt5ct papirus-icon-theme \
+			xdg-desktop-portal xdg-desktop-portal-kde \
 			playerctl light numlockx lxqt-policykit xplugd-git xss-lock wmname redshift rofi-emoji || error "Failed to install packages"
 
 	;;

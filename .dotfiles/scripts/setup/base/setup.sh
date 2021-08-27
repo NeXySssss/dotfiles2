@@ -6,13 +6,13 @@ log_info "Installing packages"
 case "$DISTRO" in
 	void)
 		sudo xbps-install -Sy base-devel elogind chrony udisks2 eudev earlyoom \
-			zsh zoxide git bat ripgrep exa neovim htop jq perl curl aria2 unzip neofetch \
+			zsh zoxide git bat ripgrep exa neovim htop jq perl python3 curl aria2 unzip neofetch \
 			dbus-elogind dbus-elogind-libs dbus-elogind-x11 \
 			xdg-user-dirs xdg-utils || error "Failed to install packages"
 	;;
 	arch)
 		sudo pacman --needed --noconfirm  -Syu base-devel udisks2 earlyoom \
-			zsh zoxide git bat ripgrep exa neovim htop jq perl curl aria2 unzip neofetch \
+			zsh zoxide git bat ripgrep exa neovim htop jq perl python curl aria2 unzip neofetch \
 			xdg-user-dirs xdg-utils || error "Failed to install packages"
 		sudo perl -i -p0e 's|#\[multilib\]\n#I|[multilib]\nI|' /etc/pacman.conf
 		if ! grep -E '^\[multilib\]' /etc/pacman.conf; then
@@ -31,7 +31,7 @@ esac
 log_info "Configuring"
 case "$DISTRO" in
 	void)
-		LIMITS="$(whoami)	hard	nofile	524288"
+		LIMITS="$(id -u -n)	hard	nofile	524288"
 		if ! grep "$LIMITS" /etc/security/limits.conf; then
 			echo "$LIMITS" | sudo tee -a /etc/security/limits.conf || error "Failed to set limits"
 		fi
