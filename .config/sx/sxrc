@@ -6,6 +6,8 @@ if [ -f "/etc/X11/xorg.conf.d/10-nvidia-optimus.conf" ]; then
 	xrandr --dpi 96
 fi
 
+xorg-setup-display
+
 export DESKTOP_SESSION="bspwm"
 
 if command -v systemctl >/dev/null; then
