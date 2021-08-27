@@ -21,7 +21,7 @@ case "$DISTRO" in
 			xorg-server xorg-setxkbmap xorg-xdpyinfo xorg-xinput xorg-xrandr xorg-xsetroot xorg-xprop sx xclip xsel \
 			xdg-desktop-portal xdg-desktop-portal-kde \
 			kitty firefox vlc mpv copyq ark dolphin gwenview kdeconnect kcolorchooser qalculate-gtk flameshot-33kk-git \
-			pipewire lib32-pipewire pipewire-jack lib32-pipewire-jack pipewire-jack-dropin pipewire-pulse || error "Failed to install packages"
+			pipewire lib32-pipewire pipewire-jack lib32-pipewire-jack pipewire-jack-dropin pipewire-alsa pipewire-pulse || error "Failed to install packages"
 	;;
 esac
 
