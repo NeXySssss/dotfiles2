@@ -35,22 +35,20 @@
 
 ### Apps
 
+- **Launcher**: rofi
 - **Terminal emulator**: kitty
 - **Web browser**: firefox
 - **File manager**: dolphin
 - **Media players**: mpv, vlc
 - **Image viewer**: gwenview
-
-### Utils
-
-- **Launcher**: rofi
-- **Clipboard manager**: copyq
+- **Calculator**: qalculate-gtk
 - **Color picker**: kcolorchooser
 - **Emoji picker**: rofi-emoji
+- **Clipboard manager**: copyq
+- **Android integration**: kdeconnect
 - **Volume control**: pavucontrol
 - **Pipewire routing**: qjackctl
 - **Qt5 settings**: qt5ct
-- **Android integration**: kdeconnect
 
 ### CLI utils
 
@@ -62,6 +60,7 @@
 - **cd** -> zoxide
 
 ### Scripts
+
 - **sens**: set mouse sensitivity
 - **wp**: set wallpaper
 - **xorg-layouts**: set xorg keyboard layouts
