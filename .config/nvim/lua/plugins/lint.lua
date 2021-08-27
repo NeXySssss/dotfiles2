@@ -5,7 +5,11 @@ require("lint").linters_by_ft = {
 	sh = { "shellcheck" },
 	zsh = { "shellcheck" },
 	js = { "eslint_d" },
+	typescript = { "eslint_d" },
+	svelte = { "eslint_d" },
+	vue = { "eslint_d" },
 }
+
 exec([[
 	au BufEnter,TextChanged,InsertLeave <buffer> lua require('lint').try_lint()
 ]])
