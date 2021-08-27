@@ -71,8 +71,8 @@
 
 - **Qt**: kvantum
 - **GTK**: oomox
-- nvim
-- obs
+- **nvim**: [kkDark](https://github.com/33kk/kkDark)
+- **obs**
 
 ### Void
 
