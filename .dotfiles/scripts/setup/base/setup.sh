@@ -15,8 +15,8 @@ case "$DISTRO" in
 			zsh zoxide git bat ripgrep exa neovim htop jq perl curl aria2 unzip neofetch \
 			xdg-user-dirs xdg-utils || error "Failed to install packages"
 		sudo perl -i -p0e 's|#\[multilib\]\n#I|[multilib]\nI|' /etc/pacman.conf
-		if ! grep -E '^[multilib]' /etc/pacman.conf; then
-			log_error "Failed to enable multilib"
+		if ! grep -E '^\[multilib\]' /etc/pacman.conf; then
+			error "Failed to enable multilib"
 			exit 1
 		fi
 	;;
