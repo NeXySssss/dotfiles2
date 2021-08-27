@@ -33,7 +33,7 @@
 - **Notifications daemon**: dunst
 - **Lockscreen**: i3lock-color
 
-### Apps
+### Software
 
 - **Launcher**: rofi
 - **Terminal emulator**: kitty
@@ -50,7 +50,7 @@
 - **Pipewire routing**: qjackctl
 - **Qt5 settings**: qt5ct
 
-### CLI utils
+#### CLI
 
 - **Text editor**: neovim
 - **System monitor**: htop
@@ -64,6 +64,7 @@
 - **sens**: set mouse sensitivity
 - **wp**: set wallpaper
 - **xorg-layouts**: set xorg keyboard layouts
+- **xorg-setup-display**: setup xorg display
 - **x-\***: default graphical apps
 
 ### Themes
