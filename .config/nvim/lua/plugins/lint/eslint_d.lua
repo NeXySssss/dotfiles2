@@ -30,8 +30,8 @@ return {
 								character = diag.column - 1,
 							},
 							["end"] = {
-								line = diag.endLine - 1,
-								character = diag.endColumn - 1,
+								line = diag.engLine and diag.endLine - 1 or diag.line - 1,
+								character = diag.endColumn and diag.endColumn - 1 or diag.column - 1,
 							},
 						},
 						code = diag.ruleId,
