@@ -28,7 +28,7 @@ super + shift + {w,a,s,d}
 
 # Move window to Nth desktop
 super + shift + {1-9,0}
-	bspc node --to-desktop "$(bspc query -m focused -T | perl -pe 's|.*?\"name\":\"(.*?)\".*|\1|'):^{1-9,0}" --focus
+	bspc node --to-desktop "$(bspc query -m focused -T | perl -pe 's|.*?\"name\":\"(.*?)\".*|\1|'):^{1-9,10}" --focus
 
 # Switch to monitor
 alt + {w,a,s,d}
@@ -36,7 +36,7 @@ alt + {w,a,s,d}
 
 # Switch to Nth monitor
 alt + {1-9,0}
-	bspc monitor "^{1-9,0}" --focus
+	bspc monitor "^{1-9,10}" --focus
 
 # Move window to monitor
 alt + ctrl + {w,a,s,d}
@@ -44,7 +44,7 @@ alt + ctrl + {w,a,s,d}
 
 # Move window to Nth monitor
 alt + ctrl + {1-9,0}
-	bspc node --to-monitor "^{1-9,0}" --focus
+	bspc node --to-monitor "^{1-9,10}" --focus
 
 # Swap desktop with another monitor
 super + alt + {w,a,s,d}
@@ -52,7 +52,7 @@ super + alt + {w,a,s,d}
 
 # Swap desktop with another monitor
 super + alt + {1-9,0}
-	bspwm-swap-desktop "^{1-9,0}"
+	bspwm-swap-desktop "^{1-9,10}"
 
 # Expand window
 super + ctrl + {w,a,s,d}
