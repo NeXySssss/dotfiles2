@@ -59,3 +59,5 @@ esac
 
 log_info "Configuring npm"
 "$DIR"/npm.sh
+log_info "Configuring neofetch"
+"$DIR"/neofetch.sh
