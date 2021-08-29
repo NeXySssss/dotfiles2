@@ -4,6 +4,14 @@ DIR=$( cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P )
 
 LOG_SIGN=">"
 
+if [ "$(id -u)" = 0 ]; then
+	error "This script shouldn't be ran as root, it calls sudo when root access is required."
+fi
+
+if ! command -v sudo >/dev/null; then
+	error "Please install sudo before running this script."
+fi
+
 . /etc/os-release
 export DISTRO="$ID"
 
