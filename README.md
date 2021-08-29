@@ -14,7 +14,7 @@
 
 ## Details
 
-- To bootstrap system from a clean void/arch install check out [setup](#setup) section
+- To bootstrap system from a clean void/arch install check out the [setup section](#setup)
 - To set mouse sensitivity use `sens` script
 - To change keyboard layouts edit `.local/bin/xorg-layouts` and add icon in `.config/polybar/modules/xkeyboard.ini`
 - To persist monitor configuration put your xrandr command in `.local/bin/xorg-setup-display`
@@ -23,7 +23,7 @@
 
 ### System
 
-- **Distro**: void
+- **Distro**: void/arch
 - **Shell**: zsh
 - **Sound server**: pipewire
 - **Window manager**: bspwm
