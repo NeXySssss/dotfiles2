@@ -1,0 +1,9 @@
+@import "base.rasi"
+
+window {
+	children: [ mode-switcher, inputbar, message, listview ];
+}
+
+inputbar {
+	children: [ prompt, entry ];
+}

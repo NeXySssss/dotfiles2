@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-exec rofi -modi emoji -show emoji
+exec rofi -show emoji -modi emoji -theme "${XDG_CONFIG_HOME:-$HOME/.config}"/rofi/themes/kkDark/dmenu-no-prompt.rasi

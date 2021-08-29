@@ -5,6 +5,10 @@ configuration {
 
 @import "base.rasi"
 
+inputbar {
+	children: [ entry ];
+}
+
 listview {
 	columns: 5;
 	lines: 3;
