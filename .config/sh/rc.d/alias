@@ -44,11 +44,8 @@ alias r="ranger"
 alias clear="printf \\\ec"
 alias c="printf \\\ec"
 
-# Get currently used gpu
-alias gpu="glxinfo | grep 'OpenGL renderer' | sed 's/.*: //'"
-
-# Alt+shift to toggle keyboard layouts
-alias kbbind="setxkbmap -model pc105 -layout us,ru,ua -variant qwerty -option grp:alt_shift_toggle"
+# Get currently used opengl renderer
+alias oglr="glxinfo | grep 'OpenGL renderer' | sed 's/.*: //'"
 
 # Dotfiles git bare repo
 alias config='git --bare --git-dir=$HOME/.dotfiles/git --work-tree=$HOME'
