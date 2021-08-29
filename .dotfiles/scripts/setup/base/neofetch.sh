@@ -13,11 +13,13 @@ case "$DISTRO" in
 esac
 
 log_info "Generating logo"
-if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/neofetch/generated.font ]; then
-	font="$(cat "${XDG_CONFIG_HOME:-$HOME/.config}"/neofetch/generated.font)"
+if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/neofetch/generated-ascii.conf ]; then
+	. "${XDG_CONFIG_HOME:-$HOME/.config}"/neofetch/generated-ascii.conf
+else
+	printf '%s\n%s' '#font=future' "#text=\$(id -u -n)" > "${XDG_CONFIG_HOME:-$HOME/.config}"/neofetch/generated-ascii.conf
 fi
 
 {
 	printf '\n\n'
-	figlet -f "${font:-future}" "$(id -u -n)" | sed -E 's|^|      |' | sed -E 's|$|   |'
+	figlet -f "${font:-future}" "${text:-$(id -u -n)}" | sed -E 's|^|      |' | sed -E 's|$|   |'
 } > "${XDG_CONFIG_HOME:-$HOME/.config}"/neofetch/generated.ascii || error "Failed to generate a logo"
