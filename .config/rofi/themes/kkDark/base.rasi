@@ -26,6 +26,8 @@ window {
 
 button {
 	padding: 0.5em;
+	vertical-align: 0.5;
+	horizontal-align: 0.5;
 }
 
 button selected {

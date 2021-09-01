@@ -1,7 +1,3 @@
-configuration {
-	show-icons: false;
-}
-
 @import "base.rasi"
 
 inputbar {
@@ -11,6 +7,10 @@ inputbar {
 listview {
 	columns: 1;
 	lines: 10;
+}
+
+element {
+	children: [ element-text ];
 }
 
 element-text {

@@ -4,6 +4,10 @@ window {
 	children: [ mode-switcher, inputbar, message, listview ];
 }
 
+element {
+	children: [ element-text ];
+}
+
 inputbar {
 	children: [ prompt, entry ];
 }

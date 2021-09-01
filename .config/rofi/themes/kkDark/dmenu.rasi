@@ -1,12 +1,12 @@
-configuration {
-	show-icons: false;
-}
-
 @import "base.rasi"
 
 listview {
 	columns: 1;
 	lines: 10;
+}
+
+element {
+	children: [ element-text ];
 }
 
 element-text {
