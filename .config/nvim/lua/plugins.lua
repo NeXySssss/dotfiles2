@@ -32,7 +32,7 @@ packer.startup({
 		-- Load .editorconfig
 		"editorconfig/editorconfig-vim",
 		-- Table mode
-		"https://github.com/dhruvasagar/vim-table-mode",
+		-- "https://github.com/dhruvasagar/vim-table-mode",
 		-- Lsp
 		"neovim/nvim-lspconfig",
 		"glepnir/lspsaga.nvim", -- Popups
