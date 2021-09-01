@@ -26,7 +26,7 @@ map("", "<leader>tv", "<cmd>vsplit term://$SHELL<CR>", { noremap = true, silent 
 
 -- Tabs
 map("", "<A-Tab>", "<cmd>tabnext<CR>", { noremap = true, silent = true })
-map("", "<A-w>", "<cmd>tabclose<CR>", { noremap = true, silent = true })
+map("", "<A-q>", "<cmd>tabclose<CR>", { noremap = true, silent = true })
 map("", "<A-t>", "<cmd>tabnew<CR>", { noremap = true, silent = true })
 
 -- Replace alias
