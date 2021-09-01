@@ -78,4 +78,6 @@ element selected {
 
 element-icon {
 	size: 3em;
+	vertical-align: 0.5;
+	horizontal-align: 0.5;
 }
