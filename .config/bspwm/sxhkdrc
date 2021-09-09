@@ -30,28 +30,28 @@ super + shift + {w,a,s,d}
 super + shift + {1-9,0}
 	bspc node --to-desktop "$(bspc query -m focused -T | perl -pe 's|.*?\"name\":\"(.*?)\".*|\1|'):^{1-9,10}" --focus
 
-# Switch to monitor
-alt + {w,a,s,d}
+# Focus monitor
+ctrl + alt + {w,a,s,d}
 	bspc monitor {north,west,south,east} --focus
 
-# Switch to Nth monitor
-alt + {1-9,0}
+# Focus Nth monitor
+ctrl + alt + {1-9,0}
 	bspc monitor "^{1-9,10}" --focus
 
 # Move window to monitor
-alt + ctrl + {w,a,s,d}
+ctrl + alt + x; {w,a,s,d}
 	bspc node --to-monitor {north,west,south,east} --focus
 
 # Move window to Nth monitor
-alt + ctrl + {1-9,0}
+ctrl + alt + x; {1-9,0}
 	bspc node --to-monitor "^{1-9,10}" --focus
 
 # Swap desktop with another monitor
-super + alt + {w,a,s,d}
+ctrl + alt + z; {w,a,s,d}
 	bspwm-swap-desktop {north,west,south,east}
 
 # Swap desktop with another monitor
-super + alt + {1-9,0}
+ctrl + alt + z; {1-9,0}
 	bspwm-swap-desktop "^{1-9,10}"
 
 # Expand window
@@ -111,7 +111,7 @@ super + ctrl + alt + {1-9}
 	bspc node -o 0.{1-9}
 
 # Cancel preselection for focused desktop
-super + control + alt + z
+super + ctrl + alt + z
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 # Rotate desktop
@@ -149,7 +149,7 @@ super + Return
 super + shift + Return
 	x-file-manager
 
-{alt,super} + space
+super + space
 	x-launcher
 
 super + r
@@ -164,7 +164,7 @@ super + e
 ctrl + alt + c
 	chatterino
 
-super + control + q
+super + ctrl + q
 	bspc quit
 
 super + o
@@ -215,7 +215,7 @@ super + XF86AudioLowerVolume
 # Other {{{
 
 # Reload bspwm config
-super + control + r
+super + ctrl + r
 	bspc wm -r
 
 # Reload sxhkd
