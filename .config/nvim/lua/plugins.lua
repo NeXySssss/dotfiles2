@@ -4,6 +4,7 @@ local packer = require("packer")
 
 packer.startup({
 	{
+		"lewis6991/impatient.nvim",
 		"wbthomason/packer.nvim",
 		"nvim-lua/plenary.nvim",
 		"rktjmp/lush.nvim",
@@ -116,6 +117,7 @@ packer.startup({
 })
 
 function load()
+	require("impatient")
 	require("plugins/colorscheme")
 	require("plugins/tree-sitter")
 	require("plugins/trouble")
