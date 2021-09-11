@@ -14,6 +14,8 @@ case "$DISTRO" in
 		sudo pacman --needed --noconfirm  -Syu base-devel udisks2 earlyoom \
 			zsh zoxide git bat ripgrep exa neovim htop jq perl python curl aria2 unzip neofetch \
 			xdg-user-dirs xdg-utils || error "Failed to install packages"
+
+		sudo sed -i "s|#ParallelDownloads = .*|ParallelDownloads = 10|" /etc/pacman.conf || error "Failed to set pacman parallel downloads"
 		sudo perl -i -p0e 's|#\[multilib\]\n#I|[multilib]\nI|' /etc/pacman.conf
 		if ! grep -E '^\[multilib\]' /etc/pacman.conf; then
 			error "Failed to enable multilib"
