@@ -7,15 +7,15 @@
 
 	font: "Noto Sans Bold 12";
 	background-color: transparent;
+	border-color: @bg-sel-2;
 	color: @fg;
 }
 
 window {
-	border: 1px;
-	border-color: @bg-sel-2;
 	transparency: "real";
 	anchor: center;
 	location: center;
+	border: 1px;
 	padding: 0.5em;
 	width: 40%;
 	children: [ inputbar, message, listview ];
@@ -32,6 +32,7 @@ button {
 
 button selected {
 	background-color: @bg-sel;
+	border: 1px;
 	border-radius: 0.5em;
 	padding: 0.5em;
 }
@@ -39,6 +40,7 @@ button selected {
 inputbar {
 	expand: false;
 	background-color: @bg-sel;
+	border: 1px;
 	border-radius: 0.5em;
 	padding: 0.5em;
 	children: [ prompt, entry ];
@@ -47,12 +49,14 @@ inputbar {
 
 message {
 	background-color: @bg-sel;
+	border: 1px;
 	border-radius: 0.5em;
 	padding: 0.5em;
 }
 
 error-message {
 	background-color: @bg-sel;
+	border: 1px;
 	border-radius: 0.5em;
 	padding: 0.5em;
 }
@@ -75,6 +79,7 @@ element {
 }
 
 element selected {
+	border: 1px;
 	background-color: @bg-sel;
 }
 
