@@ -40,12 +40,12 @@ feline.setup({
 				components.git_diff_removed,
 				components.line_percentage,
 				components.scroll_bar,
-			}
+			},
 		},
 		inactive = {
 			{ components.vi_mode },
 			{},
-			{ components.file_type }
+			{ components.file_type },
 		},
 	},
 })
