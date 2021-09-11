@@ -17,7 +17,7 @@ local function eslint_d()
 			"--stdin",
 			"--stdin-filename",
 			vim.api.nvim_buf_get_name(0),
-			"--fix-to-stdout"
+			"--fix-to-stdout",
 		},
 		stdin = true,
 	}
@@ -27,19 +27,19 @@ require("formatter").setup({
 	logging = false,
 	filetype = {
 		javascript = {
-			eslint_d
+			eslint_d,
 		},
 		typescript = {
-			eslint_d
+			eslint_d,
 		},
 		svelte = {
-			eslint_d
+			eslint_d,
 		},
 		vue = {
-			eslint_d
+			eslint_d,
 		},
 		json = {
-			prettier
+			prettier,
 		},
 		rust = {
 			function()

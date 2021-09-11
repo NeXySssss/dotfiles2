@@ -81,13 +81,13 @@ M.file_size = {
 	enabled = function()
 		return fn.getfsize(fn.expand("%:p")) > 0
 	end,
-	right_sep = { " ", { str = "", hl = { fg = colors.gray }} },
+	right_sep = { " ", { str = "", hl = { fg = colors.gray } } },
 }
 
 M.position = {
 	provider = "position",
 	left_sep = " ",
-	right_sep = { " ", { str = "", hl = { fg = colors.gray }} },
+	right_sep = { " ", { str = "", hl = { fg = colors.gray } } },
 }
 
 M.diagnostic_errors = {

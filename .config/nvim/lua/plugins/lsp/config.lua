@@ -66,7 +66,7 @@ end
 
 local srv = lspinstall.installed_servers()
 
-local runtime_path = vim.split(package.path, ';')
+local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
@@ -74,11 +74,11 @@ lspconfig[u.has(srv, "lua") and "lua" or "sumneko_lua"].setup(defaults({
 	settings = {
 		Lua = {
 			runtime = {
-				version = 'LuaJIT',
+				version = "LuaJIT",
 				path = runtime_path,
 			},
 			diagnostics = {
-				globals = {'vim'},
+				globals = { "vim" },
 			},
 			workspace = {
 				library = vim.api.nvim_get_runtime_file("", true),
@@ -88,7 +88,7 @@ lspconfig[u.has(srv, "lua") and "lua" or "sumneko_lua"].setup(defaults({
 			},
 		},
 	},
-	root_dir = lspconfig.util.root_pattern("nvim", "lua", ".git", ".gitignore")
+	root_dir = lspconfig.util.root_pattern("nvim", "lua", ".git", ".gitignore"),
 }))
 lspconfig.html.setup(defaults({}))
 lspconfig[u.has(srv, "typescript") and "typescript" or "tsserver"].setup(defaults({}))
@@ -123,13 +123,13 @@ lspconfig[u.has(srv, "yaml") and "yaml" or "yamlls"].setup(defaults({
 		yaml = {
 			schemaStore = {
 				enable = true,
-				url = "https://www.schemastore.org/api/json/catalog.json"
-			}
-		}
-	}
+				url = "https://www.schemastore.org/api/json/catalog.json",
+			},
+		},
+	},
 }))
 lspconfig[u.has(srv, "rust") and "rust" or "rust_analyzer"].setup(defaults({
-	cmd = { "rustup", "run", "nightly", "rust-analyzer" }
+	cmd = { "rustup", "run", "nightly", "rust-analyzer" },
 }))
 lspconfig[u.has(srv, "cpp") and "cpp" or "clangd"].setup(defaults({
 	handlers = lsp_status.extensions.clangd.setup(),

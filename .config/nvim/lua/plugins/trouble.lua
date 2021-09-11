@@ -1,7 +1,7 @@
 local u = require("utils")
 
 require("trouble").setup({
-	auto_preview = false
+	auto_preview = false,
 })
 
 u.map("n", "<leader>tt", "<cmd>Trouble<cr>")

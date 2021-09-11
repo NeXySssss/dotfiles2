@@ -31,7 +31,9 @@ end
 
 function M.has(tbl, item)
 	for _, value in pairs(tbl) do
-		if value == item then return true end
+		if value == item then
+			return true
+		end
 	end
 	return false
 end
