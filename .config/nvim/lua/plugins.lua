@@ -49,10 +49,8 @@ packer.startup({
 		"nvim-lua/lsp-status.nvim", -- Lsp utils
 		"folke/trouble.nvim", -- Diagnostics list
 		"simrat39/symbols-outline.nvim", -- Symbols outline
-		-- Linting
-		"mfussenegger/nvim-lint",
-		-- Formatting
-		"mhartington/formatter.nvim",
+		-- Diagnostics, formatting
+		"jose-elias-alvarez/null-ls.nvim",
 		-- Snippets
 		"hrsh7th/vim-vsnip",
 		"hrsh7th/vim-vsnip-integ",
@@ -130,8 +128,6 @@ function load()
 	require("plugins/todo-comments")
 	require("plugins/kommentary")
 	require("plugins/lsp")
-	require("plugins/formatter")
-	require("plugins/lint")
 	require("plugins/gitsigns")
 	require("plugins/colorizer")
 	require("plugins/rest")

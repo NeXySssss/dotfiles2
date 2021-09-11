@@ -17,6 +17,8 @@ capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
+	client.resolved_capabilities.document_formatting = false
+
 	local function buf_set_keymap(...)
 		vim.api.nvim_buf_set_keymap(bufnr, ...)
 	end
@@ -52,6 +54,8 @@ local on_attach = function(client, bufnr)
 	lsp_status.on_attach(client)
 end
 
+u.exec("command! Format :lua vim.lsp.buf.formatting()")
+
 local function defaults(config)
 	local _defaults = {
 		capabilities = capabilities,
@@ -69,6 +73,8 @@ local srv = lspinstall.installed_servers()
 local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
+
+lspconfig["null-ls"].setup(defaults({}))
 
 lspconfig[u.has(srv, "lua") and "lua" or "sumneko_lua"].setup(defaults({
 	settings = {
