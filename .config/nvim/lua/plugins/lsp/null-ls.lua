@@ -28,9 +28,9 @@ local function eslint_check()
 		local has_prettier_plugin = root_has_file("node_modules/eslint-plugin-prettier/package.json")
 
 		if has_prettier_plugin then
-			return "eslint_prettier"
-		else
 			return "eslint"
+		else
+			return "eslint_prettier"
 		end
 	else
 		return "prettier"
@@ -57,14 +57,14 @@ local eslint_filetypes = { "javascript", "javascriptreact", "typescript", "types
 function _G.null_ls_eslint_prettier()
 	local result = eslint_check()
 
-	if result == "eslint_prettier" then
+	if result == "eslint" then
 		nls.register(fmt.eslint_d.with({
 			filetypes = prettier_filetypes,
 		}))
 		nls.register(lint.eslint_d.with({
 			filetypes = prettier_filetypes,
 		}))
-	elseif result == "eslint" then
+	elseif result == "eslint_prettier" then
 		nls.register(fmt.eslint_d.with({
 			filetypes = eslint_filetypes,
 		}))
