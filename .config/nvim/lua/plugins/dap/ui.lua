@@ -1,3 +1,5 @@
+local u = require("utils")
+
 require("dapui").setup({
 	icons = {
 		expanded = "▾",
@@ -36,4 +38,4 @@ require("dapui").setup({
 	},
 })
 
-map("n", "<leader>du", "<cmd>lua require('dapui').toggle()<CR>", { noremap = true, silent = true })
+u.map("n", "<leader>du", "<cmd>lua require('dapui').toggle()<CR>")

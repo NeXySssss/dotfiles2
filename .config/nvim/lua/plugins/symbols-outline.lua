@@ -1,3 +1,5 @@
+local u = require("utils")
+
 vim.g.symbols_outline = {
 	highlight_hovered_item = true,
 	show_guides = true,
@@ -17,4 +19,4 @@ vim.g.symbols_outline = {
 	lsp_blacklist = {},
 }
 
-map("n", "<leader>s", "<cmd>SymbolsOutline<cr>", { silent = true, noremap = true })
+u.map("n", "<leader>s", "<cmd>SymbolsOutline<cr>")

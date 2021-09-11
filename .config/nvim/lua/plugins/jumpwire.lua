@@ -1,3 +1,5 @@
+local u = require("utils")
+
 -- TODO: Fork plugin to support opening first file that exists (cpp/c <-> hpp/h)
 require("jumpwire").setup({
 	language = {
@@ -10,5 +12,5 @@ require("jumpwire").setup({
 	},
 })
 
-map("n", "<cmd>lua require('jumpwire').jump('toggle')<CR>", { noremap = true, silent = true })
-map("n", "<cmd>lua require('jumpwire').jump('implementation')<CR>", { noremap = true, silent = true })
+u.map("n", "<cmd>lua require('jumpwire').jump('toggle')<CR>")
+u.map("n", "<cmd>lua require('jumpwire').jump('implementation')<CR>")

@@ -1,3 +1,4 @@
+local u = require("utils")
 local lsp = require("feline.providers.lsp")
 local vi_mode_utils = require("feline.providers.vi_mode")
 
@@ -140,7 +141,7 @@ function lsp_messages()
 			str = str .. " " .. v.title
 		end
 		if v.percentage then
-			str = str .. " (" .. round(v.percentage) .. "%%)"
+			str = str .. " (" .. u.round(v.percentage) .. "%%)"
 		end
 		if v.message then
 			str = str .. ": " .. v.message

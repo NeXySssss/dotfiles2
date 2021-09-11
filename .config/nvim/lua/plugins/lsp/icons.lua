@@ -1,3 +1,4 @@
+local u = require("utils")
 local ci = require("codicons")
 
 require("lspkind").init({
@@ -31,7 +32,7 @@ require("lspkind").init({
 	},
 })
 
-exec([[
+u.exec([[
 sign define LspDiagnosticsSignError text=]] .. ci.get("error") .. [[ texthl=LspDiagnosticsSignError linehl= numhl=
 sign define LspDiagnosticsSignWarning text=]] .. ci.get("warning") .. [[ texthl=LspDiagnosticsSignWarning linehl= numhl=
 sign define LspDiagnosticsSignInformation text=]] .. ci.get("info") .. [[ texthl=LspDiagnosticsSignInformation linehl= numhl=

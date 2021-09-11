@@ -1,15 +1,17 @@
 require("plugins/packer")
 
+local u = require("utils")
 local packer = require("packer")
 
 packer.startup({
 	{
-		"lewis6991/impatient.nvim",
+		"lewis6991/impatient.nvim", -- Speed up startup
+
 		"wbthomason/packer.nvim",
 		"nvim-lua/plenary.nvim",
 		"rktjmp/lush.nvim",
 		-- kkDark Colorscheme
-		{ "33kk/kkDark" },
+		{ "33kk/kkDark", requires = "lush.nvim" },
 		-- Fix for CursorHold(I)
 		"antoinemadec/FixCursorHold.nvim",
 		-- Icons
@@ -142,7 +144,7 @@ function load()
 end
 
 if first_run == true then
-	exec("PackerInstall")
+	u.exec("PackerInstall")
 else
 	load()
 end

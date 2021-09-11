@@ -1,3 +1,3 @@
-exec([[
-colorscheme kkDark
-]])
+local u = require("utils")
+
+u.exec("colorscheme kkDark")

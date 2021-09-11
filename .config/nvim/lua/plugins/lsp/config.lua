@@ -1,8 +1,10 @@
+local u = require("utils")
 local lspconfig = require("lspconfig")
 local lsp_status = require("lsp-status")
+local lspinstall = require("lspinstall")
+local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-require("lspinstall").setup()
-
+lspinstall.setup()
 lsp_status.register_progress()
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -10,7 +12,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport = {
 	properties = { "documentation", "detail", "additionalTextEdits" },
 }
-capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -62,11 +64,13 @@ local function defaults(config)
 	return defaults
 end
 
+local srv = lspinstall.installed_servers()
+
 lspconfig.tsserver.setup(defaults({}))
 lspconfig.vuels.setup(defaults({}))
 lspconfig.html.setup(defaults({}))
-lspconfig.css.setup(defaults({}))
-lspconfig.json.setup(defaults({
+lspconfig[u.has(srv, "css") and "css" or "cssls"].setup(defaults({}))
+lspconfig[u.has(srv, "json") and "json" or "jsonls"].setup(defaults({
 	settings = {
 		json = {
 			schemas = {
@@ -94,7 +98,7 @@ lspconfig.json.setup(defaults({
 		},
 	},
 }))
-lspconfig.yamlls.setup(defaults({
+lspconfig[u.has(srv, "yaml") and "yaml" or "yamlls"].setup(defaults({
 	settings = {
 		yaml = {
 			schemaStore = {
@@ -104,25 +108,35 @@ lspconfig.yamlls.setup(defaults({
 		}
 	}
 }))
-lspconfig.rust_analyzer.setup(defaults({
+lspconfig[u.has(srv, "rust") and "rust" or "rust_analyzer"].setup(defaults({
 	cmd = { "rustup", "run", "nightly", "rust-analyzer" }
 }))
-lspconfig.clangd.setup(defaults({
+lspconfig[u.has(srv, "cpp") and "cpp" or "clangd"].setup(defaults({
 	handlers = lsp_status.extensions.clangd.setup(),
 }))
-lspconfig.omnisharp.setup(defaults({
-	cmd = {
-		vim.loop.os_homedir() .. "/Documents/omnisharp/run",
-		"--languageserver",
-		"--hostPID",
-		tostring(vim.fn.getpid()),
-	},
-}))
-lspconfig.svelte.setup(defaults({
-	cmd = {
-		"node",
-		vim.loop.os_homedir() .. "/Documents/svelte-language-tools/packages/language-server/bin/server.js",
-		"--experimental-modules",
-		"--stdio",
-	},
-}))
+
+if u.has(srv, "csharp") then
+	lspconfig.csharp.setup(defaults({}))
+else
+	lspconfig.omnisharp.setup(defaults({
+		cmd = {
+			vim.loop.os_homedir() .. "/Documents/omnisharp/run",
+			"--languageserver",
+			"--hostPID",
+			tostring(vim.fn.getpid()),
+		},
+	}))
+end
+
+if u.has(srv, "svelte") then
+	lspconfig.svelte.setup(defaults({}))
+else
+	lspconfig.svelte.setup(defaults({
+		cmd = {
+			"node",
+			vim.loop.os_homedir() .. "/Documents/svelte-language-tools/packages/language-server/bin/server.js",
+			"--experimental-modules",
+			"--stdio",
+		},
+	}))
+end

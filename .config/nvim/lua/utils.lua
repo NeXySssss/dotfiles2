@@ -1,19 +1,39 @@
--- Utils
-system_name = ""
+local M = {}
+
+M.system_name = ""
+
 if vim.fn.has("mac") == 1 then
-	system_name = "macOS"
+	M.system_name = "macOS"
 elseif vim.fn.has("unix") == 1 then
-	system_name = "Linux"
+	M.system_name = "Linux"
 elseif vim.fn.has("win32") == 1 then
-	system_name = "Windows"
+	M.system_name = "Windows"
 end
-map = vim.api.nvim_set_keymap
-exec = function(text)
+
+function M.map(mode, from, to, opts)
+	if opts == nil then
+		opts = { noremap = true, silent = true }
+	end
+	vim.api.nvim_set_keymap(mode, from, to, opts)
+end
+
+function M.exec(text)
 	vim.api.nvim_exec(text, false)
 end
-t = function(str)
+
+function M.t(str)
 	return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
-round = function(n)
+
+function M.round(n)
 	return math.floor((math.floor(n * 2) + 1) / 2)
 end
+
+function M.has(tbl, item)
+	for key, value in pairs(tbl) do
+		if value == item then return true end
+	end
+	return false
+end
+
+return M

@@ -1,3 +1,5 @@
+local u = require("utils")
+
 require("todo-comments").setup({})
 
-map("n", "<leader>xt", "<cmd>TodoTrouble<cr>", { silent = true, noremap = true })
+u.map("n", "<leader>xt", "<cmd>TodoTrouble<cr>")

@@ -1,3 +1,5 @@
+local u = require("utils")
+
 require("rest-nvim").setup()
 
-map("n", "<leader>r", "`<Plug>RestNvim", { silent = true })
+u.map("n", "<leader>r", "`<Plug>RestNvim")

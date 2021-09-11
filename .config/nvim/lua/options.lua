@@ -39,7 +39,7 @@ vim.opt.langremap = true
 vim.opt.langmap =
 	"ЙЦУКЕНГШЩЗХЪЇҐФЫІВАПРОЛДЖЭЄЯЧСМИТЬБЮ\\,;QWERTYUIOP{}}\\\\ASSDFGHJKL:\"\"ZXCVBNM<>?,йцукенгшщзхъїґфыівапролджэєячсмитьбю.;qwertyuiop[]]\\\\assdfghjkl\\;''zxcvbnm\\,./"
 -- Firenvim font
-vim.opt.guifont = "JetBrainsMono Nerd Font Mono:h10"
+vim.opt.guifont = "JetBrainsMono Nerd Font Mono:h14"
 -- Enable rgb colors
 if vim.fn.has("termguicolors") == 1 then
 	vim.opt.termguicolors = true
