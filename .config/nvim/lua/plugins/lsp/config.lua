@@ -1,6 +1,8 @@
 local lspconfig = require("lspconfig")
 local lsp_status = require("lsp-status")
 
+require("lspinstall").setup()
+
 lsp_status.register_progress()
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -8,6 +10,8 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport = {
 	properties = { "documentation", "detail", "additionalTextEdits" },
 }
+capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -61,8 +65,8 @@ end
 lspconfig.tsserver.setup(defaults({}))
 lspconfig.vuels.setup(defaults({}))
 lspconfig.html.setup(defaults({}))
-lspconfig.cssls.setup(defaults({}))
-lspconfig.jsonls.setup(defaults({
+lspconfig.css.setup(defaults({}))
+lspconfig.json.setup(defaults({
 	settings = {
 		json = {
 			schemas = {

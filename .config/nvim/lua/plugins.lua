@@ -36,9 +36,10 @@ packer.startup({
 		-- "https://github.com/dhruvasagar/vim-table-mode",
 		-- Lsp
 		"neovim/nvim-lspconfig",
+		"kabouzeid/nvim-lspinstall", -- Language server installer
 		"glepnir/lspsaga.nvim", -- Popups
 		"nvim-lua/lsp_extensions.nvim", -- Extensions for rust, dart, etc...
-		"hrsh7th/nvim-compe", -- Completion
+		{ "hrsh7th/nvim-cmp", requires = { "hrsh7th/cmp-calc", "hrsh7th/cmp-path", "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-nvim-lua", "hrsh7th/cmp-vsnip", "hrsh7th/cmp-buffer" } }, -- Completion
 		"onsails/lspkind-nvim", -- Completion icons
 		"nvim-lua/lsp-status.nvim", -- Lsp utils
 		"folke/trouble.nvim", -- Diagnostics list
