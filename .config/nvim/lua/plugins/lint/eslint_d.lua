@@ -19,14 +19,14 @@ return {
 	parser = function(output, bufnr)
 		local diagnostics = {}
 		local bufname = vim.api.nvim_buf_get_name(bufnr)
-		
+
 		local firstch = string.sub(output, 1, 1)
 		if firstch ~= "[" and firstch ~= "{" then
 			return diagnostics
 		end
 
 		local decoded = vim.fn.json_decode(output)
-		
+
 		for _, item in ipairs(decoded or {}) do
 			if item.filePath == bufname then
 				for _, diag in ipairs(item.messages or {}) do

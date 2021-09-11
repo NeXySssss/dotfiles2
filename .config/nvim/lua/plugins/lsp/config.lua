@@ -53,22 +53,46 @@ local on_attach = function(client, bufnr)
 end
 
 local function defaults(config)
-	local defaults = {
+	local _defaults = {
 		capabilities = capabilities,
 		on_attach = on_attach,
 		flags = { debounce_text_changes = 150 },
 	}
 	for k, v in pairs(config) do
-		defaults[k] = v
+		_defaults[k] = v
 	end
-	return defaults
+	return _defaults
 end
 
 local srv = lspinstall.installed_servers()
 
-lspconfig.tsserver.setup(defaults({}))
-lspconfig.vuels.setup(defaults({}))
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "lua/?/init.lua")
+
+lspconfig[u.has(srv, "lua") and "lua" or "sumneko_lua"].setup(defaults({
+	settings = {
+		Lua = {
+			runtime = {
+				version = 'LuaJIT',
+				path = runtime_path,
+			},
+			diagnostics = {
+				globals = {'vim'},
+			},
+			workspace = {
+				library = vim.api.nvim_get_runtime_file("", true),
+			},
+			telemetry = {
+				enable = false,
+			},
+		},
+	},
+	root_dir = lspconfig.util.root_pattern("nvim", "lua", ".git", ".gitignore")
+}))
 lspconfig.html.setup(defaults({}))
+lspconfig[u.has(srv, "typescript") and "typescript" or "tsserver"].setup(defaults({}))
+lspconfig[u.has(srv, "vue") and "vue" or "vuels"].setup(defaults({}))
 lspconfig[u.has(srv, "css") and "css" or "cssls"].setup(defaults({}))
 lspconfig[u.has(srv, "json") and "json" or "jsonls"].setup(defaults({
 	settings = {
@@ -81,10 +105,6 @@ lspconfig[u.has(srv, "json") and "json" or "jsonls"].setup(defaults({
 				{
 					fileMatch = { "tsconfig*.json" },
 					url = "https://json.schemastore.org/tsconfig.json",
-				},
-				{
-					fileMatch = { ".eslintrc.json" },
-					url = "https://json.schemastore.org/eslintrc.json",
 				},
 				{
 					fileMatch = { ".eslintrc.json" },

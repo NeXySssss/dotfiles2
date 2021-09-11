@@ -130,7 +130,7 @@ M.diagnostic_info = {
 	icon = codicons.get("info") .. " ",
 }
 
-function lsp_messages()
+local function lsp_messages()
 	local m = lsp_status.messages()
 	local str = ""
 	for _, v in ipairs(m) do

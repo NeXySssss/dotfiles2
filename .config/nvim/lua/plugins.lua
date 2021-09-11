@@ -143,7 +143,7 @@ function load()
 	--require("plugins/jumpwire")
 end
 
-if first_run == true then
+if _G.first_run == true then
 	u.exec("PackerInstall")
 else
 	load()
