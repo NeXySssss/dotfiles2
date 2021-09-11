@@ -1,4 +1,5 @@
 local uv = vim.loop
+local lsputil = require("lspconfig.util")
 
 local M = {}
 
@@ -51,6 +52,19 @@ end
 
 function M.read_json(path)
 	return vim.fn.json_decode(M.read_file(path))
+end
+
+function M.dir_has_file(path, name)
+	return lsputil.path.exists(lsputil.path.join(path, name))
+end
+
+function M.dir_has_matching_file(path, pattern)
+	for _, value in ipairs(vim.fn.readdir(path)) do
+		if value:find(pattern) ~= nil then
+			return true
+		end
+	end
+	return false
 end
 
 return M

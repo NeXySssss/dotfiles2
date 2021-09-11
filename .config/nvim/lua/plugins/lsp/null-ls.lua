@@ -8,14 +8,18 @@ local fmt = nls.builtins.formatting
 local lint = nls.builtins.diagnostics
 
 local function root_has_file(name)
-	return lsputil.path.exists(lsputil.path.join(uv.cwd(), name))
+	return u.dir_has_file(uv.cwd(), name)
+end
+
+local function root_has_matching_file(pattern)
+	return u.dir_has_matching_file(uv.cwd(), pattern)
 end
 
 local function eslint_check()
 	local has_eslint = false
 	local cwd = uv.cwd()
 
-	if vim.fn.glob(lsputil.path.join(cwd, ".eslintrc.*")) ~= "" then
+	if root_has_matching_file("%.eslintrc%..*") then
 		has_eslint = true
 	elseif root_has_file("package.json") then
 		local json = u.read_json(lsputil.path.join(cwd, "package.json"))
@@ -30,50 +34,27 @@ local function eslint_check()
 		if has_prettier_plugin then
 			return "eslint"
 		else
-			return "eslint_prettier"
+			return "prettier_eslint"
 		end
 	else
 		return "prettier"
 	end
 end
 
-local prettier_filetypes = {
-	"javascript",
-	"javascriptreact",
-	"typescript",
-	"typescriptreact",
-	"vue",
-	"svelte",
-	"css",
-	"scss",
-	"html",
-	"json",
-	"yaml",
-	"markdown",
-}
-
-local eslint_filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "svelte" }
-
 function _G.null_ls_eslint_prettier()
 	local result = eslint_check()
 
 	if result == "eslint" then
 		nls.register(fmt.eslint_d.with({
-			filetypes = prettier_filetypes,
+			filetypes = fmt.prettier.filetypes,
 		}))
 		nls.register(lint.eslint_d.with({
-			filetypes = prettier_filetypes,
+			filetypes = fmt.prettier.filetypes,
 		}))
-	elseif result == "eslint_prettier" then
-		nls.register(fmt.eslint_d.with({
-			filetypes = eslint_filetypes,
-		}))
-		nls.register(lint.eslint_d.with({
-			filetypes = eslint_filetypes,
-		}))
-		nls.register(fmt.prettier.with({
-			filetypes = { "css", "scss", "html", "json", "yaml", "markdown" },
-		}))
+	elseif result == "prettier_eslint" then
+		nls.register(fmt.prettier)
+		nls.register(fmt.eslint_d)
+		nls.register(lint.eslint_d)
 	else
 		nls.register(fmt.prettier)
 	end
@@ -82,8 +63,8 @@ end
 nls.config({
 	sources = {
 		fmt.stylua.with({
-			condition = function(utils)
-				return utils.root_has_file("stylua.toml") or utils.root_has_file(".stylua.toml")
+			condition = function(_)
+				return root_has_matching_file("%.?stylua%.toml")
 			end,
 		}),
 
