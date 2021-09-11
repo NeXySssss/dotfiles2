@@ -1,0 +1,11 @@
+*
+!/.gitignore
+!/.gitignore/**
+!/applications
+!/applications/**
+!/kservices5
+!/kservices5/**
+!/themes
+!/themes/**
+!/wallpaper
+!/wallpaper/**

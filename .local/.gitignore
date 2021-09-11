@@ -1,0 +1,7 @@
+*
+!/.gitignore
+!/.gitignore/**
+!/bin
+!/bin/**
+!/share
+!/share/**

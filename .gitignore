@@ -1,0 +1,15 @@
+*
+!/.gitignore
+!/.gitignore/**
+!/.config
+!/.config/**
+!/.dotfiles
+!/.dotfiles/**
+!/.local
+!/.local/**
+!/.zshenv
+!/.zshenv/**
+!/LICENSE
+!/LICENSE/**
+!/README.md
+!/README.md/**
