@@ -20,8 +20,8 @@ feline.setup({
 		},
 	},
 	components = {
-		left = {
-			active = {
+		active = {
+			{
 				components.vi_mode,
 				components.file_info,
 				components.file_size,
@@ -32,19 +32,20 @@ feline.setup({
 				components.diagnostic_info,
 				components.lsp_messages,
 			},
-			inactive = { components.vi_mode },
-		},
-		mid = { active = {}, inactive = {} },
-		right = {
-			active = {
+			{},
+			{
 				components.git_branch,
 				components.git_diff_added,
 				components.git_diff_changed,
 				components.git_diff_removed,
 				components.line_percentage,
 				components.scroll_bar,
-			},
-			inactive = { components.file_type },
+			}
+		},
+		inactive = {
+			{ components.vi_mode },
+			{},
+			{ components.file_type }
 		},
 	},
 })
