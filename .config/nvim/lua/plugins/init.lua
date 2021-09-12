@@ -1,4 +1,4 @@
-require("plugins/packer")
+require("plugins/packer-init")
 
 local u = require("utils")
 local packer = require("packer")
@@ -10,6 +10,7 @@ packer.startup({
 		"wbthomason/packer.nvim",
 		"nvim-lua/plenary.nvim",
 		"rktjmp/lush.nvim",
+
 		-- kkDark Colorscheme
 		{ "33kk/kkDark", requires = "lush.nvim" },
 		-- Fix for CursorHold(I)
@@ -40,12 +41,12 @@ packer.startup({
 		"neovim/nvim-lspconfig",
 		"kabouzeid/nvim-lspinstall", -- Language server installer
 		"glepnir/lspsaga.nvim", -- Popups
+		{ "RishabhRD/nvim-lsputils", requires = { "RishabhRD/popfix" } },
 		"nvim-lua/lsp_extensions.nvim", -- Extensions for rust, dart, etc...
 		{
 			"hrsh7th/nvim-cmp",
 			requires = { "hrsh7th/cmp-calc", "hrsh7th/cmp-path", "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-nvim-lua", "hrsh7th/cmp-vsnip", "hrsh7th/cmp-buffer" },
 		}, -- Completion
-		"onsails/lspkind-nvim", -- Completion icons
 		"nvim-lua/lsp-status.nvim", -- Lsp utils
 		"folke/trouble.nvim", -- Diagnostics list
 		"simrat39/symbols-outline.nvim", -- Symbols outline
@@ -54,6 +55,8 @@ packer.startup({
 		-- Snippets
 		"hrsh7th/vim-vsnip",
 		"hrsh7th/vim-vsnip-integ",
+		-- Per project config
+		"windwp/nvim-projectconfig",
 		-- Fuzzy finder
 		"junegunn/fzf",
 		"junegunn/fzf.vim",
@@ -65,6 +68,7 @@ packer.startup({
 		"mfussenegger/nvim-dap",
 		"theHamsta/nvim-dap-virtual-text",
 		"rcarriga/nvim-dap-ui",
+		"Pocco81/DAPInstall.nvim",
 		-- Welcome screen
 		"mhinz/vim-startify",
 		-- Indent lines
@@ -79,13 +83,16 @@ packer.startup({
 		-- 'pwntester/octo.nvim',
 		-- Show code context
 		"romgrk/nvim-treesitter-context",
+		-- Rainbow parentheses
+		"p00f/nvim-ts-rainbow",
 		-- Better quickfix list
 		"kevinhwang91/nvim-bqf",
 		-- Search panel
-		"windwp/nvim-spectre",
+		"dyng/ctrlsf.vim",
 		-- Highlight ranges
 		"winston0410/cmd-parser.nvim",
 		"winston0410/range-highlight.nvim",
+		"nacro90/numb.nvim",
 		-- Preview registers
 		"tversteeg/registers.nvim",
 		-- Zoxide integration
@@ -93,15 +100,12 @@ packer.startup({
 		-- Save with sudo
 		"lambdalisue/suda.vim",
 		-- Org mode alternative
-		"vhyrro/neorg",
+		-- TODO: Configure this
+		"nvim-neorg/neorg",
 		-- Spellchecking
 		-- 'lewis6991/spellsitter.nvim',
-		-- Jump between related files
-		"micmine/jumpwire.nvim",
-		-- Startuptime viewer
-		"dstein64/vim-startuptime",
-		-- Set working directory to project root
-		-- 'oberblastmeister/rooter.nvim',
+		-- Auto cd to project root
+		"ahmedkhalf/project.nvim",
 		-- File tree
 		{
 			"ms-jpq/chadtree",
@@ -115,35 +119,12 @@ packer.startup({
 			"glacambre/firenvim",
 			run = ":call firenvim#install(0)",
 		},
-		-- Tabline
-		-- 'romgrk/barbar.nvim',
 	},
 })
-
-function load()
-	require("impatient")
-	require("plugins/colorscheme")
-	require("plugins/tree-sitter")
-	require("plugins/trouble")
-	require("plugins/todo-comments")
-	require("plugins/kommentary")
-	require("plugins/lsp")
-	require("plugins/gitsigns")
-	require("plugins/colorizer")
-	require("plugins/rest")
-	require("plugins/range-highlight")
-	require("plugins/indent-blankline")
-	require("plugins/symbols-outline")
-	require("plugins/dial")
-	require("plugins/dap")
-	require("plugins/chadtree")
-	require("plugins/startify")
-	require("plugins/feline")
-	--require("plugins/jumpwire")
-end
 
 if _G.first_run == true then
 	u.exec("PackerInstall")
 else
-	load()
+	require("plugins/config")
+	require("plugins/mappings")
 end

@@ -13,11 +13,24 @@ elseif vim.fn.has("win32") == 1 then
 	M.system_name = "Windows"
 end
 
-function M.map(mode, from, to, opts)
+function M.map(mode, keys, action, opts)
 	if opts == nil then
 		opts = { noremap = true, silent = true }
 	end
-	vim.api.nvim_set_keymap(mode, from, to, opts)
+
+	if type(mode) == "string" then
+		mode = { mode }
+	end
+
+	if type(keys) == "string" then
+		keys = { keys }
+	end
+
+	for _, mode_value in ipairs(mode) do
+		for _, keys_value in ipairs(keys) do
+			vim.api.nvim_set_keymap(mode_value, keys_value, action, opts)
+		end
+	end
 end
 
 function M.exec(text)

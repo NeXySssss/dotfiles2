@@ -1,0 +1,7 @@
+require("plugins/mappings/chadtree")
+require("plugins/mappings/ctrlsf")
+require("plugins/mappings/dap")
+require("plugins/mappings/rest")
+require("plugins/mappings/symbols-outline")
+require("plugins/mappings/todo-comments")
+require("plugins/mappings/trouble")

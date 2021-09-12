@@ -1,23 +1,21 @@
 local feline = require("feline")
-local components = require("plugins/feline/components")
+local components = require("plugins/config/feline/components")
 
 feline.setup({
-	properties = {
-		force_inactive = {
-			filetypes = {
-				"NvimTree",
-				"packer",
-				"CHADTree",
-				"startify",
-				"fugitive",
-				"fugitiveblame",
-				"qf",
-				"help",
-				"Trouble",
-			},
-			buftypes = { "terminal" },
-			bufnames = {},
+	force_inactive = {
+		filetypes = {
+			"NvimTree",
+			"packer",
+			"CHADTree",
+			"startify",
+			"fugitive",
+			"fugitiveblame",
+			"qf",
+			"help",
+			"Trouble",
 		},
+		buftypes = { "terminal" },
+		bufnames = {},
 	},
 	components = {
 		active = {

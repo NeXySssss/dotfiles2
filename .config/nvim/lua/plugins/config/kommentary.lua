@@ -1,7 +1,3 @@
-require("kommentary.config").configure_language("default", {
-	prefer_single_line_comments = true,
-})
-
 local languages = { "svelte", "html", "vue", "javascript", "tsx" }
 
 local config = {
@@ -16,3 +12,7 @@ local config = {
 for _, value in ipairs(languages) do
 	require("kommentary.config").configure_language(value, config)
 end
+
+require("kommentary.config").configure_language("default", {
+	prefer_single_line_comments = true,
+})

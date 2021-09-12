@@ -1,5 +1,5 @@
 local cmp = require("cmp")
-local lspkind = require("lspkind")
+local symbol_map = require("plugins/config/lsp/icons").symbol_map
 
 cmp.setup({
 	snippet = {
@@ -10,15 +10,16 @@ cmp.setup({
 	formatting = {
 		format = function(entry, vim_item)
 			-- fancy icons and a name of kind
-			vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
+			vim_item.kind = symbol_map[vim_item.kind] .. " " .. vim_item.kind
 
 			-- set a name for each source
 			vim_item.menu = ({
-				buffer = "[Buffer]",
+				calc = "[Calc]",
+				path = "[Path]",
 				nvim_lsp = "[LSP]",
-				luasnip = "[LuaSnip]",
 				nvim_lua = "[Lua]",
-				latex_symbols = "[Latex]",
+				vsnip = "[Snip]",
+				buffer = "[Buf]",
 			})[entry.source.name]
 			-- vim_item.menu = "[" .. entry.source.name .. "]"
 			return vim_item
