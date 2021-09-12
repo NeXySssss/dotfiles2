@@ -28,8 +28,12 @@ packer.startup({
 		"kazhala/close-buffers.nvim",
 		-- TreeSitter
 		"nvim-treesitter/nvim-treesitter",
-		"nvim-treesitter/nvim-treesitter-textobjects",
+		"nvim-treesitter/nvim-treesitter-textobjects", -- Custom textobjects
 		"JoosepAlviste/nvim-ts-context-commentstring", -- Sets commentstring dynamically for files with multiple languages embedded
+		"romgrk/nvim-treesitter-context", -- Show code context
+		"ThePrimeagen/refactoring.nvim", -- Refactoring
+		"p00f/nvim-ts-rainbow", -- Rainbow parentheses
+		-- 'lewis6991/spellsitter.nvim', -- Spellchecking
 		-- Commenting
 		"b3nj5m1n/kommentary",
 		-- Todo comments
@@ -43,6 +47,7 @@ packer.startup({
 		-- Lsp
 		"neovim/nvim-lspconfig",
 		"kabouzeid/nvim-lspinstall", -- Language server installer
+		"jose-elias-alvarez/null-ls.nvim", -- Diagnostics, formatting
 		"glepnir/lspsaga.nvim", -- Popups
 		{ "RishabhRD/nvim-lsputils", requires = { "RishabhRD/popfix" } },
 		"nvim-lua/lsp_extensions.nvim", -- Extensions for rust, dart, etc...
@@ -53,8 +58,6 @@ packer.startup({
 		"nvim-lua/lsp-status.nvim", -- Lsp utils
 		"folke/trouble.nvim", -- Diagnostics list
 		"stevearc/aerial.nvim", -- Symbols outline
-		-- Diagnostics, formatting
-		"jose-elias-alvarez/null-ls.nvim",
 		-- Snippets
 		"hrsh7th/vim-vsnip",
 		"hrsh7th/vim-vsnip-integ",
@@ -83,10 +86,6 @@ packer.startup({
 		"NTBBloodbath/rest.nvim",
 		-- Github integration
 		-- 'pwntester/octo.nvim',
-		-- Show code context
-		"romgrk/nvim-treesitter-context",
-		-- Rainbow parentheses
-		"p00f/nvim-ts-rainbow",
 		-- Better quickfix list
 		"kevinhwang91/nvim-bqf",
 		-- Search panel
@@ -104,8 +103,6 @@ packer.startup({
 		-- Org mode alternative
 		-- TODO: Configure this
 		"nvim-neorg/neorg",
-		-- Spellchecking
-		-- 'lewis6991/spellsitter.nvim',
 		-- Auto cd to project root
 		"ahmedkhalf/project.nvim",
 		-- File tree

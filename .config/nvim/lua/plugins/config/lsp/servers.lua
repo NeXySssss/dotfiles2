@@ -68,6 +68,10 @@ lspconfig[u.has(srv, "json") and "json" or "jsonls"].setup(defaults({
 					url = "https://json.schemastore.org/eslintrc.json",
 				},
 				{
+					fileMatch = { ".prettierrc*" },
+					url = "http://json.schemastore.org/prettierrc",
+				},
+				{
 					fileMatch = { "*.schema.json" },
 					url = "http://json-schema.org/draft-07/schema#",
 				},
