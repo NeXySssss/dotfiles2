@@ -1,6 +1,7 @@
 local M = {}
 
 local u = require("utils")
+local aerial = require("aerial")
 local lsp_status = require("lsp-status")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 local mappings = require("plugins/mappings/lsp")
@@ -27,6 +28,7 @@ function M.on_attach(client, bufnr)
 	u.exec("command! -buffer Format :lua vim.lsp.buf.formatting()")
 	u.exec("command! -buffer FormatWrite :lua vim.lsp.buf.formatting_sync(); vim.loop.sleep(500); vim.cmd('w')")
 
+	aerial.on_attach(client)
 	lsp_status.on_attach(client)
 end
 

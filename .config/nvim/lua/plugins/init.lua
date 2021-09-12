@@ -49,7 +49,7 @@ packer.startup({
 		}, -- Completion
 		"nvim-lua/lsp-status.nvim", -- Lsp utils
 		"folke/trouble.nvim", -- Diagnostics list
-		"simrat39/symbols-outline.nvim", -- Symbols outline
+		"stevearc/aerial.nvim", -- Symbols outline
 		-- Diagnostics, formatting
 		"jose-elias-alvarez/null-ls.nvim",
 		-- Snippets
@@ -58,8 +58,7 @@ packer.startup({
 		-- Per project config
 		"windwp/nvim-projectconfig",
 		-- Fuzzy finder
-		"junegunn/fzf",
-		"junegunn/fzf.vim",
+		"nvim-telescope/telescope.nvim",
 		-- Color highlighting
 		"norcalli/nvim-colorizer.lua",
 		-- Collaborative editing

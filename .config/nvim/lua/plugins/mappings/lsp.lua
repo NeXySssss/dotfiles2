@@ -1,5 +1,3 @@
-local u = require("utils")
-
 local map = vim.api.nvim_buf_set_keymap
 local opts = { noremap = true, silent = true }
 
@@ -22,4 +20,13 @@ return function(bufnr)
 	map(bufnr, "n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
 	map(bufnr, "n", "<leader>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
 	map(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+
+	-- Toggle the aerial window
+	map(bufnr, "n", "<leader>s", "<cmd>AerialToggle!<CR>", opts)
+	-- Jump forwards/backwards
+	map(bufnr, "n", "{", "<cmd>AerialPrev<CR>", opts)
+	map(bufnr, "n", "}", "<cmd>AerialNext<CR>", opts)
+	-- Jump up the tree
+	map(bufnr, "n", "[[", "<cmd>AerialPrevUp<CR>", opts)
+	map(bufnr, "n", "]]", "<cmd>AerialNextUp<CR>", opts)
 end
