@@ -24,8 +24,11 @@ packer.startup({
 		"kdheepak/lazygit.nvim", -- Lazygit git TUI integration
 		-- Satusline
 		"famiu/feline.nvim",
+		-- Close buffers
+		"kazhala/close-buffers.nvim",
 		-- TreeSitter
 		"nvim-treesitter/nvim-treesitter",
+		"nvim-treesitter/nvim-treesitter-textobjects",
 		"JoosepAlviste/nvim-ts-context-commentstring", -- Sets commentstring dynamically for files with multiple languages embedded
 		-- Commenting
 		"b3nj5m1n/kommentary",

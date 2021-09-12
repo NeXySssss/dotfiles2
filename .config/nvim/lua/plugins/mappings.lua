@@ -1,6 +1,8 @@
 require("plugins/mappings/chadtree")
+require("plugins/mappings/close-buffers")
 require("plugins/mappings/ctrlsf")
 require("plugins/mappings/dap")
 require("plugins/mappings/rest")
+require("plugins/mappings/telescope")
 require("plugins/mappings/todo-comments")
 require("plugins/mappings/trouble")

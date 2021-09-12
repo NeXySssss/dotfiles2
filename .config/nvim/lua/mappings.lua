@@ -29,9 +29,9 @@ u.map("", "S", ":%s//gI<Left><Left><Left>", {})
 
 -- Quit
 u.map("", "<C-q>", "<cmd>q<CR>")
-u.map("", "<leader>x", "<cmd>q<CR>")
-u.map("", "<leader>wq", "<cmd>wq<CR>")
-u.map("", "<leader>w", "<cmd>w<CR>")
+u.map("", "<leader>qq", "<cmd>q<CR>")
+u.map("", "<leader>qw", "<cmd>wq<CR>")
+u.map("", "<leader>W", "<cmd>w<CR>")
 
 -- Clear highlight with Esc
 u.map("n", "<Esc>", ":noh <CR>")

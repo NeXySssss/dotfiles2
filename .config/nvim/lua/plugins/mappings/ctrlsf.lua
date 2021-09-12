@@ -1,1 +1,3 @@
--- TODO: https://github.com/dyng/ctrlsf.vim#use-your-own-map
+local u = require("utils")
+
+u.map("n", "<leader>fs", ":CtrlSF ", { noremap = true })

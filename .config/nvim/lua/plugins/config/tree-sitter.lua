@@ -34,7 +34,6 @@ require("nvim-treesitter.configs").setup({
 	},
 	highlight = { enable = true },
 	incremental_selection = { enable = true },
-	textobjects = { enable = true },
 	indent = { enable = true },
 	autopairs = { enable = true },
 	rainbow = {
@@ -45,5 +44,66 @@ require("nvim-treesitter.configs").setup({
 	context_commentstring = {
 		enable = true,
 		enable_autocmd = false,
+	},
+	textobjects = {
+		-- enable = true,
+		select = {
+			enable = true,
+
+			-- Automatically jump forward to textobj, similar to targets.vim
+			lookahead = true,
+
+			keymaps = {
+				-- You can use the capture groups defined in textobjects.scm
+				["af"] = "@function.outer",
+				["if"] = "@function.inner",
+				["ab"] = "@block.outer",
+				["ib"] = "@block.inner",
+				["ac"] = "@class.outer",
+				["ic"] = "@class.inner",
+				["as"] = "@statement.outer",
+			},
+		},
+		swap = {
+			enable = true,
+			swap_next = {
+				["<leader>sn"] = "@parameter.inner",
+			},
+			swap_previous = {
+				["<leader>sp"] = "@parameter.inner",
+			},
+		},
+		move = {
+			enable = true,
+			set_jumps = true,
+			goto_next_start = {
+				["]]"] = "@function.outer",
+				-- ["]f"] = "@function.outer",
+				["]s"] = "@statement.outer",
+				["]b"] = "@block.outer",
+				["]c"] = "@class.outer",
+			},
+			goto_next_end = {
+				["]["] = "@function.outer",
+				-- ["]F"] = "@function.outer",
+				["]S"] = "@statement.outer",
+				["]B"] = "@block.outer",
+				["]C"] = "@class.outer",
+			},
+			goto_previous_start = {
+				["[["] = "@function.outer",
+				-- ["[f"] = "@function.outer",
+				["[s"] = "@statement.outer",
+				["[b"] = "@block.outer",
+				["[c"] = "@class.outer",
+			},
+			goto_previous_end = {
+				["[]"] = "@function.outer",
+				-- ["[f"] = "@function.outer",
+				["[S"] = "@statement.outer",
+				["[B"] = "@block.outer",
+				["[C"] = "@class.outer",
+			},
+		},
 	},
 })

@@ -1,5 +1,5 @@
 local uv = vim.loop
-local lsputil = require("lspconfig.util")
+local lsputil_ok, lsputil = pcall("require", "lspconfig.util")
 
 local M = {}
 
@@ -68,6 +68,7 @@ function M.read_json(path)
 end
 
 function M.dir_has_file(path, name)
+	if not lsputil_ok then return false end
 	return lsputil.path.exists(lsputil.path.join(path, name))
 end
 

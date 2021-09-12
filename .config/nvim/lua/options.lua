@@ -14,7 +14,7 @@ vim.opt.encoding = "utf-8"
 -- Line numbers and signcolumn
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.signcolumn = "auto"
+vim.opt.signcolumn = "yes"
 -- TODO: This doesn't work with telescope
 -- vim.opt.signcolumn = "auto:2-4"
 -- Hide mode messages
