@@ -1,3 +1,4 @@
+require("plugins/disable-builtin")
 require("plugins/packer-init")
 
 local u = require("utils")
@@ -15,6 +16,8 @@ packer.startup({
 		{ "33kk/kkDark", requires = "lush.nvim" },
 		-- Fix for CursorHold(I)
 		"antoinemadec/FixCursorHold.nvim",
+		-- Display keybinding hints
+		"folke/which-key.nvim",
 		-- Icons
 		"kyazdani42/nvim-web-devicons",
 		"mortepau/codicons.nvim", -- Codicons font
@@ -42,6 +45,8 @@ packer.startup({
 		"zsugabubus/crazy8.nvim",
 		-- Load .editorconfig
 		"editorconfig/editorconfig-vim",
+		-- Multi cursor mode
+		"mg979/vim-visual-multi",
 		-- Table mode
 		-- "https://github.com/dhruvasagar/vim-table-mode",
 		-- Lsp
@@ -89,6 +94,7 @@ packer.startup({
 		-- Better quickfix list
 		"kevinhwang91/nvim-bqf",
 		-- Search panel
+		"windwp/nvim-spectre",
 		"dyng/ctrlsf.vim",
 		-- Highlight ranges
 		"winston0410/cmd-parser.nvim",
@@ -101,7 +107,7 @@ packer.startup({
 		-- Save with sudo
 		"lambdalisue/suda.vim",
 		-- Org mode alternative
-		-- TODO: Configure this
+		-- TODO: Configure
 		"nvim-neorg/neorg",
 		-- Auto cd to project root
 		"ahmedkhalf/project.nvim",

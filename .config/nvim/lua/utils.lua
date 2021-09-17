@@ -1,5 +1,6 @@
 local uv = vim.loop
-local lsputil_ok, lsputil = pcall("require", "lspconfig.util")
+local lsputil_ok, lsputil = pcall(require, "lspconfig.util")
+local wk_ok, wk = pcall(require, "which-key")
 
 local M = {}
 
@@ -13,11 +14,15 @@ elseif vim.fn.has("win32") == 1 then
 	M.system_name = "Windows"
 end
 
-function M.map(mode, keys, action, opts)
-	if opts == nil then
-		opts = { noremap = true, silent = true }
+function M.map_group(keys, label)
+	if wk_ok then
+		wk.register({
+			[keys] = { name = label },
+		})
 	end
+end
 
+function M.map(mode, keys, action, opts)
 	if type(mode) == "string" then
 		mode = { mode }
 	end
@@ -26,9 +31,28 @@ function M.map(mode, keys, action, opts)
 		keys = { keys }
 	end
 
+	if opts == nil then
+		opts = {}
+	end
+
+	local buffer = opts.buffer
+	local label = opts.label
+
+	opts.buffer = nil
+	opts.label = nil
+
+	opts = vim.tbl_extend("keep", opts, { noremap = true, silent = true })
+
 	for _, mode_value in ipairs(mode) do
 		for _, keys_value in ipairs(keys) do
-			vim.api.nvim_set_keymap(mode_value, keys_value, action, opts)
+			if buffer == nil then
+				vim.api.nvim_set_keymap(mode_value, keys_value, action, opts)
+			else
+				vim.api.nvim_buf_set_keymap(buffer, mode_value, keys_value, action, opts)
+			end
+			if label ~= nil and wk_ok then
+				wk.register({ [keys_value] = { label } }, { buffer = buffer })
+			end
 		end
 	end
 end
@@ -71,6 +95,7 @@ function M.dir_has_file(path, name)
 	if not lsputil_ok then
 		return false
 	end
+
 	return lsputil.path.exists(lsputil.path.join(path, name))
 end
 

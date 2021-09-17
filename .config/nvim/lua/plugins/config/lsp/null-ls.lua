@@ -42,30 +42,6 @@ local function prettier_eslint_check()
 	end
 end
 
--- Configure sources
-nls.config({
-	sources = {
-		fmt.stylua.with({
-			condition = function(_)
-				return root_has_matching_file("%.?stylua%.toml")
-			end,
-		}),
-
-		fmt.shellcheck,
-		lint.shellcheck,
-
-		fmt.clang_format,
-		fmt.gofmt,
-		fmt.rustfmt,
-
-		fmt.nixfmt,
-		fmt.shfmt,
-
-		fmt.cmake_format,
-		fmt.nginx_beautifier,
-	},
-})
-
 -- Register eslint/prettier sources conditionally
 function _G.null_ls_prettier_eslint()
 	local result = prettier_eslint_check()
@@ -89,3 +65,23 @@ end
 u.exec(
 	"autocmd FileType javascript,javascriptreact,typescript,typescriptreact,vue,svelte,css,scss,html,json,yaml,markdown lua null_ls_prettier_eslint()"
 )
+
+-- Configure sources
+nls.config({
+	sources = {
+		fmt.stylua,
+
+		fmt.shellcheck,
+		lint.shellcheck,
+
+		fmt.clang_format,
+		fmt.gofmt,
+		fmt.rustfmt,
+
+		fmt.nixfmt,
+		fmt.shfmt,
+
+		fmt.cmake_format,
+		fmt.nginx_beautifier,
+	},
+})

@@ -1,4 +1,6 @@
 require("impatient")
+require("plugins/config/which-key")
+
 require("plugins/config/dap")
 require("plugins/config/feline")
 require("plugins/config/lsp")

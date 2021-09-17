@@ -1,3 +1,3 @@
 local u = require("utils")
 
-u.map("n", "<leader>r", "`<Plug>RestNvim")
+u.map("n", "<leader>R", "`<Plug>RestNvim", { label = "REST: Run" })

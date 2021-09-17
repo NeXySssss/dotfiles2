@@ -1,5 +1,3 @@
-local u = require("utils")
-
 require("dapui").setup({
 	icons = {
 		expanded = "▾",
@@ -37,5 +35,3 @@ require("dapui").setup({
 		max_width = nil, -- Floats will be treated as percentage of your screen.
 	},
 })
-
-u.map("n", "<leader>du", "<cmd>lua require('dapui').toggle()<CR>")

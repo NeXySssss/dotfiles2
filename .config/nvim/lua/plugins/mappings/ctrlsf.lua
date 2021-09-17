@@ -1,3 +1,3 @@
 local u = require("utils")
 
-u.map("n", "<leader>fs", ":CtrlSF ", { noremap = true })
+u.map("n", "<leader>F", ":CtrlSF ", { label = "CtrlSF: Search", silent = false })
