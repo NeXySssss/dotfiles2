@@ -13,7 +13,8 @@ if [ ! -d "$PKGS_DIR" ]; then
 	log_info "Cloning the repo"
 	git clone --branch my-pkgs --single-branch --depth=1 --recurse-submodules "https://github.com/33kk/void-packages" "$PKGS_DIR" || error "Failed to clone repo"
 fi
-cd "$PKGS_DIR"
+
+cd "$PKGS_DIR" || error "Failed to change into repo directory"
 
 log_info "Bootstrapping"
 ./xbps-src binary-bootstrap || error "Failed to bootstrap"

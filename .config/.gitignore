@@ -33,6 +33,8 @@
 !/kdeglobals/**
 !/kitty
 !/kitty/**
+!/libinput-gestures.conf
+!/libinput-gestures.conf/**
 !/mpv
 !/mpv/**
 !/neofetch
