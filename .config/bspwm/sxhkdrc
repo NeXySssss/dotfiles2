@@ -8,11 +8,11 @@ super + {w,a,s,d}
 
 # Focus next window
 super + {_,shift +} z
-	bspc node {next,prev}.window.local --focus
+	bspc node {next,prev}.!hidden.window.local --focus
 
 # Focus next node
 super + ctrl + {_,shift +} z
-	bspc node {next,prev}.local --focus
+	bspc node {next,prev}.!hidden.local --focus
 
 # Switch to Nth desktop
 super + {1-9,0}
@@ -62,21 +62,9 @@ super + ctrl + {w,a,s,d}
 super + ctrl + shift + {w,a,s,d}
 	bspc node -z {bottom 0 -20,right -20 0,top 0 20,left 20 0}
 
-# Tile window
-super + n
-	bspc node --state tiled
-
-# Pseudo-tile window
-super + t
-	bspc node --state \~pseudo_tiled
-
-# Float window
-super + f
-	bspc node --state \~floating
-
-# Fullscreen window
-super + shift + f
-	bspc node --state \~fullscreen
+# Set window state
+super + {n,t,f,shift + f}
+	bspc node --state \~{tiled,pseudo_tiled,floating,fullscreen}
 
 # Cycle window states
 super + m
@@ -88,11 +76,11 @@ super + k
 
 # Lock window
 super + shift + l
-	bspc node --flag sticky
+	bspc node --flag locked
 
 # Lock window position
 super + ctrl + l
-	bspc node --flag sticky
+	bspc node --flag private
 
 # Close window
 super + q
