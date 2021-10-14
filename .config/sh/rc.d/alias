@@ -37,6 +37,7 @@ alias :q="exit"
 alias sl="streamlink"
 alias icat="kitty +kitten icat"
 alias n="nvim"
+alias nn="nvim ."
 alias r="ranger"
 # }}}
 
