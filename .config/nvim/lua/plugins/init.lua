@@ -48,7 +48,7 @@ packer.startup({
 		-- Multi cursor mode
 		"mg979/vim-visual-multi",
 		-- Table mode
-		-- "https://github.com/dhruvasagar/vim-table-mode",
+		"https://github.com/dhruvasagar/vim-table-mode",
 		-- Lsp
 		"neovim/nvim-lspconfig",
 		"kabouzeid/nvim-lspinstall", -- Language server installer

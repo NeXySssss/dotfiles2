@@ -11,7 +11,7 @@ u.map(
 	"<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
 	{ label = "DAP: Set conditional breakpoint" }
 )
--- u.map("n", "<leader>dl", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", { label = "DAP: Set log point" })
+u.map("n", "<leader>dl", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", { label = "DAP: Set log point" })
 u.map("n", "<leader>dro", "<cmd>lua require'dap'.repl.open({}, 'vsplit')<CR><C-w>l", { label = "DAP: Open repl" })
 u.map("n", "<leader>drl", "<cmd>lua require'dap'.repl.run_last()<CR>", { label = "DAP: Run last in repl" })
 u.map("n", "<leader>di", "<cmd>lua require'dap.ui.variables'.hover(function () return vim.fn.expand(\"<cexpr>\") end)<CR>", { label = "DAP: Hover" })

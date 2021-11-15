@@ -1,4 +1,4 @@
--- Enabme mouse
+-- Enable mouse
 vim.opt.mouse = "a"
 -- Completion
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
@@ -30,6 +30,9 @@ vim.opt.smarttab = true
 vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.breakindent = true
+-- Scrolling
+vim.opt.scrolloff = 5
+vim.opt.sidescrolloff = 12
 -- Split direction
 vim.opt.splitbelow = true
 vim.opt.splitright = true
@@ -37,9 +40,9 @@ vim.opt.splitright = true
 vim.opt.foldmethod = "syntax"
 vim.opt.foldlevelstart = 9999
 -- Layout remaps (doesn't work with keybindings)
-vim.opt.langremap = true
-vim.opt.langmap =
-	"ЙЦУКЕНГШЩЗХЪЇҐФЫІВАПРОЛДЖЭЄЯЧСМИТЬБЮ\\,;QWERTYUIOP{}}\\\\ASSDFGHJKL:\"\"ZXCVBNM<>?,йцукенгшщзхъїґфыівапролджэєячсмитьбю.;qwertyuiop[]]\\\\assdfghjkl\\;''zxcvbnm\\,./"
+-- vim.opt.langremap = true
+-- vim.opt.langmap =
+-- 	"ЙЦУКЕНГШЩЗХЪЇҐФЫІВАПРОЛДЖЭЄЯЧСМИТЬБЮ\\,;QWERTYUIOP{}}\\\\ASSDFGHJKL:\"\"ZXCVBNM<>?,йцукенгшщзхъїґфыівапролджэєячсмитьбю.;qwertyuiop[]]\\\\assdfghjkl\\;''zxcvbnm\\,./"
 -- Firenvim font
 vim.opt.guifont = "JetBrainsMono Nerd Font Mono:h14"
 -- Enable rgb colors

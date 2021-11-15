@@ -69,18 +69,14 @@ u.exec(
 -- Configure sources
 nls.config({
 	sources = {
-		fmt.stylua,
-
-		fmt.shellcheck,
 		lint.shellcheck,
 
+		fmt.stylua,
 		fmt.clang_format,
 		fmt.gofmt,
 		fmt.rustfmt,
-
 		fmt.nixfmt,
 		fmt.shfmt,
-
 		fmt.cmake_format,
 		fmt.nginx_beautifier,
 	},

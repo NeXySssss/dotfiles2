@@ -21,8 +21,8 @@ u.map("", "<leader>tv", "<cmd>vsplit term://$SHELL<CR>", { label = "Open a termi
 -- Tabs
 u.map("", "<A-q>", "<cmd>tabclose<CR>", { label = "Close the tab" })
 u.map("", "<A-t>", "<cmd>tabnew<CR>", { label = "Open a new tab" })
-u.map("n", "<Tab>", "<cmd>tabnext<CR>", { label = "Switch to the next tab" })
-u.map("n", "<S-Tab>", "<cmd>tabprev<CR>", { label = "Switch to previous tab" })
+u.map("n", "<A-Tab>", "<cmd>tabnext<CR>", { label = "Switch to the next tab" })
+-- u.map("n", "<S-Tab>", "<cmd>tabprev<CR>", { label = "Switch to previous tab" })
 
 -- Replace alias
 u.map("", "S", ":%s//gI<Left><Left><Left>", { label = "Replace", silent = false })
@@ -36,8 +36,8 @@ u.map("", "<leader>W", "<cmd>w<CR>", { label = "Save current buffer" })
 u.map("n", "<Esc>", ":noh <CR>", { label = "Clear highlights" })
 
 -- Easier movement between wrapped lines
-u.map("", { "j", "<Down>" }, 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { label = "Move down", noremap = true, silent = true, expr = true })
-u.map("", { "k", "<Up>" }, 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { label = "Move up", noremap = true, silent = true, expr = true })
+u.map("", { "j", "<Down>" }, 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { label = "Move down", expr = true })
+u.map("", { "k", "<Up>" }, 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { label = "Move up", expr = true })
 
 -- Insert mode movement
 u.map("i", "<C-a>", "<Home>", { label = "I: same as 0" })
@@ -45,7 +45,7 @@ u.map("i", "<C-h>", "<Left>", { label = "I: same as h" })
 u.map("i", "<C-j>", "<Down>", { label = "I: same as j" })
 u.map("i", "<C-k>", "<Up>", { label = "I: same as k" })
 u.map("i", "<C-l>", "<Right>", { label = "I: same as l" })
-u.map("i", "<C-e>", "<End>", { label = "I: same as $" })
+u.map("i", "<C-d>", "<End>", { label = "I: same as $" })
 
 -- Move lines up and down
 u.map("n", { "<C-A-j>", "<C-A-Down>" }, ":m .+1<CR>==", { label = "Move the line down" })
