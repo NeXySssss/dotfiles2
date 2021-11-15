@@ -1,12 +1,5 @@
 fpath+=$ZDOTDIR/completions
 
-# Completion
-autoload -Uz compinit
-compinit
-zinit cdreplay -q
-# Default completion
-compdef _gnu_generic -default-
-
 autoload zcalc
 # Mass rename
 autoload zmv
