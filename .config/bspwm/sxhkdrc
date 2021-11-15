@@ -160,6 +160,22 @@ super + o
 
 # }}}
 
+# Dunst {{{
+
+super + grave
+	dunstctl history-pop
+
+ctrl {_, + shift} + space
+	dunstctl close{_,-all}
+
+ctrl + shift + space
+	dunstctl close-all
+
+ctrl + shift + period
+	dunstctl action
+
+# }}}
+
 # Multimedia Keys {{{
 
 XF86AudioRaiseVolume
