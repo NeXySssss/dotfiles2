@@ -11,6 +11,7 @@ zcomet load zsh-users/zsh-autosuggestions
 zcomet load zsh-users/zsh-syntax-highlighting
 zcomet load zdharma-continuum/history-search-multi-word
 zcomet load zsh-users/zsh-completions
+# zcomet load marlonrichert/zsh-autocomplete
 # }}}
 
 # Prompt {{{
