@@ -6,6 +6,11 @@ zcompare() {
   fi
 }
 
+zcompare "$ZDOTDIR"/.zshrc
+if [ -f ""$ZDOTDIR"/.p10k.zsh" ]; then
+	zcompare "$ZDOTDIR"/.p10k.zsh
+fi
+
 for file in "${XDG_CONFIG_HOME:-~/.config}"/sh/rc.d/**/*; do
 	source "$file"
 done; unset file
