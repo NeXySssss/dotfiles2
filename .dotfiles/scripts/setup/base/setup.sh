@@ -21,8 +21,13 @@ case "$DISTRO" in
 			error "Failed to enable multilib"
 			exit 1
 		fi
+
+		sudo pacman -Sy || error "Failed to sync repos"
 	;;
 esac
+
+log_info "Configuring Apple HID fnmode"
+sudo cp "$DIR"/hid-apple.conf /etc/modprobe.d/hid-apple.conf || error "Failed to configure Apple HID fnmode"
 
 log_info "Changing user shell"
 case "$SHELL" in
