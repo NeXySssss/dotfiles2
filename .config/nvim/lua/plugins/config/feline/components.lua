@@ -93,7 +93,7 @@ M.position = {
 M.diagnostic_errors = {
 	provider = "diagnostic_errors",
 	enabled = function()
-		return lsp.diagnostics_exist("Error")
+		return lsp.diagnostics_exist("error")
 	end,
 	hl = { fg = colors.red_bright },
 	left_sep = " ",
@@ -103,7 +103,7 @@ M.diagnostic_errors = {
 M.diagnostic_warnings = {
 	provider = "diagnostic_warnings",
 	enabled = function()
-		return lsp.diagnostics_exist("Warning")
+		return lsp.diagnostics_exist("warn")
 	end,
 	hl = { fg = colors.yellow_bright },
 	left_sep = " ",
@@ -113,7 +113,7 @@ M.diagnostic_warnings = {
 M.diagnostic_hints = {
 	provider = "diagnostic_hints",
 	enabled = function()
-		return lsp.diagnostics_exist("Hint")
+		return lsp.diagnostics_exist("hint")
 	end,
 	hl = { fg = colors.fg },
 	left_sep = " ",
@@ -123,7 +123,7 @@ M.diagnostic_hints = {
 M.diagnostic_info = {
 	provider = "diagnostic_info",
 	enabled = function()
-		return lsp.diagnostics_exist("Information")
+		return lsp.diagnostics_exist("info")
 	end,
 	hl = { fg = colors.fg },
 	left_sep = " ",

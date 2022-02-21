@@ -10,7 +10,6 @@ parser_config.markdown = {
 require("nvim-treesitter.configs").setup({
 	ensure_installed = {
 		"lua",
-		"markdown",
 		"javascript",
 		"c_sharp",
 		"rust",

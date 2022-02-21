@@ -1,4 +1,4 @@
-vim.g.aerial = {
+require("aerial").setup({
 	-- Enum: persist, close, auto, global
 	--   persist - aerial window will stay open until closed
 	--   close   - aerial window will close when original file is no longer visible
@@ -27,17 +27,14 @@ vim.g.aerial = {
 	-- To disable dynamic resizing, set this to be equal to max_width
 	min_width = 32,
 
-	-- Whether to open aerial automatically when entering a buffer.
-	-- Can also be specified per-filetype as a map (see below)
-	open_automatic = false,
-
+	--[[open_automatic = false,
 	-- If open_automatic is true, only open aerial if the source buffer is at
 	-- least this long
 	open_automatic_min_lines = 0,
 
 	-- If open_automatic is true, only open aerial if there are at least this many symbols
 	open_automatic_min_symbols = 0,
-
+	]]
 	-- Run this command after jumping to a symbol (false will disable)
 	post_jump_cmd = "normal! zz",
 
@@ -54,21 +51,8 @@ vim.g.aerial = {
 		"Method",
 		"Struct",
 	},
-}
 
--- open_automatic can be specified as a filetype map. For example, the below
--- configuration will open automatically in all filetypes except python and rust
-vim.g.aerial = {
-	open_automatic = {
-		-- use underscore to specify the default behavior
-		["_"] = true,
-		python = false,
-		rust = false,
-	},
-}
-
--- You can also override the default icons.
-vim.g.aerial = {
+	-- You can also override the default icons.
 	icons = {
 		Class = "",
 		-- The icon to use when a class has been collapsed in the tree
@@ -78,4 +62,4 @@ vim.g.aerial = {
 		-- The default icon to use when any symbol is collapsed in the tree
 		Collapsed = "▶",
 	},
-}
+})

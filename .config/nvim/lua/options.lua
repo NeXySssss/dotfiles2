@@ -1,3 +1,4 @@
+vim.opt.autoread = true
 -- Enable mouse
 vim.opt.mouse = "a"
 -- Completion

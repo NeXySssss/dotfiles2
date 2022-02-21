@@ -11,13 +11,13 @@ local feedkey = function(key, mode)
 end
 
 cmp.setup({
-	experimental = {
-		native_menu = true,
-	},
 	snippet = {
 		expand = function(args)
 			vim.fn["vsnip#anonymous"](args.body)
 		end,
+	},
+	view = {
+		-- entries = "native"
 	},
 	formatting = {
 		format = function(entry, vim_item)

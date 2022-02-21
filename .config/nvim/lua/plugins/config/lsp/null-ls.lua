@@ -67,7 +67,7 @@ u.exec(
 )
 
 -- Configure sources
-nls.config({
+nls.setup({
 	sources = {
 		lint.shellcheck,
 

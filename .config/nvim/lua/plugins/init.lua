@@ -41,6 +41,11 @@ packer.startup({
 		"b3nj5m1n/kommentary",
 		-- Todo comments
 		"folke/todo-comments.nvim",
+		-- Json with comments
+		"kevinoid/vim-jsonc",
+		-- Markdown
+		"godlygeek/tabular",
+		"preservim/vim-markdown",
 		-- Detect indent
 		"zsugabubus/crazy8.nvim",
 		-- Load .editorconfig
@@ -51,7 +56,7 @@ packer.startup({
 		"https://github.com/dhruvasagar/vim-table-mode",
 		-- Lsp
 		"neovim/nvim-lspconfig",
-		"kabouzeid/nvim-lspinstall", -- Language server installer
+		"williamboman/nvim-lsp-installer", -- Language server installer
 		"jose-elias-alvarez/null-ls.nvim", -- Diagnostics, formatting
 		"glepnir/lspsaga.nvim", -- Popups
 		{ "RishabhRD/nvim-lsputils", requires = { "RishabhRD/popfix" } },
