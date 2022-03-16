@@ -91,7 +91,8 @@ packer.startup({
 		-- Increment/decrement numbers/dates
 		"monaqa/dial.nvim",
 		-- Auto close pairs
-		"windwp/nvim-autopairs",
+		-- NOTE: Breaks nvim-cmp <CR> keybinding
+		-- "windwp/nvim-autopairs",
 		-- REST client
 		"NTBBloodbath/rest.nvim",
 		-- Github integration

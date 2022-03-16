@@ -43,28 +43,24 @@ local function prettier_eslint_check()
 end
 
 -- Register eslint/prettier sources conditionally
-function _G.null_ls_prettier_eslint()
-	local result = prettier_eslint_check()
+-- function _G.null_ls_prettier_eslint()
+-- 	local result = prettier_eslint_check()
 
-	if result == "eslint" then
-		nls.register(fmt.eslint_d.with({
-			filetypes = fmt.prettier.filetypes,
-		}))
-		nls.register(lint.eslint_d.with({
-			filetypes = fmt.prettier.filetypes,
-		}))
-	elseif result == "prettier_eslint" then
-		nls.register(fmt.prettier)
-		nls.register(fmt.eslint_d)
-		nls.register(lint.eslint_d)
-	else
-		nls.register(fmt.prettier)
-	end
-end
-
-u.exec(
-	"autocmd FileType javascript,javascriptreact,typescript,typescriptreact,vue,svelte,css,scss,html,json,yaml,markdown lua null_ls_prettier_eslint()"
-)
+-- 	if result == "eslint" then
+-- 		nls.register(fmt.eslint_d.with({
+-- 			filetypes = fmt.prettier.filetypes,
+-- 		}))
+-- 		nls.register(lint.eslint_d.with({
+-- 			filetypes = fmt.prettier.filetypes,
+-- 		}))
+-- 	elseif result == "prettier_eslint" then
+-- 		nls.register(fmt.prettier)
+-- 		nls.register(fmt.eslint_d)
+-- 		nls.register(lint.eslint_d)
+-- 	else
+-- 		nls.register(fmt.prettier)
+-- 	end
+-- end
 
 -- Configure sources
 nls.setup({
@@ -79,5 +75,32 @@ nls.setup({
 		fmt.shfmt,
 		fmt.cmake_format,
 		fmt.nginx_beautifier,
+
+		fmt.prettier.with({
+			runtime_condition = function()
+				local c = prettier_eslint_check()
+				return c == "prettier" or c == "prettier_eslint"
+			end
+		}),
+		fmt.eslint_d.with({
+			runtime_condition = function()
+				return prettier_eslint_check() == "prettier_eslint"
+			end
+		}),
+		lint.eslint_d.with({
+			runtime_condition = function()
+				return prettier_eslint_check() == "prettier_eslint"
+			end
+		}),
+		fmt.eslint_d.with({
+			runtime_condition = function()
+				return prettier_eslint_check() == "eslint"
+			end
+		}),
+		lint.eslint_d.with({
+			runtime_condition = function()
+				return prettier_eslint_check() == "eslint"
+			end
+		}),
 	},
 })
