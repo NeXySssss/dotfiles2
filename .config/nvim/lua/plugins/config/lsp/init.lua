@@ -1,5 +1,0 @@
-require("plugins/config/lsp/extensions")
-require("plugins/config/lsp/null-ls")
-require("plugins/config/lsp/cmp")
-require("plugins/config/lsp/icons")
-require("plugins/config/lsp/servers")
