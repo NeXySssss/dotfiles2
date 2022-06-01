@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+
+case "$1" in
+	enter|on)
+		touch /tmp/"$USER$DISPLAY"-focus
+		sed -i 's/^#inactive-dim/inactive-dim/' ~/.config/picom/picom.conf
+		dunstctl set-paused true
+		for m in $(bspc query -M); do
+			bspc monitor "$m" -d 1 2
+		done
+		bspc config top_padding 0
+		killall polybar >/dev/null 2>&1
+	;;
+	exit|off)
+		rm /tmp/"$USER$DISPLAY"-focus >/dev/null 2>&1
+		sed -i 's/^inactive-dim/#inactive-dim/' ~/.config/picom/picom.conf
+		dunstctl set-paused false
+		for m in $(bspc query -M); do
+			bspc monitor "$m" -d 1 2 3 4 5 6 7 8 9 10
+		done
+		bspc config top_padding 30
+		(~/.config/polybar/launch.sh > /dev/null 2>&1; ) >/dev/null 2>&1
+	;;
+	toggle)
+		if [ -f /tmp/"$USER$DISPLAY"-focus ]; then
+			"$0" off
+		else
+			"$0" on
+		fi
+	;;
+esac
