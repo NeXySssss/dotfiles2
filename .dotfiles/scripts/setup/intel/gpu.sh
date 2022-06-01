@@ -9,7 +9,7 @@ case "$DISTRO" in
 		sudo xbps-install -Sy linux-firmware-intel intel-video-accel mesa-dri mesa-vulkan-intel || error "Failed to install packages"
 	;;
 	arch)
-		sudo pacman --needed --noconfirm  -Syu vulkan-intel libva-intel-driver intel-media-driver || error "Failed to install packages"
+		sudo pacman --needed --noconfirm  -Syu vulkan-intel lib32-vulkan-intel libva-intel-driver lib32-libva-intel-driver intel-media-driver || error "Failed to install packages"
 	;;
 esac
 
