@@ -74,20 +74,12 @@ super + m
 super + k
 	bspc node --flag sticky
 
-# Lock window
-super + shift + l
-	bspc node --flag locked
-
-# Lock window position
-super + ctrl + l
-	bspc node --flag private
-
 # Close window
 super + q
 	bspc node -c
 
 # Kill window
-super + F4
+super + shift + q
 	bspc node -k
 
 # Preseleft direction
@@ -122,26 +114,11 @@ super + {_, shift + }v
 
 # Launchers {{{
 
-ctrl + alt + f
-	x-www-browser
-
 Print
 	flameshot gui
 
 super + l
 	loginctl lock-session self
-
-super + Return
-	x-terminal-emulator
-
-super + shift + Return
-	x-file-manager
-
-super + space
-	x-launcher
-
-super + r
-	x-launcher
 
 super + p
 	x-power-menu
@@ -149,15 +126,26 @@ super + p
 super + e
 	x-emoji-picker
 
-ctrl + alt + c
+super + Return
+	x-terminal-emulator
+
+super + space
+	x-launcher
+
+super + r; f
+	x-www-browser
+
+super + r; d
+	x-file-manager
+
+super + r; c
 	chatterino
+
+super + r; p
+	mpv "$(xclip -sel c -o)"
 
 super + ctrl + q
 	bspc quit
-
-super + o
-	mpv "$(xclip -sel c -o)"
-
 # }}}
 
 # Dunst {{{
@@ -165,13 +153,13 @@ super + o
 super + grave
 	dunstctl history-pop
 
-ctrl {_, + shift} + space
-	dunstctl close{_,-all}
+super + Escape
+	dunstctl close
 
-ctrl + shift + space
+super + shift + Escape
 	dunstctl close-all
 
-ctrl + shift + period
+super + period
 	dunstctl action
 
 # }}}
@@ -216,14 +204,14 @@ super + XF86AudioLowerVolume
 
 # }}}
 
-# Other {{{
+# Manage {{{
 
 # Reload bspwm config
-super + ctrl + r
+super + b; w
 	bspc wm -r
 
 # Reload sxhkd
-super + shift + r
+super + b; b
 	pkill -USR1 -x sxhkd
 
 # }}}
