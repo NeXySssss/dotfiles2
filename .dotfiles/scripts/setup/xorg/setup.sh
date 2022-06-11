@@ -15,11 +15,11 @@ case "$DISTRO" in
 		LOG_SIGN="$LOG_SIGN>" "$DIR"/custom-packages.sh || error "Failed to install custom packages"
 	;;
 	arch)
-		paru --needed --noconfirm  -Syu mesa lib32-mesa mesa-demos mesa-vdpau lib32-mesa-vdpau \
+		paru --needed --noconfirm -Syu pipewire lib32-pipewire pipewire-alsa pipewire-pulse pipewire-jack lib32-pipewire-jack \
 			vulkan-icd-loader lib32-vulkan-icd-loader vulkan-headers vulkan-validation-layers vulkan-tools \
 			xorg-server xorg-setxkbmap xorg-xdpyinfo xorg-xinput libinput-gestures xorg-xrandr xorg-xsetroot xorg-xprop sx xclip xsel \
 			kitty firefox vlc mpv copyq ark dolphin gwenview kdeconnect kcolorchooser qalculate-gtk flameshot-33kk-git \
-			pipewire lib32-pipewire pipewire-alsa pipewire-pulse pipewire-jack lib32-pipewire-jack || error "Failed to install packages"
+			mesa lib32-mesa mesa-demos mesa-vdpau lib32-mesa-vdpau || error "Failed to install packages"
 	;;
 esac
 

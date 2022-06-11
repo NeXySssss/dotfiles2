@@ -8,7 +8,7 @@ case "$DISTRO" in
 		sudo xbps-install -Sy curl jq unzip noto-fonts-ttf noto-fonts-cjk || error "Failed to install packages"
 	;;
 	arch)
-		sudo pacman --needed --noconfirm  -Syu curl jq unzip noto-fonts noto-fonts-cjk || error "Failed to install packages"
+		sudo pacman --needed --noconfirm -Syu curl jq unzip noto-fonts noto-fonts-cjk || error "Failed to install packages"
 	;;
 esac
 
