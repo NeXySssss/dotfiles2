@@ -98,7 +98,7 @@ This was only tested on a clean void/arch install. Xorg, Fonts, Amd, Nvidia & In
 
 ```bash
 sudo xbps-install -S git
-git clone --bare https://github.com/33kk/dotfiles ~/.dotfiles/git
+git clone --bare https://github.com/NeXySssss/dotfilespepeg ~/.dotfiles/git
 git --bare --git-dir="$HOME"/.dotfiles/git --work-tree="$HOME" checkout
 ~/.dotfiles/scripts/setup.sh
 ```
@@ -107,7 +107,7 @@ git --bare --git-dir="$HOME"/.dotfiles/git --work-tree="$HOME" checkout
 
 ```bash
 sudo pacman -Syu git
-git clone --bare https://github.com/33kk/dotfiles ~/.dotfiles/git
+git clone --bare https://github.com/NeXySssss/dotfilespepeg ~/.dotfiles/git
 git --bare --git-dir="$HOME"/.dotfiles/git --work-tree="$HOME" checkout
 ~/.dotfiles/scripts/setup.sh
 ```
