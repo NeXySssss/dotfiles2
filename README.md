@@ -1,16 +1,9 @@
 # 33KK's Dotfiles
 
 ## Screenshots
-
-![1](.dotfiles/screenshots/1.png)
-![2](.dotfiles/screenshots/2.png)
-![3](.dotfiles/screenshots/3.png)
-![4](.dotfiles/screenshots/4.png)
-![5](.dotfiles/screenshots/5.png)
-![6](.dotfiles/screenshots/6.png)
-![7](.dotfiles/screenshots/7.png)
-![8](.dotfiles/screenshots/8.png)
-![9](.dotfiles/screenshots/9.png)
+Лень делать BRUH ...
+Обои: 
+![1](.dotfiles/wp/wp1.jpg)
 
 ## Details
 
