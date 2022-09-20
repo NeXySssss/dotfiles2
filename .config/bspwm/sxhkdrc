@@ -31,27 +31,27 @@ super + shift + {1-9,0}
 	bspc node --to-desktop "$(bspc query -m focused -T | perl -pe 's|.*?\"name\":\"(.*?)\".*|\1|'):^{1-9,10}" --focus
 
 # Focus monitor
-ctrl + alt + {w,a,s,d}
+super + ctrl + alt + {w,a,s,d}
 	bspc monitor {north,west,south,east} --focus
 
 # Focus Nth monitor
-ctrl + alt + {1-9,0}
+super + ctrl + alt + {1-9,0}
 	bspc monitor "^{1-9,10}" --focus
 
 # Move window to monitor
-ctrl + alt + x; {w,a,s,d}
+super + ctrl + alt + x; {w,a,s,d}
 	bspc node --to-monitor {north,west,south,east} --focus
 
 # Move window to Nth monitor
-ctrl + alt + x; {1-9,0}
+super + ctrl + alt + x; {1-9,0}
 	bspc node --to-monitor "^{1-9,10}" --focus
 
 # Swap desktop with another monitor
-ctrl + alt + z; {w,a,s,d}
+super + ctrl + alt + z; {w,a,s,d}
 	bspwm-swap-desktop {north,west,south,east}
 
 # Swap desktop with another monitor
-ctrl + alt + z; {1-9,0}
+super + ctrl + alt + z; {1-9,0}
 	bspwm-swap-desktop "^{1-9,10}"
 
 # Expand window
@@ -74,12 +74,20 @@ super + m
 super + k
 	bspc node --flag sticky
 
+# Lock window
+super + shift + l
+	bspc node --flag locked
+
+# Lock window position
+super + ctrl + l
+	bspc node --flag private
+
 # Close window
 super + q
 	bspc node -c
 
 # Kill window
-super + shift + q
+super + F4
 	bspc node -k
 
 # Preseleft direction
@@ -114,11 +122,26 @@ super + {_, shift + }v
 
 # Launchers {{{
 
+super + ctrl + alt + f
+	x-www-browser
+
 Print
 	flameshot gui
 
 super + l
 	loginctl lock-session self
+
+super + Return
+	x-terminal-emulator
+
+super + shift + Return
+	x-file-manager
+
+super + space
+	x-launcher
+
+super + r
+	x-launcher
 
 super + p
 	x-power-menu
@@ -126,41 +149,14 @@ super + p
 super + e
 	x-emoji-picker
 
-super + Return
-	x-terminal-emulator
-
-super + space
-	x-launcher
-
-super + r; f
-	x-www-browser
-
-super + r; d
-	x-file-manager
-
-super + r; c
-	chatterino
-
-super + r; p
-	mpv "$(xclip -sel c -o)"
+super + ctrl + alt + c
+	CHATTERINO2_TWITCH_SERVER_HOST=trovo.egror.liphi.co CHATTERINO2_TWITCH_SERVER_PORT=5697 CHATTERINO2_TWITCH_SERVER_SECURE=true chatterino
 
 super + ctrl + q
 	bspc quit
-# }}}
 
-# Dunst {{{
-
-super + grave
-	dunstctl history-pop
-
-super + Escape
-	dunstctl close
-
-super + shift + Escape
-	dunstctl close-all
-
-super + period
-	dunstctl action
+super + o
+	mpv "$(xclip -sel c -o)"
 
 # }}}
 
@@ -204,14 +200,14 @@ super + XF86AudioLowerVolume
 
 # }}}
 
-# Manage {{{
+# Other {{{
 
 # Reload bspwm config
-super + b; w
+super + ctrl + r
 	bspc wm -r
 
 # Reload sxhkd
-super + b; b
+super + shift + r
 	pkill -USR1 -x sxhkd
 
 # }}}
