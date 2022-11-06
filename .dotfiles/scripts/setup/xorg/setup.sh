@@ -19,7 +19,7 @@ case "$DISTRO" in
 			vulkan-icd-loader lib32-vulkan-icd-loader vulkan-headers vulkan-validation-layers vulkan-tools \
 			xorg-server xorg-setxkbmap xorg-xdpyinfo xorg-xinput libinput-gestures xorg-xrandr xorg-xsetroot xorg-xprop sx xclip xsel \
 			kitty firefox vlc mpv copyq ark dolphin gwenview kdeconnect kcolorchooser qalculate-gtk flameshot-33kk-git \
-			mesa lib32-mesa mesa-demos mesa-vdpau lib32-mesa-vdpau nodejs npm discord telegram-desktop chatterino2-7tv-git easyeffects network-manager-applet  || error "Failed to install packages"
+			mesa lib32-mesa mesa-demos mesa-vdpau lib32-mesa-vdpau nodejs npm discord telegram-desktop chatterino2-7tv-git easyeffects network-manager-applet spotify-launcher steam-native-runtime lutris gparted corectrl || error "Failed to install packages"
 	;;
 esac
 
