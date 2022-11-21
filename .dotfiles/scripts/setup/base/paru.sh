@@ -5,7 +5,7 @@ DIR=$( cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P )
 if ! command -v paru; then
 	log_info "Cloning package"
 	TMP=$(mktemp -d)
-	git clone https://aur.archlinux.org/paru.git "$TMP" || error "Failed to clone package"
+	git clone https://aur.archlinux.org/paru-bin.git "$TMP" || error "Failed to clone package"
 	cd "$TMP"
 	log_info "Building package"
 	makepkg --needed --noconfirm -si|| error "Failed to build package"
