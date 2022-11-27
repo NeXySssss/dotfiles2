@@ -3,7 +3,7 @@
 ## Screenshots
 Лень делать BRUH ...
 Обои: 
-![1][.dotfiles/wp/wallpaper.jpg]
+![1](.dotfiles/wp/wallpaper.jpg)
 
 ## Details
 
